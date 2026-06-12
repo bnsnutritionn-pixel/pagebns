@@ -1,0 +1,173 @@
+# Entrega da Landing Page Premium - BNS+
+
+A landing page completa e responsiva para a marca de suplementos premium **BNS+** foi criada com sucesso. O arquivo está localizado em [index.html](file:///e:/LANDING%20PAGE%20BNS/index.html).
+
+---
+
+## 🛠️ Tecnologias e Recursos Utilizados
+- **HTML5 Semântico**: Estruturação limpa com tags semânticas (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`).
+- **CSS3 Moderno**: Utilização de variáveis globais de CSS, Flexbox, CSS Grid, media queries (Mobile-First) e animações personalizadas.
+- **Tipografia**:
+  - `Poppins` para cabeçalhos e elementos fortes.
+  - `Inter` para leitura agradável e corrida.
+  - `Playfair Display` para títulos editoriais com apelo elegante (ex: Destaque de Produto Hero).
+- **Sem Dependências Externas**: Ícones construídos nativamente via vetores SVG in-line para otimizar velocidade de carregamento e evitar dependências de CDNs terceiros.
+
+---
+
+## 📐 Estrutura de Blocos Desenvolvida (Ordem Estrita)
+
+1. **Header Fixo**:
+   - Barra superior promocional com anúncio de frete grátis (personalizado para compras acima de R$ 99).
+   - Logomarca principal apontando para o arquivo de imagem personalizado `logo_blue.png` com dimensões e proporções otimizadas via CSS.
+   - Barra de pesquisa integrada (com lupa SVG).
+   - Ícones de ações atualizados com rótulos de texto no desktop ("Faça seu login ou cadastre-se" ao lado de Usuário, "Precisa de ajuda?" ao lado do ícone de Ajuda adicionado, e contador na Sacola).
+   - Sub-menu de navegação contendo o botão de destaque "**Todos os produtos**" em azul à esquerda, links alinhados à referência (`Compre por objetivo`, `Best Sellers`, `Lançamentos`, `Promoções`, `GLP-1 Support`, `Assinatura`), pequenos **separadores de bolinhas cinzas (`•`)** com espaçamento ajustado de `16px`, e ícone de chevron na categoria `Compre por objetivo`.
+   - Menu mobile drawer adaptado com a mesma lista de links correspondente.
+   - **Comportamento Scrolled / Fixo (Novo)**: Ao rolar a página para baixo, o cabeçalho se contrai de duas linhas para **uma única linha ultra compacta**, alinhada perfeitamente com a referência visual:
+     - Reordena dinamicamente os elementos usando Flexbox e `display: contents` no CSS, sem alterar a estrutura do DOM.
+     - A ordem dos elementos torna-se: `Logo` | `Todos os produtos` | `Compre por objetivo` (com chevron) | `Assinatura` | `Barra de Busca` (em formato de pílula compacta de fundo bege `#F5F0EB` e ícone de lupa alinhado à direita) | `Ações do Header` (Minha Conta, Ajuda e Sacola de compras).
+     - Oculta de forma inteligente os links intermediários (`Best Sellers`, `Lançamentos`, `Promoções`, `GLP-1 Support`) e os pontos separadores.
+     - Esconde o botão de Favoritos e o texto dos ícones de login e ajuda em resoluções abaixo de `1200px` para evitar sobreposições, mantendo o cabeçalho 100% responsivo e elegante.
+
+2. **Banner Hero Principal**:
+   - Configurado como um **card centralizado e responsivo** dentro da largura do container, utilizando a imagem enviada pelo usuário (`dragon-gtx-banner.png`) como imagem de fundo e contendo bordas arredondadas (`border-radius: 24px`) com `overflow: hidden` e uma máscara WebKit (`-webkit-mask-image`) para forçar o arredondamento perfeito de todos os cantos no navegador, incluindo os dois cantos inferiores.
+   - Remoção do estiramento de tela cheia nas laterais, com a seção externa adotando fundo branco limpo, mantendo o foco centralizado no conteúdo.
+   - Posicionamento da imagem de fundo (`dragon-gtx-banner.png`) deslocado `220px` para a direita e largura do conteúdo limitada a `520px` no desktop, evitando sobreposição com os produtos da imagem e mantendo o pote próximo à borda direita.
+   - Disposição interna dos elementos reestruturada para seguir fielmente a referência: rótulo superior, headline grande, **ticket de brindes com bordas pontilhadas e duas colunas** (`Kit Ritual do Treino` e `Intra-Treino ou Cúrcuma`), botão CTA primário e nota de rodapé informativa.
+
+3. **Carrossel de Categorias**:
+   - Scroll horizontal fluido com 9 categorias representadas por círculos pastéis e ícones SVG temáticos (com a categoria "Proteínas Veganas" removida de acordo com a customização).
+
+4. **Seção Best Sellers (Best Sellers)**:
+   - Título e link para listagem geral.
+   - Grid horizontal scrollável com setas de navegação desktop.
+   - Cards com badge de desconto, avaliação de estrelas, preços antigo/novo e botão de carrinho com animação de pulso.
+
+5. **Seção Editorial / Blog Preview**:
+   - Grid 2x2 responsiva com as 4 postagens solicitadas (Saúde, Vitaminas, Fitness) e títulos idênticos à referência.
+
+6. **Destaque de Produto Hero ("Ferro Liposomal")**:
+   - Seção full-width de fundo bege médio com tipografia serifada gigante e benefícios organizados em cards brancos de destaque.
+
+7. **Seção "Quem Usa, Recomenda"**:
+   - Carrossel horizontal de influencers com depoimento, foto em estilo retrato com gradiente escuro e botão de compra rápida.
+
+8. **Seção True Foods**:
+   - Grid de 4 produtos com fundos pastéis coloridos vibrantes (rosa, marrom, caramelo e azul/verde), preço e botão circular de compra rápida.
+
+9. **Bloco Depoimento Destaque**:
+   - Banner de destaque em azul sólido `#015CAB`.
+   - Foto grande do produto à esquerda. Aspas gigantes e carrossel interativo em JS com troca automática/manual de depoimentos à direita.
+
+10. **Bloco Depoimento Médico**:
+    - Fundo off-white `#F5F0EB` com foco em autoridade.
+    - Foto circular de especialista à esquerda e declaração oficial em itálico à direita com setas funcionais de navegação.
+
+11. **Seção "Recomendados Para Você"**:
+    - Grid de 4 produtos com descontos e estilo idêntico à seção Best Sellers.
+
+12. **Banner Institucional**:
+    - Fundo suave e layout moderno conectando o propósito da marca (insumos limpos e naturais) com uma foto editorial sofisticada.
+
+13. **Footer Completo**:
+    - Logo, assinatura de newsletter com botão azul brand, links corporativos e de ajuda estruturados em 4 colunas responsivas, selo SSL seguro, selos de segurança adicionais e ícones de cartões/Pix.
+
+---
+
+## 💫 Interações Funcionais Desenvolvidas (via JavaScript Embutido)
+- **Header Dinâmico**: Diminui de tamanho e adiciona sombra leve (`backdrop-filter`) ao rolar a página para baixo.
+- **Carrinho Interativo**: Ao clicar em "Conhecer produto", o contador do cabeçalho incrementa dinamicamente com uma animação de salto (scale) e o botão exibe um status temporário de "✓ Adicionado!".
+- **Carrosséis Horizontais**: Setas funcionais de navegação horizontal no grid de Best Sellers, Recomendados e Influencers.
+- **Sliders de Depoimento**:
+  - Depoimentos Destaque (Azul) alternam textos e autores por meio de setas sem recarregar a página.
+  - Depoimentos Médicos (Autoridade) contam com navegação funcional para múltiplas citações médicas.
+- **Newsletter**: Validação de e-mail e popup interativo confirmando a assinatura.
+
+---
+
+## 🎨 Novo Layout Premium dos Cards de Produto
+
+Alinhado com a nova referência visual solicitada pelo usuário, todos os 8 cards de produtos (Bloco 4: Best Sellers e Bloco 11: Recomendados Para Você) foram reestruturados e estilizados:
+
+1. **Badge de Sabor / Benefício (Pílula Overlay)**:
+   - Posicionamento absoluto e centralizado na base do wrapper da imagem do produto.
+   - Fundo branco limpo com texto em azul da marca (`#015CAB`) em negrito, criando um contraste premium.
+   - Textos adaptados para cada produto:
+     - *Whey*: "Sabor do Coco de Verdade"
+     - *Creatina*: "100% Pura & Importada"
+     - *Termogênico*: "Fórmula Fit Clean"
+     - *Multivitamínico*: "A-Z Vitaminas e Minerais"
+     - *Vitamina D3+K2*: "Saúde Imunológica"
+     - *Ômega 3*: "Ultra Purificado"
+     - *Colágeno*: "Beleza & Firmeza"
+
+2. **Alinhamento Inline de Preços e Avaliação (Meta Row)**:
+   - Em vez de blocos separados, o preço (De / Por) e a avaliação do produto (estrela gold + número) agora compartilham a mesma linha horizontal logo abaixo do nome do produto.
+   - Preço De (antigo) com traço em cinza claro, preço Por (atual) em negrito e preto `#1A1A1A`, e estrela gold com a nota (ex: `★ 4.8`) alinhada à direita.
+
+3. **Botão de Adicionar ao Carrinho (Visual Clean)**:
+   - Removida a borda outline e o ícone de sacola para adotar um estilo minimalista premium.
+   - Fundo bege claro sólido (`#F5F0EB`) com texto marrom escuro em negrito (`#4A3E3D`).
+   - Efeito hover premium: transiciona suavemente para o azul principal da marca (`#015CAB`) com texto em branco e uma sombra sutil projetada.
+   - Atualizada a lógica Javascript de feedback para que, ao clicar no novo botão bege, ele transicione para o feedback de sucesso verde "✓ Adicionado!" por 1 segundo e retorne suavemente à cor original.
+
+4. **Proporção e Imagem Genérica Temporária**:
+   - Ajustada a proporção do wrapper da imagem (`.product-img-wrapper`) para **aspect ratio 4:5** conforme a referência.
+   - Definido o ajuste de encaixe da imagem para `object-fit: cover` para cobrir o espaço inteiro da proporção.
+   - Configurada a imagem [generic-product.jpg](file:///E:/LANDING%20PAGE%20BNS/generic-product.jpg) como imagem genérica em todos os 8 cards de produtos para visualização rápida do layout real.
+
+---
+
+## 🥤 Substituição da Seção de Artigos por Card de Nova Fórmula
+
+A seção de "Artigos" (Bloco 5) foi totalmente substituída por um card promocional moderno e responsivo que destaca a **Nova Fórmula** do suplemento *True Energyzer & Focus*:
+
+1. **Recorte de Imagens de Alta Fidelidade**:
+   - Desenvolvido um script em Python que localizou e extraiu de forma automatizada os elementos da imagem de referência.
+   - O pote do produto foi salvo como [canister-product.png](file:///E:/LANDING%20PAGE%20BNS/canister-product.png) (com fundo branco).
+   - O bloco contendo a bebida no copo com morangos/gelo e fundo coral foi salvo como [drink-banner.png](file:///E:/LANDING%20PAGE%20BNS/drink-banner.png) (com cantos arredondados).
+
+2. **Desenvolvimento do Layout (.formula-card)**:
+   - **Estrutura Bipartida**: Grid responsivo de duas colunas (50%/50% no desktop, empilhando-se verticalmente no mobile).
+   - **Estilo Visual**: Adotado fundo bege claro (`#F5F0EB`) e bordas bem arredondadas (`28px`), idêntico ao modelo.
+   - **Controles e Alinhamento**: O lado esquerdo exibe o pote de produto, a tipografia limpa da chamada, descrição resumida e uma linha de controles com um botão CTA azul da marca (`#015CAB`) e setas de navegação circulares brancas. O lado direito exibe a imagem coral completa da bebida.
+
+---
+
+## 🎠 Carrossel Dinâmico de 12 Produtos no Card de Fórmula
+
+O bloco promocional de fórmula foi transformado em um carrossel interativo e funcional que navega entre 12 produtos da marca contidos na pasta `formula-card/`:
+
+1. **Troca Dinâmica de Elementos**:
+   - Ao clicar nas setas de navegação (`#formulaPrev` e `#formulaNext`), o card atualiza em tempo real as seguintes informações:
+     - Imagem do pote do produto (buscada da pasta local `formula-card/`).
+     - Título e nome do produto (ex: *Complexo B*, *Cafeína Anidra*, *Coenzima Q10*, *Magnésio Malato*, etc.).
+     - Descrição com os benefícios e diferenciais específicos de cada fórmula.
+     - Imagem promocional de fundo na coluna direita (buscada da pasta `formula-card-banners/`).
+
+2. **Geração das Imagens Promocionais (Banners)**:
+   - Geramos 12 banners fotográficos conceituais em alta definição utilizando IA para o lado direito de cada produto, todos salvos em [formula-card-banners/](file:///E:/LANDING%20PAGE%20BNS/formula-card-banners/) com proporção 4:5.
+   - Cada banner reflete visualmente a proposta do produto correspondente (ex: grãos de café dinâmicos para a Cafeína, frutas frescas para o Polivitamínico, raios solares para a Vitamina D3, etc.).
+
+3. **Efeito de Transição Suave (Fade Transition)**:
+   - Implementamos a classe CSS `.formula-fade` combinada com o JavaScript para aplicar um efeito suave de esmaecimento e leve deslocamento vertical (`transform: translateY`) a cada transição de slide, prevenindo cortes bruscos nas imagens e textos.
+
+---
+
+## 🌟 Destaque de Produto Hero: Cabelo, Pele & Unhas
+
+A seção de **Destaque de Produto Hero (Bloco 6)** foi atualizada para promover o produto **Cabelo, Pele & Unhas** em vez de *Ferro Liposomal*, alinhando-se com a estratégia de exclusividade definida pelo usuário:
+
+1. **Alteração de Mídia**:
+   - Substituído o placeholder anterior pela imagem real do pote do produto [CABELO, PELE E UNHA.png](file:///E:/LANDING%20PAGE%20BNS/formula-card/CABELO,%20PELE%20E%20UNHA.png), posicionada perfeitamente acima do círculo de fundo da seção.
+2. **Atualização Textual & Benefícios**:
+   - Título alterado para "Cabelo, Pele & Unhas" com o subtítulo "Brilho, Força e Elasticidade".
+   - Descrição reescrita destacando a sinergia entre a biotina concentrada, colágeno hidrolisado e minerais quelatos.
+   - Lista de diferenciais atualizada para:
+     - *Estimula a produção de colágeno*
+     - *Fios mais fortes e menos queda*
+     - *Fortalecimento profundo das unhas*
+     - *Fórmula pura com biotina e quelatos*
+   - Preço no botão ajustado de forma atrativa para **R$ 89,90**.
+

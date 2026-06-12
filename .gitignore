@@ -1,0 +1,9 @@
+# Arquivos de mídia e documentos muito pesados (acima de 100MB)
+DOCUMENTOS/CATÁLOGO_REVISTA.pdf
+preview_site_unico.html
+CAPA_CATALOGO_ORIGINAL.png
+
+# Pastas de cache e temporárias do Python
+__pycache__/
+*.pyc
+scratch/

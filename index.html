@@ -1,0 +1,3804 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNS+ | Suplementos Alimentares Premium & Naturais</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Descubra a BNS+: suplementos de alta qualidade para saúde, performance e bem-estar. Whey Protein, Creatina e Vitaminas 100% limpos. Compre com 15% Off.">
+  <meta name="robots" content="index, follow">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ----------------------------------------------------
+       ESTILOS GLOBAIS E VARIÁVEIS (DESIGN SYSTEM)
+       ---------------------------------------------------- */
+    :root {
+      --primary: #015CAB;
+      --primary-hover: #004B8C;
+      --primary-light: #E6F0FA;
+      --accent-green: #2E7D32;
+      --accent-green-light: #E8F5E9;
+      --text-dark: #1A1A1A;
+      --text-muted: #666666;
+      --text-light: #999999;
+      --bg-white: #FFFFFF;
+      --bg-light: #F8F8F8;
+      --bg-beige: #FAF6F0;
+      --bg-beige-dark: #F5F0EB;
+      --border-color: #EAEAEA;
+      
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      
+      --transition-fast: 0.2s ease;
+      --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 20px 45px rgba(26, 26, 26, 0.08);
+      --shadow-primary: 0 8px 25px rgba(1, 92, 171, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background-color: var(--bg-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-fast);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input {
+      font-family: inherit;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
+      background: none;
+      transition: var(--transition-smooth);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Utilitários Tipográficos */
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 28px;
+        line-height: 28px;
+      }
+    }
+
+    .badge-primary {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* Botões Premium */
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--bg-white);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(1, 92, 171, 0.35);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background-color: transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: var(--bg-white);
+      animation: pulse 1.2s infinite;
+    }
+
+    /* Animações */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(1, 92, 171, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(1, 92, 171, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(1, 92, 171, 0);
+      }
+    }
+
+    @keyframes pulse-soft {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-light);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D5D5D5;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B5B5B5;
+    }
+
+    /* ----------------------------------------------------
+       1. HEADER FIXO
+       ---------------------------------------------------- */
+
+
+    .header-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      transition: var(--transition-smooth);
+    }
+
+    .header-wrapper.scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 19px 0;
+      transition: var(--transition-smooth);
+    }
+
+    .header-wrapper.scrolled .header-main {
+      padding: 12px 0;
+    }
+
+    @media (min-width: 1024px) {
+      /* Smooth transitions for key elements when scrolled */
+      .header-wrapper .logo,
+      .header-wrapper .logo img,
+      .header-wrapper .search-bar,
+      .header-wrapper .search-bar input,
+      .header-wrapper .btn-all-products,
+      .header-wrapper .action-btn {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Desktop Scrolled Header Layout - Single Row Collapse */
+      .header-wrapper.scrolled .header-main {
+        display: contents;
+      }
+      .header-wrapper.scrolled .header-nav {
+        display: contents;
+      }
+      .header-wrapper.scrolled .nav-container {
+        display: contents;
+      }
+      .header-wrapper.scrolled .nav-links {
+        display: contents;
+      }
+      
+      .header-wrapper.scrolled .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        height: 70px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      /* Flex ordering and styles */
+      .header-wrapper.scrolled .logo {
+        order: 1;
+        width: 105px;
+        margin: 0;
+        flex-shrink: 0;
+      }
+      .header-wrapper.scrolled .logo img {
+        max-width: 105px;
+      }
+
+      .header-wrapper.scrolled .btn-all-products {
+        order: 2;
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+        height: 38px;
+        box-shadow: none;
+      }
+
+      .header-wrapper.scrolled .nav-links li:first-child {
+        order: 3;
+        display: block !important;
+      }
+      .header-wrapper.scrolled .nav-links li:last-child {
+        order: 4;
+        display: block !important;
+      }
+      .header-wrapper.scrolled .nav-links li:not(:first-child):not(:last-child) {
+        display: none !important;
+      }
+      .header-wrapper.scrolled .nav-dot {
+        display: none !important;
+      }
+
+      .header-wrapper.scrolled .nav-links a {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+      .header-wrapper.scrolled .nav-links li:last-child a {
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .header-wrapper.scrolled .search-bar {
+        order: 5;
+        display: block;
+        flex: 1 1 200px;
+        max-width: 380px;
+        margin: 0 12px;
+      }
+      .header-wrapper.scrolled .search-bar input {
+        height: 38px;
+        padding: 0 40px 0 16px;
+        font-size: 0.8rem;
+        background-color: #F5F0EB;
+        border-radius: 50px;
+        border: 1px solid transparent;
+      }
+      .header-wrapper.scrolled .search-bar input:focus {
+        background-color: var(--bg-white);
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(1, 92, 171, 0.1);
+      }
+      .header-wrapper.scrolled .search-bar svg {
+        left: auto;
+        right: 14px;
+        width: 16px;
+        height: 16px;
+        color: var(--text-muted);
+      }
+
+      .header-wrapper.scrolled .header-actions {
+        order: 6;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+      }
+      .header-wrapper.scrolled .action-btn[title="Favoritos"] {
+        display: none !important;
+      }
+      .header-wrapper.scrolled .action-btn {
+        gap: 6px;
+      }
+      .header-wrapper.scrolled .action-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      .header-wrapper.scrolled .action-btn .action-text {
+        display: inline-block !important;
+        font-size: 0.72rem;
+        line-height: 1.25;
+        font-weight: 500;
+        color: var(--text-dark);
+        text-align: left;
+      }
+
+      @media (max-width: 1200px) {
+        .header-wrapper.scrolled .action-btn .action-text {
+          display: none !important;
+        }
+      }
+
+      .header-wrapper.scrolled .cart-count {
+        width: 14px;
+        height: 14px;
+        font-size: 0.6rem;
+        top: -4px;
+        right: -6px;
+      }
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      width: 131px;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 100%;
+      max-width: 131px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Busca */
+    .search-bar {
+      flex: 0 1 912px;
+      position: relative;
+      margin: 0 24px;
+      display: none; /* Mobile hidden */
+    }
+
+    @media (min-width: 768px) {
+      .search-bar {
+        display: block;
+      }
+    }
+
+    .search-bar input {
+      width: 100%;
+      height: 48px;
+      background-color: var(--bg-light);
+      padding: 0 20px 0 48px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      border: 1px solid transparent;
+      transition: var(--transition-fast);
+    }
+
+    .search-bar input:focus {
+      background-color: var(--bg-white);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(1, 92, 171, 0.1);
+    }
+
+    .search-bar svg {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Ações */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .action-btn {
+      position: relative;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+    }
+
+    .action-btn:hover {
+      color: var(--primary);
+    }
+
+    .action-btn svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .action-btn .action-text {
+      font-size: 0.72rem;
+      line-height: 1.25;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: none;
+      text-align: left;
+    }
+
+    @media (min-width: 1024px) {
+      .action-btn .action-text {
+        display: inline-block;
+      }
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background-color: var(--primary);
+      color: var(--bg-white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Menu Hamburger Mobile */
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (min-width: 1024px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    /* Navegação */
+    .header-nav {
+      padding: 0;
+      display: none; /* Mobile menu is a drawer */
+    }
+
+    @media (min-width: 1024px) {
+      .header-nav {
+        display: block;
+      }
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .btn-all-products {
+      background-color: var(--primary);
+      color: var(--bg-white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-primary);
+    }
+
+    .btn-all-products:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-all-products svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .nav-links {
+      display: contents;
+    }
+
+    .nav-links li {
+      list-style: none;
+    }
+
+    .nav-dot {
+      color: #CCCCCC;
+      font-size: 0.8rem;
+      user-select: none;
+      pointer-events: none;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-dark);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.promo-link {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .nav-links a.promo-link::after {
+      background-color: var(--primary);
+    }
+
+    /* Mobile Menu Drawer */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background-color: var(--bg-white);
+      z-index: 1002;
+      box-shadow: var(--shadow-lg);
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-menu.active {
+      left: 0;
+    }
+
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1001;
+      display: none;
+    }
+
+    .mobile-menu-overlay.active {
+      display: block;
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-menu-close {
+      cursor: pointer;
+    }
+
+    .mobile-menu-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .mobile-menu-links a {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: block;
+    }
+
+    .mobile-menu-links a.promo-link {
+      color: var(--primary);
+    }
+
+    /* ----------------------------------------------------
+       2. BANNER HERO PRINCIPAL
+       ---------------------------------------------------- */
+    .hero-section {
+      background-color: var(--bg-white);
+      padding: 24px 0;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        padding-top: 40px;
+        padding-bottom: 32px;
+      }
+    }
+
+    .hero-banner-inner {
+      background-color: var(--bg-beige);
+      background-image: url('dragon-gtx-banner.png');
+      background-size: cover;
+      background-position: right center;
+      background-repeat: no-repeat;
+      border-radius: 24px;
+      -webkit-border-radius: 24px;
+      -moz-border-radius: 24px;
+      padding: 40px 24px;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+    }
+
+    @media (min-width: 768px) {
+      .hero-banner-inner {
+        padding: 0;
+        min-height: 580px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .hero-banner-inner {
+        background-position: center right 35%;
+      }
+    }
+
+    .hero-content {
+      max-width: 580px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (min-width: 992px) {
+      .hero-banner-inner {
+        background-position: right -220px center;
+      }
+      .hero-content {
+        text-align: center;
+        max-width: 520px;
+      }
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 24px;
+      letter-spacing: -1.5px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.8rem;
+      }
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+
+    .hero-subtitle strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .hero-top-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .hero-ticket-container {
+      background-color: var(--bg-white);
+      border: 1px dashed rgba(1, 92, 171, 0.4);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 auto 28px auto;
+      box-shadow: var(--shadow-sm);
+      max-width: 460px;
+      width: 100%;
+    }
+
+    .ticket-item {
+      flex: 1;
+      text-align: left;
+    }
+
+    .ticket-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+
+    .ticket-subtitle {
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .ticket-divider {
+      width: 1px;
+      height: 40px;
+      background-color: var(--border-color);
+      flex-shrink: 0;
+    }
+
+    .hero-footer-text {
+      font-size: 0.65rem;
+      color: var(--text-light);
+      margin: 16px auto 0 auto;
+      line-height: 1.4;
+      max-width: 440px;
+      text-align: center;
+    }
+
+
+
+    @media (max-width: 480px) {
+      .hero-ticket-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .ticket-divider {
+        width: 100%;
+        height: 1px;
+      }
+    }
+
+    /* ----------------------------------------------------
+       3. CARROSSEL DE CATEGORIAS
+       ---------------------------------------------------- */
+    .categories-section {
+      background-color: var(--bg-white);
+      padding: 0;
+    }
+
+    .categories-carousel {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 0;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    @media (min-width: 1024px) {
+      .categories-carousel {
+        justify-content: center;
+      }
+    }
+
+    .categories-carousel::-webkit-scrollbar {
+      display: none; /* Safari/Chrome */
+    }
+
+    .category-card {
+      flex: 0 0 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .category-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .category-card:hover .category-icon {
+      background-color: var(--primary-light);
+    }
+
+    .category-icon svg {
+      width: 44px;
+      height: 44px;
+      transition: var(--transition-smooth);
+    }
+
+    .category-card:hover .category-icon svg {
+      color: var(--primary);
+    }
+
+    .category-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      white-space: normal;
+      line-height: 1.2;
+    }
+
+    /* ----------------------------------------------------
+       4. SEÇÃO BEST SELLERS
+       ---------------------------------------------------- */
+    .products-section {
+      background-color: var(--bg-white);
+      padding: 32px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 1024px) {
+      #bestSellers .section-header,
+      #recommended .section-header,
+      #reviews .section-header {
+        margin-left: -24px;
+        margin-right: -24px;
+      }
+    }
+
+    .section-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .section-link:hover {
+      color: var(--primary-hover);
+      gap: 8px;
+    }
+
+    .carousel-container {
+      position: relative;
+    }
+
+    .products-grid {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 10px 0;
+      scrollbar-width: none; /* Firefox */
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .products-grid::-webkit-scrollbar {
+      display: none; /* Safari/Chrome */
+    }
+
+    .products-grid:active {
+      cursor: grabbing;
+    }
+
+    .products-grid img {
+      -webkit-user-drag: none;
+      user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    @media (min-width: 1440px) {
+      .products-grid {
+        margin-left: -24px;
+        margin-right: calc(-50vw + 696px);
+        padding-right: 24px;
+      }
+    }
+
+    @media (max-width: 1439px) {
+      .products-grid {
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-right: 24px;
+      }
+    }
+
+    /* Card de Produto */
+    .product-card {
+      background-color: var(--bg-white);
+      border-radius: 20px;
+      border: 1px solid #F0F0F0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      scroll-snap-align: start;
+      transition: var(--transition-smooth);
+      width: 366px;
+      height: 546px;
+      flex: 0 0 366px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      border-color: transparent;
+    }
+
+    .product-badge-discount {
+      display: none;
+    }
+
+    .product-img-wrapper {
+      background-color: var(--bg-beige);
+      border-radius: 20px 20px 0 0;
+      width: 366px;
+      height: 451px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    
+
+    .product-flavor-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      width: 239px;
+      height: 32px;
+      background-color: var(--bg-white);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 50px;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+      padding: 12px 16px 16px 16px;
+      box-sizing: border-box;
+    }
+
+    .product-name {
+      display: none;
+    }
+
+    .product-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .product-prices {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .price-old {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+    }
+
+    .price-current {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1A1A1A;
+    }
+
+    .product-rating-inline {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #FFB300;
+    }
+
+    .product-rating-inline svg {
+      width: 14px;
+      height: 14px;
+      fill: #FFB300;
+    }
+
+    .product-card .add-to-cart-btn {
+      width: 100%;
+      background-color: #F5F0EB;
+      color: #4A3E3D;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .product-card .add-to-cart-btn:hover {
+      background-color: var(--primary);
+      color: var(--bg-white);
+      box-shadow: 0 4px 12px rgba(1, 92, 171, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Setas Carrossel */
+    .carousel-btn {
+      display: none !important;
+    }
+
+    /* ----------------------------------------------------
+       5. SEÇÃO EDITORIAL / BLOG PREVIEW
+       ---------------------------------------------------- */
+    .editorial-section {
+      background-color: var(--bg-light);
+      padding: 32px 0;
+    }
+
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .editorial-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .blog-card {
+      background-color: var(--bg-white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+
+    
+
+    .blog-img-wrapper {
+      position: relative;
+      aspect-ratio: 1.6;
+      overflow: hidden;
+    }
+
+    .blog-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    
+
+    .blog-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background-color: var(--primary);
+      color: var(--bg-white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 5;
+    }
+
+    .blog-info {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .blog-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .blog-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-link {
+      margin-top: auto;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .blog-link:hover {
+      gap: 8px;
+    }
+
+    /* ----------------------------------------------------
+       6. DESTAQUE DE PRODUTO HERO (FULL-WIDTH)
+       ---------------------------------------------------- */
+    .product-hero-section {
+      background-color: var(--bg-beige);
+      padding: 32px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-hero-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    @media (min-width: 1024px) {
+      .product-hero-container {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+
+    .product-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .product-hero-tag {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .product-hero-title {
+      font-family: var(--font-serif);
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text-dark);
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .product-hero-title {
+        font-size: 3.4rem;
+      }
+    }
+
+    .product-hero-title span {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: var(--primary);
+      letter-spacing: -1px;
+      margin-top: -5px;
+    }
+
+    .product-hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+
+    .product-hero-benefits {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    @media (min-width: 600px) {
+      .product-hero-benefits {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .benefit-tag {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-white);
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .benefit-tag svg {
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .product-hero-image-wrapper {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .product-hero-image-wrapper img {
+      z-index: 2;
+      width: 90%;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
+      transition: var(--transition-smooth);
+    }
+
+    .product-hero-image-wrapper:hover img {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .product-hero-circle-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background-color: var(--bg-beige-dark);
+      z-index: 1;
+    }
+
+    /* ----------------------------------------------------
+       7. SEÇÃO "QUEM USA, RECOMENDA"
+       ---------------------------------------------------- */
+    .reviews-section {
+      background-color: var(--bg-white);
+      padding: 32px 0;
+    }
+
+    .reviews-carousel-wrapper {
+      position: relative;
+    }
+
+    .reviews-grid {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 10px 0;
+      scrollbar-width: none; /* Firefox */
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .reviews-grid::-webkit-scrollbar {
+      display: none; /* Safari/Chrome */
+    }
+
+    .reviews-grid:active {
+      cursor: grabbing;
+    }
+
+    .reviews-grid img {
+      -webkit-user-drag: none;
+      user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    @media (min-width: 1440px) {
+      .reviews-grid {
+        margin-left: -24px;
+        margin-right: calc(-50vw + 696px);
+        padding-right: 24px;
+      }
+    }
+
+    @media (max-width: 1439px) {
+      .reviews-grid {
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-right: 24px;
+      }
+    }
+
+    .review-card-lifestyle {
+      background-color: var(--bg-light);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: start;
+      width: 376px;
+      height: 668px;
+      flex: 0 0 376px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+      box-sizing: border-box;
+      max-width: 85vw;
+    }
+
+    
+
+    .review-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transition: var(--transition-smooth);
+    }
+
+    
+
+    .review-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+      z-index: 2;
+    }
+
+    .review-username {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      color: var(--bg-white);
+      font-size: 1.15rem;
+      font-weight: 600;
+      z-index: 3;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .review-card-content {
+      position: relative;
+      z-index: 3;
+      color: var(--bg-white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .review-product-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 6px;
+      text-align: center;
+      color: var(--bg-white);
+    }
+
+    .review-product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .review-product-meta .price-old {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: line-through;
+    }
+
+    .review-product-meta .price-current {
+      font-weight: 700;
+      color: var(--bg-white);
+    }
+
+    .review-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #FFB300;
+      margin-left: 4px;
+    }
+
+    .review-rating svg {
+      width: 14px;
+      height: 14px;
+      fill: #FFB300;
+    }
+
+    .review-add-btn {
+      width: 100%;
+      background-color: #D27547;
+      color: var(--bg-white);
+      border: none;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(210, 117, 71, 0.2);
+    }
+
+    .review-add-btn:hover {
+      background-color: #BD6338;
+      box-shadow: 0 6px 16px rgba(189, 99, 56, 0.35);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+      .review-card-lifestyle {
+        flex: 0 0 85vw;
+        height: 500px;
+        padding: 16px;
+      }
+      .review-username {
+        top: 16px;
+        left: 16px;
+        font-size: 1rem;
+      }
+      .review-product-name {
+        font-size: 0.95rem;
+      }
+      .review-product-meta {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+      }
+      .review-add-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* ----------------------------------------------------
+       8. SEÇÃO TRUE FOODS / LINHA ESPECIAL
+       ---------------------------------------------------- */
+    .true-foods-section {
+      background-color: var(--bg-white);
+      padding: 32px 0;
+    }
+
+    .true-foods-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 600px) {
+      .true-foods-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .true-foods-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Ajustes para tornar os cards responsivos no grid de True Foods */
+    .true-foods-grid .product-card {
+      width: 100%;
+      height: auto;
+      min-width: 0;
+      flex: none;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .true-foods-grid .product-img-wrapper {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 366 / 451;
+    }
+
+    .true-foods-grid .product-flavor-badge {
+      left: 16px;
+      bottom: 16px;
+      width: calc(100% - 32px);
+    }
+
+    .product-img-wrapper.tf-pink { background-color: #FFF0F2; }
+    .product-img-wrapper.tf-chocolate { background-color: #EADCD0; }
+    .product-img-wrapper.tf-caramel { background-color: #FCF1E1; }
+    .product-img-wrapper.tf-green { background-color: #E3F2FD; }
+
+    /* ----------------------------------------------------
+       9. BLOCO DEPOIMENTO DESTAQUE (FULL-WIDTH)
+       ---------------------------------------------------- */
+    .testimonial-destaque-section {
+      background-color: var(--primary);
+      color: var(--bg-white);
+      padding: 32px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-destaque-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .testimonial-destaque-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+
+    .td-image-wrapper {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .td-image-wrapper img {
+      max-height: 480px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+      position: relative;
+      z-index: 2;
+    }
+
+    .td-image-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      aspect-ratio: 1;
+      background-color: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .td-content {
+      position: relative;
+    }
+
+    .td-quotes {
+      font-size: 5rem;
+      font-family: var(--font-serif);
+      line-height: 1;
+      height: 30px;
+      color: rgba(255,255,255,0.3);
+      display: block;
+      margin-bottom: -10px;
+    }
+
+    .td-text {
+      font-family: var(--font-body);
+      font-size: 1.35rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      color: var(--bg-white);
+    }
+
+    @media (min-width: 768px) {
+      .td-text {
+        font-size: 1.6rem;
+      }
+    }
+
+    .td-author-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .td-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 32px;
+    }
+
+    .td-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--bg-white);
+    }
+
+    .td-nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .td-nav-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      color: var(--bg-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .td-nav-btn:hover {
+      background-color: var(--bg-white);
+      color: var(--primary);
+    }
+
+    /* ----------------------------------------------------
+       10. BLOCO DEPOIMENTO MÉDICO / AUTORIDADE
+       ---------------------------------------------------- */
+    .medical-testimonial-section {
+      background-color: var(--bg-beige-dark);
+      padding: 32px 0;
+      position: relative;
+    }
+
+    .medical-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .medical-container {
+        grid-template-columns: 1fr 2.5fr;
+      }
+    }
+
+    .medical-photo-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .medical-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--bg-white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .medical-content {
+      position: relative;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .medical-content {
+        text-align: left;
+      }
+    }
+
+    .medical-quote {
+      font-size: 1.08rem;
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .medical-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .medical-specialty {
+      font-size: 0.82rem;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+    }
+
+    .medical-nav {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .medical-nav {
+        justify-content: flex-start;
+      }
+    }
+
+    .medical-nav-btn {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 50%;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .medical-nav-btn:hover {
+      background-color: var(--primary);
+      color: var(--bg-white);
+      border-color: var(--primary);
+    }
+
+    /* ----------------------------------------------------
+       11. SEÇÃO "RECOMENDADOS PARA VOCÊ"
+       ---------------------------------------------------- */
+    .recommended-section {
+      background-color: var(--bg-white);
+      padding: 32px 0;
+    }
+
+    /* ----------------------------------------------------
+       12. BANNER INSTITUCIONAL FULL-WIDTH
+       ---------------------------------------------------- */
+    .institutional-banner {
+      background-color: var(--bg-beige);
+      padding: 32px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .inst-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .inst-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .inst-content {
+      max-width: 580px;
+    }
+
+    .inst-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .inst-title {
+        font-size: 2.8rem;
+      }
+    }
+
+    .inst-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .inst-image-wrapper {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .inst-image-wrapper img {
+      border-radius: 24px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth);
+      width: 100%;
+      max-width: 540px;
+    }
+
+    .inst-image-wrapper:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Modal de Catálogo PDF */
+    .pdf-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pdf-modal.active {
+      display: flex;
+    }
+
+    .pdf-modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .pdf-modal.active .pdf-modal-overlay {
+      opacity: 1;
+    }
+
+    .pdf-modal-container {
+      position: relative;
+      width: 90%;
+      max-width: 1000px;
+      height: 85vh;
+      background-color: var(--bg-white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.9);
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    .pdf-modal.active .pdf-modal-container {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .pdf-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-white);
+    }
+
+    .pdf-modal-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .pdf-modal-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+    }
+
+    .pdf-modal-close:hover {
+      background-color: #EAEAEA;
+      transform: rotate(90deg);
+    }
+
+    .pdf-modal-body {
+      flex-grow: 1;
+      width: 100%;
+      height: calc(100% - 68px);
+      background-color: #525659;
+    }
+
+    /* ----------------------------------------------------
+       13. FOOTER COMPLETO
+       ---------------------------------------------------- */
+    .footer {
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+      padding: 32px 0 24px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-top {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    /* Newsletter Form */
+    .newsletter-form {
+      display: flex;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+    }
+
+    .newsletter-form input {
+      flex-grow: 1;
+      padding: 14px 20px;
+      border-radius: 50px;
+      border: 1px solid var(--border-color);
+      font-size: 0.88rem;
+      background-color: var(--bg-light);
+    }
+
+    .newsletter-form input:focus {
+      background-color: var(--bg-white);
+      border-color: var(--primary);
+    }
+
+    .newsletter-form button {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      bottom: 4px;
+      background-color: var(--primary);
+      color: var(--bg-white);
+      padding: 0 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .newsletter-form button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* Footer Colunas Links */
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .footer-col-title {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col-links a {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .footer-col-links a:hover {
+      color: var(--primary);
+      padding-left: 4px;
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .footer-bottom {
+        flex-direction: row;
+      }
+    }
+
+    .copyright {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .copyright {
+        text-align: left;
+      }
+    }
+
+    .bottom-icons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .payments-row, .seals-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .icon-box-payment {
+      background-color: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 28px;
+    }
+
+    .icon-box-payment svg {
+      height: 18px;
+      width: auto;
+    }
+
+    .seal-box {
+      height: 32px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* 5. SEÇÃO NOVA FÓRMULA (Substituta de Artigos) */
+    .formula-section {
+      padding: 32px 0;
+      background-color: var(--bg-white);
+    }
+
+    .formula-card {
+      background-color: #F5F0EB;
+      border-radius: 28px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .formula-left-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 20px;
+    }
+
+    .formula-product-img {
+      max-height: 140px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 20px;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .formula-title {
+      font-family: var(--font-body);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #3C302F;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .formula-desc {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: #5C5248;
+      margin-bottom: 28px;
+      line-height: 1.5;
+      max-width: 420px;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .formula-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .formula-btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary);
+      color: var(--bg-white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 12px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 12px rgba(1, 92, 171, 0.2);
+    }
+
+    .formula-btn-cta:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(1, 92, 171, 0.3);
+    }
+
+    .formula-nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .formula-nav-btn:hover {
+      transform: scale(1.05);
+      background-color: #FAF6F0;
+    }
+
+    .formula-right-col {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      position: relative;
+    }
+
+    .formula-drink-img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .formula-fade {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    @media (max-width: 991px) {
+      .formula-card {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+      }
+
+      .formula-left-col {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+      }
+
+      .formula-desc {
+        max-width: 100%;
+      }
+
+      .formula-right-col {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <!-- 1. HEADER FIXO -->
+  <header class="header-wrapper" id="mainHeader">
+    <div class="container">
+      <div class="header-main">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <img src="logo_blue.png" alt="BNS+">
+        </a>
+
+        <!-- Barra de Busca -->
+        <div class="search-bar">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" placeholder="O que você procura?">
+        </div>
+
+        <!-- Ações do Header -->
+        <div class="header-actions">
+          <!-- Favoritos -->
+          <a href="#" class="action-btn" title="Favoritos">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </a>
+          <!-- Minha Conta -->
+          <a href="#" class="action-btn" title="Minha Conta">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+            <span class="action-text">Faça seu login<br>ou cadastre-se</span>
+          </a>
+          <!-- Ajuda -->
+          <a href="#" class="action-btn" title="Ajuda">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            <span class="action-text">Precisa de<br>ajuda?</span>
+          </a>
+          <!-- Carrinho -->
+          <a href="#" class="action-btn" id="cartBtn" title="Carrinho de Compras">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+            </svg>
+            <span class="cart-count" id="cartCounter">0</span>
+          </a>
+          <!-- Menu Hamburger Mobile -->
+          <button class="menu-toggle" id="menuToggleBtn">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu de Navegação -->
+      <nav class="header-nav">
+        <div class="nav-container">
+          <button class="btn-all-products">
+            Todos os produtos
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <span class="nav-dot">•</span>
+          <ul class="nav-links">
+            <li><a href="#bestSellers">Best Sellers</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="#recommended" class="promo-link">Promoções</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="#productHero">Destaque da Semana</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="#categories">Vitaminas</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="#" class="logo">
+        <img src="logo_blue.png" alt="BNS+">
+      </a>
+      <button class="mobile-menu-close" id="menuCloseBtn">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-menu-links">
+      <li><a href="#bestSellers">Best Sellers</a></li>
+      <li><a href="#recommended" class="promo-link">Promoções</a></li>
+      <li><a href="#productHero">Destaque da Semana</a></li>
+      <li><a href="#categories">Vitaminas</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- 2. BANNER HERO PRINCIPAL -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-banner-inner">
+          <!-- Textos Hero -->
+          <div class="hero-content">
+            <span class="hero-top-label">O Ritual Diário que Desperta a sua Verdade</span>
+            <h1 class="hero-title">Toda a linha Dragon com<br><span>20% Off +</span></h1>
+            
+            <!-- Ticket de Brindes -->
+            <div class="hero-ticket-container">
+              <div class="ticket-item">
+                <div class="ticket-title">Kit Ritual do Treino</div>
+                <div class="ticket-subtitle">EM COMPRAS A PARTIR DE R$ 319</div>
+              </div>
+              <div class="ticket-divider"></div>
+              <div class="ticket-item">
+                <div class="ticket-title">Intra-Treino ou Cúrcuma</div>
+                <div class="ticket-subtitle">EM COMPRAS A PARTIR DE R$ 589</div>
+              </div>
+            </div>
+
+            <a href="#bestSellers" class="btn-primary">
+              Quero aproveitar
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+            
+            <p class="hero-footer-text">*20% Off válido em toda a linha Dragon. Brindes não acumulativos e válidos enquanto durarem os estoques.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CARROSSEL DE CATEGORIAS -->
+    <section class="categories-section" id="categories">
+      <div class="container">
+        <div class="categories-carousel">
+          <!-- Categoria 1 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <span class="category-name">Whey Protein</span>
+          </div>
+          <!-- Categoria 3 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <span class="category-name">Pré-Treino</span>
+          </div>
+          <!-- Categoria 4 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"></path>
+              </svg>
+            </div>
+            <span class="category-name">Creatina</span>
+          </div>
+          <!-- Categoria 5 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <span class="category-name">Vitaminas</span>
+          </div>
+          <!-- Categoria 6 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253"></path>
+              </svg>
+            </div>
+            <span class="category-name">Ômega 3</span>
+          </div>
+          <!-- Categoria 7 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </div>
+            <span class="category-name">Colágeno</span>
+          </div>
+          <!-- Categoria 8 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
+              </svg>
+            </div>
+            <span class="category-name">True Foods</span>
+          </div>
+          <!-- Categoria 9 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.3 12a3.3 3.3 0 11-6.6 0 3.3 3.3 0 016.6 0zM2 12h3m14 0h3m-9-9v3m0 14v3"></path>
+              </svg>
+            </div>
+            <span class="category-name">Emagrecedores</span>
+          </div>
+          <!-- Categoria 10 -->
+          <div class="category-card">
+            <div class="category-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1.5M12 19.5V21M4.22 4.22l1.06 1.06M17.72 17.72l1.06 1.06M3 12h1.5M19.5 12H21M4.22 19.78l1.06-1.06M17.72 6.28l1.06-1.06M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z"></path>
+              </svg>
+            </div>
+            <span class="category-name">Vitamina D</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SEÇÃO BEST SELLERS -->
+    <section class="products-section" id="bestSellers">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Best Sellers</h2>
+          <a href="#" class="section-link">
+            Ver todos os produtos
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="carousel-container">
+          <!-- Botão Anterior -->
+          <button class="carousel-btn carousel-btn-prev" id="bestSellersPrev" aria-label="Produtos Anteriores">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="products-grid" id="bestSellersGrid">
+            <!-- Produto 1 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-15% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="PRODUTOS/NEW WHEY PROTEIN/WHEY_DE_COCO.jpeg" alt="True Whey Protein Isolate">
+                <div class="product-flavor-badge">Sabor do Coco de Verdade</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 489,90</span>
+                    <span class="price-current">R$ 416,42</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-15% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="PRODUTOS/DRAGON GTX/DRAGON_FRUTAS.jpeg" alt="Dragon GTX Pre-Workout">
+                <div class="product-flavor-badge">Energia Explosiva & Foco</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 259,90</span>
+                    <span class="price-current">R$ 220,92</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.7</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-15% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="PRODUTOS/CREATINA DARK/CREA_DARK.jpeg" alt="Creatina Monohidratada Pura">
+                <div class="product-flavor-badge">100% Pura & Monohidratada</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 109,90</span>
+                    <span class="price-current">R$ 93,42</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.9</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-15% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="generic-product.jpg" alt="True Liquid Iron Plus">
+                <div class="product-flavor-badge">Ferro em Gotas</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 99,90</span>
+                    <span class="price-current">R$ 84,92</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.5</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-15% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="generic-product.jpg" alt="True Saúde &amp; Vitalidade">
+                <div class="product-flavor-badge">Saúde &amp; Vitalidade</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 124,90</span>
+                    <span class="price-current">R$ 106,16</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botão Próximo -->
+          <button class="carousel-btn carousel-btn-next" id="bestSellersNext" aria-label="Próximos Produtos">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SEÇÃO EDITORIAL / BLOG PREVIEW -->
+    <!-- 5. SEÇÃO NOVA FÓRMULA (Substituta de Artigos) -->
+    <section class="formula-section">
+      <div class="container">
+        <div class="formula-card">
+          <!-- Coluna Esquerda: Produto e Textos -->
+          <div class="formula-left-col">
+            <img id="formulaProductImg" src="formula-card/B-COMPLEX.png" alt="Complexo B" class="formula-product-img">
+            <h2 id="formulaTitle" class="formula-title">Complexo B</h2>
+            <p id="formulaDesc" class="formula-desc">Energia, foco e vitalidade metabólica. Fórmula ultra concentrada com todas as vitaminas essenciais do complexo B.</p>
+            <div class="formula-controls">
+              <a id="formulaCta" href="#" class="formula-btn-cta">Confira!</a>
+              <button id="formulaPrev" class="formula-nav-btn formula-nav-prev" aria-label="Fórmula Anterior">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button id="formulaNext" class="formula-nav-btn formula-nav-next" aria-label="Próxima Fórmula">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Coluna Direita: Imagem do Drink -->
+          <div class="formula-right-col">
+            <img id="formulaDrinkImg" src="formula-card-banners/b_complex_banner.png" alt="Bebida refrescante de Complexo B" class="formula-drink-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DESTAQUE DE PRODUTO HERO (FULL-WIDTH) -->
+    <section class="product-hero-section" id="productHero">
+      <div class="container">
+        <div class="product-hero-container">
+          <!-- Textos -->
+          <div class="product-hero-content">
+            <span class="product-hero-tag">Destaque da Semana</span>
+            <h2 class="product-hero-title">Cabelo, Pele & Unhas <span>Brilho, Força e Elasticidade</span></h2>
+            <p class="product-hero-desc">A fórmula avançada de Cabelo, Pele & Unhas da BNS+ combina biotina concentrada, colágeno hidrolisado e minerais quelatos essenciais para nutrir profundamente os fios, reduzir a queda, fortalecer as unhas e renovar a elasticidade da pele.</p>
+            
+            <div class="product-hero-benefits">
+              <div class="benefit-tag">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Estimula a produção de colágeno
+              </div>
+              <div class="benefit-tag">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Fios mais fortes e menos queda
+              </div>
+              <div class="benefit-tag">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Fortalecimento profundo das unhas
+              </div>
+              <div class="benefit-tag">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Fórmula pura com biotina e quelatos
+              </div>
+            </div>
+
+            <button class="btn-primary add-to-cart-btn">
+              Conhecer produto
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+              </svg>
+            </button>
+          </div>
+          <!-- Imagem Destaque -->
+          <div class="product-hero-image-wrapper">
+            <div class="product-hero-circle-bg"></div>
+            <img src="formula-card/CABELO, PELE E UNHA.png" alt="Suplemento Cabelo, Pele e Unhas BNS+">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SEÇÃO "QUEM USA, RECOMENDA" (Prova Social) -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="badge-primary">Comunidade</span>
+            <h2 class="section-title">Quem Usa, Recomenda!</h2>
+          </div>
+          <!-- Apenas um espaçamento no desktop, scroll no mobile -->
+        </div>
+
+        <div class="reviews-carousel-wrapper">
+          <button class="carousel-btn carousel-btn-prev" id="reviewsPrev" aria-label="Avaliações Anteriores">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+
+          <div class="reviews-grid" id="reviewsGrid">
+            <!-- Card 1 -->
+            <div class="review-card-lifestyle">
+              <img src="quemusa.png" alt="Lisa Aguiar" class="review-bg-img">
+              <div class="review-overlay"></div>
+              <div class="review-username">@lisaguiars</div>
+              <div class="review-card-content">
+                <div class="review-product-name">Magnésio + Inositol Relief 3.0 Sem Melatonina Lemonade</div>
+                <div class="review-product-meta">
+                  <span class="price-current">R$ 259,90</span>
+                </div>
+                <button class="review-add-btn">Conhecer produto</button>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="review-card-lifestyle">
+              <img src="quemusa.png" alt="Romana Novais" class="review-bg-img">
+              <div class="review-overlay"></div>
+              <div class="review-username">@romananovais</div>
+              <div class="review-card-content">
+                <div class="review-product-name">True Whey Protein Coconut Ice Cream</div>
+                <div class="review-product-meta">
+                  <span class="price-old">R$ 489,90</span>
+                  <span class="price-current">R$ 416,42</span>
+                  <span class="review-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    4.8
+                  </span>
+                </div>
+                <button class="review-add-btn">Conhecer produto</button>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="review-card-lifestyle">
+              <img src="quemusa.png" alt="Bella Falconi" class="review-bg-img">
+              <div class="review-overlay"></div>
+              <div class="review-username">@bellafalconi</div>
+              <div class="review-card-content">
+                <div class="review-product-name">Magnésio + Inositol Relief 3.0</div>
+                <div class="review-product-meta">
+                  <span class="price-old">R$ 259,90</span>
+                  <span class="price-current">R$ 220,92</span>
+                  <span class="review-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    4.7
+                  </span>
+                </div>
+                <button class="review-add-btn">Conhecer produto</button>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="review-card-lifestyle">
+              <img src="quemusa.png" alt="Juliana Alves Barreto" class="review-bg-img">
+              <div class="review-overlay"></div>
+              <div class="review-username">@julianaalvesbarreto</div>
+              <div class="review-card-content">
+                <div class="review-product-name">True Vegan Doce de Leite</div>
+                <div class="review-product-meta">
+                  <span class="price-old">R$ 349,90</span>
+                  <span class="price-current">R$ 297,42</span>
+                  <span class="review-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    4.7
+                  </span>
+                </div>
+                <button class="review-add-btn">Conhecer produto</button>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="review-card-lifestyle">
+              <img src="quemusa.png" alt="Carlos Augusto" class="review-bg-img">
+              <div class="review-overlay"></div>
+              <div class="review-username">@carlosaugusto</div>
+              <div class="review-card-content">
+                <div class="review-product-name">True Coenzima Q10 Importada</div>
+                <div class="review-product-meta">
+                  <span class="price-old">R$ 124,90</span>
+                  <span class="price-current">R$ 106,16</span>
+                  <span class="review-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    4.8
+                  </span>
+                </div>
+                <button class="review-add-btn">Conhecer produto</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-btn carousel-btn-next" id="reviewsNext" aria-label="Próximas Avaliações">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. SEÇÃO TRUE FOODS / LINHA ESPECIAL -->
+    <section class="true-foods-section" id="trueFoods">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">True Foods</h2>
+          <a href="#" class="section-link">
+            Ver todos
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="true-foods-grid">
+          <!-- Card 1 (Rosa) -->
+          <div class="product-card">
+            <div class="product-img-wrapper tf-pink">
+              <img src="PRODUTOS/CASTANHAS/POTE_PREMIUM.jpeg" alt="Pasta de Amendoim BNS+">
+              <div class="product-flavor-badge">Pasta de Amendoim</div>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-row">
+                <div class="product-prices">
+                  <span class="price-old">R$ 34,90</span>
+                  <span class="price-current">R$ 29,66</span>
+                </div>
+                <div class="product-rating-inline">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <span>4.8</span>
+                </div>
+              </div>
+              <button class="add-to-cart-btn">
+                Conhecer produto
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 (Chocolate) -->
+          <div class="product-card">
+            <div class="product-img-wrapper tf-chocolate">
+              <img src="PRODUTOS/CASTANHAS/POTE_PREMIUM.jpeg" alt="Proteína em Barra BNS+">
+              <div class="product-flavor-badge">Proteína em Barra</div>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-row">
+                <div class="product-prices">
+                  <span class="price-old">R$ 14,90</span>
+                  <span class="price-current">R$ 12,66</span>
+                </div>
+                <div class="product-rating-inline">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <span>4.7</span>
+                </div>
+              </div>
+              <button class="add-to-cart-btn">
+                Conhecer produto
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 (Caramelo) -->
+          <div class="product-card">
+            <div class="product-img-wrapper tf-caramel">
+              <img src="PRODUTOS/CASTANHAS/POTE_PREMIUM.jpeg" alt="Granola Proteica BNS+">
+              <div class="product-flavor-badge">Granola Proteica</div>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-row">
+                <div class="product-prices">
+                  <span class="price-old">R$ 29,90</span>
+                  <span class="price-current">R$ 25,42</span>
+                </div>
+                <div class="product-rating-inline">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <span>3.9</span>
+                </div>
+              </div>
+              <button class="add-to-cart-btn">
+                Conhecer produto
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4 (Verde) -->
+          <div class="product-card">
+            <div class="product-img-wrapper tf-green">
+              <img src="PRODUTOS/CASTANHAS/POTE_PREMIUM.jpeg" alt="Bebida Proteica Matcha BNS+">
+              <div class="product-flavor-badge">Bebida Proteica</div>
+            </div>
+            <div class="product-info">
+              <div class="product-meta-row">
+                <div class="product-prices">
+                  <span class="price-old">R$ 18,90</span>
+                  <span class="price-current">R$ 16,06</span>
+                </div>
+                <div class="product-rating-inline">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <span>4.5</span>
+                </div>
+              </div>
+              <button class="add-to-cart-btn">
+                Conhecer produto
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. BLOCO DEPOIMENTO DESTAQUE (FULL-WIDTH) -->
+    <section class="testimonial-destaque-section">
+      <div class="container">
+        <div class="testimonial-destaque-grid">
+          <!-- Esquerda: Imagem Pote -->
+          <div class="td-image-wrapper">
+            <div class="td-image-circle"></div>
+            <img src="https://placehold.co/500x500/FFFFFF/015CAB?text=Whey+Pote+True" alt="Whey Protein Premium Pote">
+          </div>
+          <!-- Direita: Testemunho -->
+          <div class="td-content">
+            <span class="td-quotes">“</span>
+            <blockquote class="td-text" id="tdQuoteText">
+              "Eu recomendo o Pure Whey da BNS+. Ele dissolve super bem, não deixa sabor residual e a pureza dos ingredientes é incomparável. Sem dúvidas, o melhor whey que já comprei no Brasil!"
+            </blockquote>
+            <div class="td-author-name" id="tdQuoteAuthor">Carlos Augusto</div>
+            <div class="td-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            
+            <div class="td-nav-buttons">
+              <button class="td-nav-btn" id="tdPrevBtn" aria-label="Depoimento Anterior">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button class="td-nav-btn" id="tdNextBtn" aria-label="Próximo Depoimento">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. BLOCO DEPOIMENTO MÉDICO / AUTORIDADE -->
+    <section class="medical-testimonial-section">
+      <div class="container">
+        <div class="medical-container">
+          <!-- Foto à esquerda -->
+          <div class="medical-photo-wrapper">
+            <img src="https://placehold.co/200x200/FAF6F0/5C5248?text=Dr.+Thiago" alt="Dr. Thiago Silva, Nutrólogo" class="medical-photo">
+          </div>
+          <!-- Conteúdo à direita -->
+          <div class="medical-content">
+            <blockquote class="medical-quote" id="medQuoteText">
+              "Como médico nutrólogo, o que mais prezo em um suplemento é a transparência dos ingredientes. A BNS+ entrega fórmulas com pureza absoluta, sem aromatizantes artificiais e adoçantes agressivos. É a minha recomendação padrão de saúde no consultório."
+            </blockquote>
+            <div class="medical-name" id="medicalName">Dr. Thiago Silva</div>
+            <div class="medical-specialty" id="medicalSpecialty">Nutrologia Clínico-Esportiva - CRM/SP 123456</div>
+            
+            <div class="medical-nav">
+              <button class="medical-nav-btn" id="medPrev" aria-label="Médico Anterior">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button class="medical-nav-btn" id="medNext" aria-label="Próximo Médico">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. SEÇÃO "RECOMENDADOS PARA VOCÊ" -->
+    <section class="recommended-section" id="recommended">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Recomendados Para Você</h2>
+          <a href="#" class="section-link">
+            Ver todos
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="carousel-container">
+          <!-- Botão Anterior -->
+          <button class="carousel-btn carousel-btn-prev" id="recPrev" aria-label="Recomendados Anteriores">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="products-grid" id="recGrid">
+            <!-- Produto 1 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-17% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="PRODUTOS/NEW WHEY PROTEIN/WHEY_DE_COCO.jpeg" alt="True Whey Protein Isolate">
+                <div class="product-flavor-badge">Sabor do Coco de Verdade</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 179,97</span>
+                    <span class="price-current">R$ 149,97</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-10% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="generic-product.jpg" alt="Vitamina K2 e D3">
+                <div class="product-flavor-badge">Saúde Imunológica</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 89,00</span>
+                    <span class="price-current">R$ 80,10</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.9</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-12% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="generic-product.jpg" alt="Omega 3 Ultra Puro">
+                <div class="product-flavor-badge">Ultra Purificado</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 139,00</span>
+                    <span class="price-current">R$ 122,32</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.8</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="product-card">
+              <span class="product-badge-discount">-18% OFF</span>
+              <div class="product-img-wrapper">
+                <img src="generic-product.jpg" alt="Colágeno Verisol">
+                <div class="product-flavor-badge">Beleza & Firmeza</div>
+              </div>
+              <div class="product-info">
+                <div class="product-meta-row">
+                  <div class="product-prices">
+                    <span class="price-old">R$ 159,00</span>
+                    <span class="price-current">R$ 130,38</span>
+                  </div>
+                  <div class="product-rating-inline">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span>4.7</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">
+                  Conhecer produto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botão Próximo -->
+          <button class="carousel-btn carousel-btn-next" id="recNext" aria-label="Próximos Recomendados">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. BANNER INSTITUCIONAL FULL-WIDTH -->
+    <section class="institutional-banner">
+      <div class="container">
+        <div class="inst-grid">
+          <!-- Textos Esquerda -->
+          <div class="inst-content">
+            <h2 class="inst-title">BNS+: suplementos de alta qualidade para saúde e performance</h2>
+            <p class="inst-desc">Nós nascemos da insatisfação com a falta de clareza nos rótulos e com produtos cheios de açúcares disfarçados. Criamos uma marca limpa, transparente e focada 100% na potência real dos ativos naturais de altíssima qualidade.</p>
+            <a href="javascript:void(0)" class="btn-primary" id="openCatalogBtn">
+              Ver catálogo
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- Imagem Direita -->
+          <div class="inst-image-wrapper">
+            <img src="CAPA_CATALOGO.png" alt="Catálogo Revista BNS+">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 13. FOOTER COMPLETO -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Linha Superior -->
+      <div class="footer-top">
+        <a href="#" class="logo">
+          <img src="logo_blue.png" alt="BNS+">
+        </a>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Digite seu e-mail" required id="newsletterEmail">
+          <button type="submit">Assinar</button>
+        </form>
+      </div>
+
+      <!-- 4 Colunas Links -->
+      <div class="footer-links-grid">
+        <!-- Col 1 -->
+        <div>
+          <h4 class="footer-col-title">Empresa</h4>
+          <ul class="footer-col-links">
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Imprensa</a></li>
+          </ul>
+        </div>
+        <!-- Col 2 -->
+        <div>
+          <h4 class="footer-col-title">Ajuda</h4>
+          <ul class="footer-col-links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Frete</a></li>
+            <li><a href="#">Trocas e Devoluções</a></li>
+            <li><a href="#">Rastrear Pedido</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <h4 class="footer-col-title">Produtos</h4>
+          <ul class="footer-col-links">
+            <li><a href="#trueFoods">Whey Protein</a></li>
+            <li><a href="#bestSellers">Creatina</a></li>
+            <li><a href="#productHero">Vitaminas</a></li>
+            <li><a href="#reviews">Pré-Treino</a></li>
+            <li><a href="#recommended">Emagrecedores</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div>
+          <h4 class="footer-col-title">Contato</h4>
+          <ul class="footer-col-links">
+            <li><a href="#">WhatsApp</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">E-mail SAC</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Linha Inferior -->
+      <div class="footer-bottom">
+        <div class="copyright">
+          &copy; 2026 BNS+ Suplementos E-commerce S.A. CNPJ 12.345.678/0001-90. Todos os direitos reservados.
+        </div>
+
+        <div class="bottom-icons-row">
+          <!-- Formas de Pagamento -->
+          <div class="payments-row">
+            <!-- Visa -->
+            <div class="icon-box-payment" title="Visa">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="#002244" d="M1 4h22v16H1z"/><path fill="#FFCC00" d="M2.5 14.8l2.1-7.2h2.2l-2.1 7.2zM12.9 8.2l-1.9 4.6-.2-.9c-.4-1.3-1.6-2.7-3-3.4l1.9 6.3h2.3l3.5-6.6zM21.5 7.6h-1.8c-.6 0-1.1.3-1.3.9l-3.8 9h2.3l.5-1.3h2.8l.3 1.3h2z"/>
+              </svg>
+            </div>
+            <!-- Mastercard -->
+            <div class="icon-box-payment" title="Mastercard">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <circle cx="9" cy="12" r="6" fill="#EB001B" opacity="0.9"/><circle cx="15" cy="12" r="6" fill="#F79E1B" opacity="0.9"/>
+              </svg>
+            </div>
+            <!-- Pix -->
+            <div class="icon-box-payment" title="Pix">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="#32BCAD">
+                <path d="M12 2L2 12l10 10 10-10L12 2zm0 3.5L18.5 12 12 18.5 5.5 12 12 5.5z"/>
+              </svg>
+            </div>
+            <!-- Boleto -->
+            <div class="icon-box-payment" title="Boleto">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="#000000">
+                <path d="M3 4h2v16H3zm4 0h1v16H7zm3 0h3v16h-3zm5 0h1v16h-1zm3 0h3v16h-3z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Selos de Segurança -->
+          <div class="seals-row">
+            <div class="seal-box" title="SSL Seguro">
+              <img src="https://placehold.co/80x30/2E7D32/FFFFFF?text=SSL+Seguro" alt="Selo SSL Seguro">
+            </div>
+            <div class="seal-box" title="Google Safe Browsing">
+              <img src="https://placehold.co/120x30/000000/FFFFFF?text=Google+Safe" alt="Google Safe Browsing">
+            </div>
+            <div class="seal-box" title="Reclame Aqui RA1000">
+              <img src="https://placehold.co/100x30/4A32A8/FFFFFF?text=RA1000" alt="Selo Reclame Aqui">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Catálogo PDF -->
+  <div id="pdfModal" class="pdf-modal">
+    <div class="pdf-modal-overlay" id="pdfModalOverlay"></div>
+    <div class="pdf-modal-container">
+      <div class="pdf-modal-header">
+        <h3 class="pdf-modal-title">Catálogo BNS+</h3>
+        <button class="pdf-modal-close" id="closePdfModal" aria-label="Fechar catálogo">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="pdf-modal-body">
+        <iframe id="pdfIframe" src="" width="100%" height="100%" style="border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------------------------------------------------
+       SCRIPT DE INTERAÇÕES E ANIMAÇÕES
+       ---------------------------------------------------- -->
+  <script>
+    // 1. Efeito do Header Fixado ao Rolar
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // 2. Menu Hamburguer Responsivo
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const menuCloseBtn = document.getElementById('menuCloseBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+    function openMenu() {
+      mobileMenu.classList.add('active');
+      mobileMenuOverlay.classList.add('active');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('active');
+      mobileMenuOverlay.classList.remove('active');
+    }
+
+    menuToggleBtn.addEventListener('click', openMenu);
+    menuCloseBtn.addEventListener('click', closeMenu);
+    mobileMenuOverlay.addEventListener('click', closeMenu);
+
+    // Fechar menu mobile ao clicar em algum link
+    document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // 3. Simulação de Carrinho
+    const cartCounter = document.getElementById('cartCounter');
+    let cartItemsCount = 0;
+
+    document.querySelectorAll('.add-to-cart-btn, .tf-btn-cart').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        cartItemsCount++;
+        cartCounter.textContent = cartItemsCount;
+        
+        // Pequena animação no contador de carrinho
+        cartCounter.style.transform = 'scale(1.3)';
+        setTimeout(() => {
+          cartCounter.style.transform = 'scale(1)';
+        }, 200);
+
+        // Feedback de sucesso
+        const originalText = button.innerHTML;
+        if (button.classList.contains('add-to-cart-btn') && !button.classList.contains('btn-primary') && !button.classList.contains('tf-btn-cart')) {
+          button.style.backgroundColor = 'var(--accent-green)';
+          button.style.color = '#fff';
+          button.innerHTML = '✓ Adicionado!';
+          setTimeout(() => {
+            button.style.backgroundColor = '';
+            button.style.color = '';
+            button.innerHTML = originalText;
+          }, 1000);
+        } else if (button.classList.contains('btn-primary')) {
+          button.innerHTML = '✓ Adicionado ao carrinho';
+          setTimeout(() => {
+            button.innerHTML = originalText;
+          }, 1000);
+        }
+      });
+    });
+
+    // 3.1. Carrossel de 12 Fórmulas
+    const formulaProducts = [
+      {
+        title: "Complexo B",
+        desc: "Energia, foco e vitalidade metabólica. Fórmula ultra concentrada com todas as vitaminas essenciais do complexo B.",
+        img: "formula-card/B-COMPLEX.png",
+        banner: "formula-card-banners/b_complex_banner.png"
+      },
+      {
+        title: "Cabelo, Pele & Unhas",
+        desc: "Beleza e fortalecimento de dentro para fora. Colágeno, biotina e minerais essenciais para cabelos fortes e pele saudável.",
+        img: "formula-card/CABELO, PELE E UNHA.png",
+        banner: "formula-card-banners/cabelo_pele_unha_banner.png"
+      },
+      {
+        title: "Cafeína Anidra",
+        desc: "Performance máxima e foco absoluto nos treinos. Termogênico de rápida liberação energética para impulsionar seus limites.",
+        img: "formula-card/CAFEÍNA.png",
+        banner: "formula-card-banners/cafeina_banner.png"
+      },
+      {
+        title: "Coenzima Q10",
+        desc: "Saúde cardiovascular e energia mitocondrial celular. Potente ação antioxidante natural no combate ao envelhecimento precoce.",
+        img: "formula-card/COENZIMA Q10.png",
+        banner: "formula-card-banners/coenzima_q10_banner.png"
+      },
+      {
+        title: "Curcumina Ativa",
+        desc: "Anti-inflamatório e antioxidante natural. O melhor do extrato purificado de cúrcuma para a saúde articular e muscular.",
+        img: "formula-card/CURCUMINA.png",
+        banner: "formula-card-banners/curcumina_banner.png"
+      },
+      {
+        title: "Magnésio Malato + Resveratrol",
+        desc: "Longevidade ativa e suporte contra dores musculares. Sinergia perfeita do magnésio com o antioxidante natural das uvas.",
+        img: "formula-card/MAGNÉSIO MALATO RESVE.png",
+        banner: "formula-card-banners/magnesio_malato_resve_banner.png"
+      },
+      {
+        title: "Magnésio Malato",
+        desc: "Menos fadiga e melhor contração muscular. A forma mais biodisponível de magnésio para repor os minerais essenciais.",
+        img: "formula-card/MAGNÉSIO MALATO.png",
+        banner: "formula-card-banners/magnesio_malato_banner.png"
+      },
+      {
+        title: "Picolinato de Cromo",
+        desc: "Controle da saciedade e regulação da glicemia. Reduz significativamente a vontade de ingerir doces e carboidratos.",
+        img: "formula-card/PICOLINATO DE CROMO.png",
+        banner: "formula-card-banners/picolinato_cromo_banner.png"
+      },
+      {
+        title: "Multivitamínico A-Z",
+        desc: "Nutrição integral e imunidade fortalecida. O complemento diário ideal de micronutrientes biodisponíveis para seu corpo.",
+        img: "formula-card/POLIVITAMÍNICO.png",
+        banner: "formula-card-banners/polivitaminico_banner.png"
+      },
+      {
+        title: "Vitamina D3 + K2 + Mg",
+        desc: "Fórmula de suporte ósseo avançado e blindagem imunológica. O trio ideal de fixação e distribuição de cálcio.",
+        img: "formula-card/VITAMINA D3+K+MG+II.png",
+        banner: "formula-card-banners/vitamina_d3_k_mg_ii_banner.png"
+      },
+      {
+        title: "Vitamina D3 Premium",
+        desc: "Suplementação essencial da vitamina do sol. Fortalecimento de articulações e estímulo ao sistema imune diário.",
+        img: "formula-card/VITAMINA D3.png",
+        banner: "formula-card-banners/vitamina_d3_banner.png"
+      },
+      {
+        title: "Zinco Quelato",
+        desc: "Suporte antioxidante e celular para o organismo. Mineral indispensável para a cicatrização e regeneração da pele.",
+        img: "formula-card/ZINCO.png",
+        banner: "formula-card-banners/zinco_banner.png"
+      }
+    ];
+
+    let currentFormulaIndex = 0;
+
+    const formulaProductImg = document.getElementById('formulaProductImg');
+    const formulaTitle = document.getElementById('formulaTitle');
+    const formulaDesc = document.getElementById('formulaDesc');
+    const formulaDrinkImg = document.getElementById('formulaDrinkImg');
+    const formulaPrev = document.getElementById('formulaPrev');
+    const formulaNext = document.getElementById('formulaNext');
+
+    function updateFormulaCard(index) {
+      formulaProductImg.classList.add('formula-fade');
+      formulaTitle.classList.add('formula-fade');
+      formulaDesc.classList.add('formula-fade');
+      formulaDrinkImg.classList.add('formula-fade');
+
+      setTimeout(() => {
+        const prod = formulaProducts[index];
+        formulaProductImg.src = prod.img;
+        formulaProductImg.alt = prod.title;
+        formulaTitle.textContent = prod.title;
+        formulaDesc.textContent = prod.desc;
+        formulaDrinkImg.src = prod.banner;
+        formulaDrinkImg.alt = "Bebida conceitual para " + prod.title;
+
+        formulaProductImg.classList.remove('formula-fade');
+        formulaTitle.classList.remove('formula-fade');
+        formulaDesc.classList.remove('formula-fade');
+        formulaDrinkImg.classList.remove('formula-fade');
+      }, 250);
+    }
+
+    if (formulaPrev && formulaNext) {
+      formulaNext.addEventListener('click', () => {
+        currentFormulaIndex = (currentFormulaIndex + 1) % formulaProducts.length;
+        updateFormulaCard(currentFormulaIndex);
+      });
+
+      formulaPrev.addEventListener('click', () => {
+        currentFormulaIndex = (currentFormulaIndex - 1 + formulaProducts.length) % formulaProducts.length;
+        updateFormulaCard(currentFormulaIndex);
+      });
+    }
+
+    // 4. Carrossel Mais Vendidos (Scroll via botões)
+    const bestSellersGrid = document.getElementById('bestSellersGrid');
+    const bsPrev = document.getElementById('bestSellersPrev');
+    const bsNext = document.getElementById('bestSellersNext');
+
+    // Helper function for click-and-drag scroll behavior
+    function enableDragScroll(el) {
+      if (!el) return;
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      el.addEventListener('mousedown', (e) => {
+        isDown = true;
+        el.style.scrollSnapType = 'none';
+        el.style.scrollBehavior = 'auto';
+        startX = e.pageX - el.offsetLeft;
+        scrollLeft = el.scrollLeft;
+      });
+
+      el.addEventListener('mouseleave', () => {
+        if (!isDown) return;
+        isDown = false;
+        el.style.scrollSnapType = '';
+        el.style.scrollBehavior = '';
+      });
+
+      el.addEventListener('mouseup', () => {
+        if (!isDown) return;
+        isDown = false;
+        el.style.scrollSnapType = '';
+        el.style.scrollBehavior = '';
+      });
+
+      el.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - el.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        el.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    enableDragScroll(bestSellersGrid);
+
+    // 5. Carrossel Recomendados Para Você (Scroll via click-and-drag)
+    const recGrid = document.getElementById('recGrid');
+    enableDragScroll(recGrid);
+
+    // 6. Carrossel Avaliações Lifestyle (Scroll via click-and-drag)
+    const reviewsGrid = document.getElementById('reviewsGrid');
+    enableDragScroll(reviewsGrid);
+
+    // 7. Troca de Depoimentos Destaque (Carrossel Simulado)
+    const tdQuotes = [
+      {
+        text: '"Eu recomendo o Pure Whey da BNS+. Ele dissolve super bem, não deixa sabor residual e a pureza dos ingredientes é incomparável. Sem dúvidas, o melhor whey que já comprei no Brasil!"',
+        author: "Carlos Augusto"
+      },
+      {
+        text: '"O Multivitamínico mudou completamente minha fadiga no trabalho. Consigo render 100% mais e não sinto mais aquela moleza após o almoço. Compro todos os meses!"',
+        author: "Renata Faria"
+      },
+      {
+        text: '"Excelente pós-venda e a entrega no Rio de Janeiro levou apenas 2 dias úteis. A Creatina é super fina e dissolve rápido. Recomendo muito!"',
+        author: "Lucio Valente"
+      }
+    ];
+
+    let currentTdIndex = 0;
+    const tdQuoteText = document.getElementById('tdQuoteText');
+    const tdQuoteAuthor = document.getElementById('tdQuoteAuthor');
+    const tdPrevBtn = document.getElementById('tdPrevBtn');
+    const tdNextBtn = document.getElementById('tdNextBtn');
+
+    function updateDestaqueTestimonial() {
+      tdQuoteText.style.opacity = 0;
+      tdQuoteAuthor.style.opacity = 0;
+      
+      setTimeout(() => {
+        tdQuoteText.textContent = tdQuotes[currentTdIndex].text;
+        tdQuoteAuthor.textContent = tdQuotes[currentTdIndex].author;
+        tdQuoteText.style.opacity = 1;
+        tdQuoteAuthor.style.opacity = 1;
+      }, 200);
+    }
+
+    if (tdPrevBtn && tdNextBtn) {
+      tdNextBtn.addEventListener('click', () => {
+        currentTdIndex = (currentTdIndex + 1) % tdQuotes.length;
+        updateDestaqueTestimonial();
+      });
+
+      tdPrevBtn.addEventListener('click', () => {
+        currentTdIndex = (currentTdIndex - 1 + tdQuotes.length) % tdQuotes.length;
+        updateDestaqueTestimonial();
+      });
+    }
+
+    // 8. Troca de Depoimentos Médicos (Carrossel Simulado)
+    const medQuotes = [
+      {
+        text: '"Como médico nutrólogo, o que mais prezo em um suplemento é a transparência dos ingredientes. A BNS+ entrega fórmulas com pureza absoluta, sem aromatizantes artificiais e adoçantes agressivos. É a minha recomendação padrão de saúde no consultório."',
+        name: "Dr. Thiago Silva",
+        specialty: "Nutrologia Clínico-Esportiva - CRM/SP 123456"
+      },
+      {
+        text: '"Muitos pacientes se queixam de gases com whey tradicional. O isolado da BNS+ tem um grau de digestibilidade fantástico e não causa esse desconforto devido aos processos rigorosos de purificação."',
+        name: "Dra. Carolina Mendes",
+        specialty: "Nutricionista Clínica e Funcional - CRN 98765"
+      }
+    ];
+
+    let currentMedIndex = 0;
+    const medQuoteText = document.getElementById('medQuoteText');
+    const medicalName = document.getElementById('medicalName');
+    const medicalSpecialty = document.getElementById('medicalSpecialty');
+    const medPrevBtn = document.getElementById('medPrev');
+    const medNextBtn = document.getElementById('medNext');
+
+    function updateMedicalTestimonial() {
+      medQuoteText.style.opacity = 0;
+      medicalName.style.opacity = 0;
+      medicalSpecialty.style.opacity = 0;
+      
+      setTimeout(() => {
+        medQuoteText.textContent = medQuotes[currentMedIndex].text;
+        medicalName.textContent = medQuotes[currentMedIndex].name;
+        medicalSpecialty.textContent = medQuotes[currentMedIndex].specialty;
+        
+        medQuoteText.style.opacity = 1;
+        medicalName.style.opacity = 1;
+        medicalSpecialty.style.opacity = 1;
+      }, 200);
+    }
+
+    if (medPrevBtn && medNextBtn) {
+      medNextBtn.addEventListener('click', () => {
+        currentMedIndex = (currentMedIndex + 1) % medQuotes.length;
+        updateMedicalTestimonial();
+      });
+
+      medPrevBtn.addEventListener('click', () => {
+        currentMedIndex = (currentMedIndex - 1 + medQuotes.length) % medQuotes.length;
+        updateMedicalTestimonial();
+      });
+    }
+
+    // 9. Formulário de Newsletter
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailInput = document.getElementById('newsletterEmail');
+        alert(`Obrigado! O e-mail ${emailInput.value} foi cadastrado com sucesso para receber nossas ofertas exclusivas.`);
+        emailInput.value = '';
+      });
+    }
+
+    // 10. Modal do Catálogo PDF
+    const instCard = document.querySelector('.inst-image-wrapper');
+    const openCatalogBtn = document.getElementById('openCatalogBtn');
+    const pdfModal = document.getElementById('pdfModal');
+    const pdfIframe = document.getElementById('pdfIframe');
+    const closePdfModal = document.getElementById('closePdfModal');
+    const pdfModalOverlay = document.getElementById('pdfModalOverlay');
+
+    if ((instCard || openCatalogBtn) && pdfModal && pdfIframe) {
+      const openModal = () => {
+        pdfIframe.src = 'DOCUMENTOS/CATÁLOGO_REVISTA_OTIMIZADO.pdf';
+        pdfModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      if (instCard) {
+        instCard.addEventListener('click', openModal);
+      }
+      
+      if (openCatalogBtn) {
+        openCatalogBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal();
+        });
+      }
+
+      const closeModal = () => {
+        pdfModal.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+          pdfIframe.src = '';
+        }, 300);
+      };
+
+      closePdfModal.addEventListener('click', closeModal);
+      pdfModalOverlay.addEventListener('click', closeModal);
+    }
+  </script>
+</body>
+</html>
