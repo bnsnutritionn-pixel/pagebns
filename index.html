@@ -56,6 +56,27 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Ajuste de scroll com margem para cabeçalho sticky */
+    #bestSellers,
+    #productHero,
+    #trueFoods,
+    #categories,
+    #reviews,
+    #recommended {
+      scroll-margin-top: 130px;
+    }
+
+    @media (max-width: 1024px) {
+      #bestSellers,
+      #productHero,
+      #trueFoods,
+      #categories,
+      #reviews,
+      #recommended {
+        scroll-margin-top: 90px;
+      }
+    }
+
     body {
       font-family: var(--font-body);
       color: var(--text-dark);
@@ -3696,9 +3717,29 @@
     menuCloseBtn.addEventListener('click', closeMenu);
     mobileMenuOverlay.addEventListener('click', closeMenu);
 
-    // Fechar menu mobile ao clicar em algum link
+    // Fechar menu mobile ao clicar em algum link e rolar suavemente com offset
     document.querySelectorAll('.mobile-menu-links a').forEach(link => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          e.preventDefault();
+          closeMenu();
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            // Aguarda o menu fechar (drawer slide-out leva 300ms) para rolar a página perfeitamente
+            setTimeout(() => {
+              const headerHeight = document.getElementById('mainHeader').offsetHeight;
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.scrollY - headerHeight;
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }, 300);
+          }
+        }
+      });
     });
 
 
