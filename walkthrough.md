@@ -161,26 +161,25 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 
 ---
 
-## 📱 Banner Hero Exclusivo para Versão Mobile (VERSAO_MOBILE.webp)
-- Conforme solicitado, substituímos a exibição de textos em HTML sobrepostos no mobile por uma versão de **altíssima fidelidade** baseada na nova imagem de alta qualidade enviada pelo usuário:
-  1. **Conversão e Otimização para WebP**:
-     - Localizamos o arquivo `VERSAO_MOBILE.png` na raiz do projeto.
-     - Convertemos a imagem para o formato moderno **`VERSAO_MOBILE.webp`** com qualidade premium de **`95%`**, mantendo os detalhes visuais nítidos para telas de retina (alta densidade).
-     - O tamanho do arquivo foi otimizado para apenas **36.7 KB**, mantendo excelente velocidade de carregamento.
-     - Removemos a imagem `.png` original e o antigo `.webp` de menor resolução do repositório.
+## 📱 Banner Hero Exclusivo para Versão Mobile (VERSAO_MOBILE.webp - Alta Qualidade)
+- Para solucionar o problema de qualidade do banner de capa no mobile, adotamos um processo de aprimoramento de densidade de pixels:
+  1. **Upscaling por Lanczos (3x Densidade)**:
+     - O arquivo original `VERSAO_MOBILE.png` foi processado em Python e redimensionado para **`990x1155`** pixels (três vezes a resolução anterior) utilizando a interpolação Lanczos.
+     - Isso cria pixels físicos extras para serem lidos pelas telas Retina e de alta definição (High-DPI) do mobile, removendo completamente a aparência embaçada/pixelada sem estourar o tamanho do arquivo.
+     - Convertemos a imagem final para WebP com qualidade de **`95%`**, resultando em um arquivo super nítido de apenas **144 KB**.
   2. **Exibição Responsiva via CSS/HTML**:
-     - Criamos as classes utilitárias `.hero-desktop-only` e `.hero-mobile-only`.
-     - Em telas mobile (largura menor que `768px`), o banner em HTML com textos e botão dinâmicos é ocultado e a imagem de alta fidelidade `VERSAO_MOBILE.webp` é exibida.
-     - Para manter a experiência de compra, a imagem inteira do banner no mobile funciona como um link clicável apontando diretamente para `#bestSellers`.
+     - O banner em HTML com textos sobrepostos é ocultado no mobile, dando lugar ao `VERSAO_MOBILE.webp` em alta definição.
+     - A imagem inteira é encapsulada em um link ativo que aponta diretamente para a seção `#bestSellers`.
 
 ---
 
-## 🧭 Barra de Navegação Horizontal Scrollable no Mobile
-- Atendendo à primeira solicitação, trouxemos a barra de categorias secundária (sub-menu de navegação) para a versão mobile:
-  1. **Ativação da Navegação Secundária**:
-     - O contêiner `.header-nav` agora está visível em todas as resoluções (`display: block` global).
-  2. **Interatividade e Ajuste para Telas Estreitas (CSS)**:
-     - Adicionamos a propriedade `overflow-x: auto` e `-webkit-overflow-scrolling: touch` para habilitar a rolagem por arrasto horizontal (*scroll-snap/swipe*) em smartphones.
-     - Ocultamos a barra de rolagem usando `scrollbar-width: none` e `-webkit-scrollbar { display: none }` para uma estética limpa.
-     - O contêiner `.nav-container` foi configurado com `width: max-content` e `flex-wrap: nowrap` para forçar todos os itens (Botão "Todos os produtos", separadores `•` e links) a permanecerem em uma única linha contínua que pode ser deslizada lateralmente.
-     - Adicionamos uma linha divisória superior (`border-top: 1px solid var(--border-color)`) e fundo branco para delimitar o menu perfeitamente.
+## 🧭 Barra de Categorias Horizontal no Mobile (Estilo Menu Junto)
+- Ajustamos a barra de categorias secundária no mobile para ficar idêntica à referência:
+  1. **Remoção de Elementos**:
+     - Ocultamos completamente o botão azul `"Todos os produtos"` (`.btn-all-products`) no mobile para evitar poluição visual.
+     - Removemos todos os círculos/pontos separadores (`.nav-dot`) para manter o menu clean.
+  2. **Agrupamento e Espaçamento (CSS)**:
+     - Modificamos a classe `.nav-links` no mobile para se comportar como um contêiner flex (`display: flex !important; flex-direction: row !important; gap: 20px`).
+     - O gap de **`20px`** aproxima as opções de navegação (`Best Sellers`, `Promoções`, `Destaques da semana`, `Vitaminas`), agrupando-as lateralmente de forma compacta como na referência.
+     - A tipografia foi atualizada para uma cor escura premium (`var(--text-dark)`) com peso negrito (`600`) para melhor leitura.
+     - A navegação secundária permanece scrollável horizontalmente sem quebras de linha em qualquer dispositivo móvel.
