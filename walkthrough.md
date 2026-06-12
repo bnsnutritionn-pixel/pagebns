@@ -22,12 +22,12 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
    - Logomarca principal apontando para o arquivo de imagem personalizado `logo_blue.png` com dimensões e proporções otimizadas via CSS.
    - Barra de pesquisa integrada (com lupa SVG).
    - Ícones de ações atualizados com rótulos de texto no desktop ("Faça seu login ou cadastre-se" ao lado de Usuário, "Precisa de ajuda?" ao lado do ícone de Ajuda adicionado, e contador na Sacola).
-   - Sub-menu de navegação contendo o botão de destaque "**Todos os produtos**" em azul à esquerda, links alinhados à referência (`Compre por objetivo`, `Best Sellers`, `Lançamentos`, `Promoções`, `GLP-1 Support`, `Assinatura`), pequenos **separadores de bolinhas cinzas (`•`)** com espaçamento ajustado de `16px`, e ícone de chevron na categoria `Compre por objetivo`.
+   - Sub-menu de navegação contendo o botão de destaque "**Todos os produtos**" em azul à esquerda, links alinhados à referência (`Compre por objetivo`, `Mais Vendidos`, `Lançamentos`, `Destaque da Semana`, `GLP-1 Support`, `Assinatura`), pequenos **separadores de bolinhas cinzas (`•`)** com espaçamento ajustado de `16px`, e ícone de chevron na categoria `Compre por objetivo`.
    - Menu mobile drawer adaptado com a mesma lista de links correspondente.
    - **Comportamento Scrolled / Fixo (Novo)**: Ao rolar a página para baixo, o cabeçalho se contrai de duas linhas para **uma única linha ultra compacta**, alinhada perfeitamente com a referência visual:
      - Reordena dinamicamente os elementos usando Flexbox e `display: contents` no CSS, sem alterar a estrutura do DOM.
      - A ordem dos elementos torna-se: `Logo` | `Todos os produtos` | `Compre por objetivo` (com chevron) | `Assinatura` | `Barra de Busca` (em formato de pílula compacta de fundo bege `#F5F0EB` e ícone de lupa alinhado à direita) | `Ações do Header` (Minha Conta, Ajuda e Sacola de compras).
-     - Oculta de forma inteligente os links intermediários (`Best Sellers`, `Lançamentos`, `Promoções`, `GLP-1 Support`) e os pontos separadores.
+     - Oculta de forma inteligente os links intermediários (`Mais Vendidos`, `Lançamentos`, `Destaque da Semana`, `GLP-1 Support`) e os pontos separadores.
      - Esconde o botão de Favoritos e o texto dos ícones de login e ajuda em resoluções abaixo de `1200px` para evitar sobreposições, mantendo o cabeçalho 100% responsivo e elegante.
 
 2. **Banner Hero Principal**:
@@ -199,6 +199,6 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
      - Removemos todos os círculos/pontos separadores (`.nav-dot`) para manter o menu clean.
   2. **Agrupamento e Espaçamento (CSS)**:
      - Modificamos a classe `.nav-links` no mobile para se comportar como um contêiner flex (`display: flex !important; flex-direction: row !important; gap: 20px`).
-     - O gap de **`20px`** aproxima as opções de navegação (`Best Sellers`, `Promoções`, `Destaques da semana`, `Vitaminas`), agrupando-as lateralmente de forma compacta como na referência.
+     - O critério de rolagem e toque aproxima as opções de navegação (`Mais Vendidos`, `Destaque da Semana`, `Foods`, `Catálogo`), agrupando-as lateralmente de forma compacta como na referência.
      - A tipografia foi atualizada para uma cor escura premium (`var(--text-dark)`) com peso negrito (`600`) para melhor leitura.
      - A navegação secundária permanece scrollável horizontalmente sem quebras de linha em qualquer dispositivo móvel.
