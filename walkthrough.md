@@ -8,7 +8,7 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 - **HTML5 Semântico**: Estruturação limpa com tags semânticas (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`).
 - **CSS3 Moderno**: Utilização de variáveis globais de CSS, Flexbox, CSS Grid, media queries (Mobile-First) e animações personalizadas.
 - **Tipografia**:
-  - `Poppins` para cabeçalhos e elementos fortes.
+  - `Poppins` para cabeçalhos e elements fortes.
   - `Inter` para leitura agradável e corrida.
   - `Playfair Display` para títulos editoriais com apelo elegante (ex: Destaque de Produto Hero).
 - **Sem Dependências Externas**: Ícones construídos nativamente via vetores SVG in-line para otimizar velocidade de carregamento e evitar dependências de CDNs terceiros.
@@ -47,7 +47,7 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 5. **Seção Editorial / Blog Preview**:
    - Grid 2x2 responsiva com as 4 postagens solicitadas (Saúde, Vitaminas, Fitness) e títulos idênticos à referência.
 
-6. **Destaque de Produto Hero ("Ferro Liposomal")**:
+6. **Destaque de Produto Hero ("Cabelo, Pele & Unhas")**:
    - Seção full-width de fundo bege médio com tipografia serifada gigante e benefícios organizados em cards brancos de destaque.
 
 7. **Seção "Quem Usa, Recomenda"**:
@@ -87,119 +87,100 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 ---
 
 ## 🎨 Novo Layout Premium dos Cards de Produto
-
-Alinhado com a nova referência visual solicitada pelo usuário, todos os 8 cards de produtos (Bloco 4: Best Sellers e Bloco 11: Recomendados Para Você) foram reestruturados e estilizados:
-
-1. **Badge de Sabor / Benefício (Pílula Overlay)**:
-   - Posicionamento absoluto e centralizado na base do wrapper da imagem do produto.
-   - Fundo branco limpo com texto em azul da marca (`#015CAB`) em negrito, criando um contraste premium.
-   - Textos adaptados para cada produto:
-     - *Whey*: "Sabor do Coco de Verdade"
-     - *Creatina*: "100% Pura & Importada"
-     - *Termogênico*: "Fórmula Fit Clean"
-     - *Multivitamínico*: "A-Z Vitaminas e Minerais"
-     - *Vitamina D3+K2*: "Saúde Imunológica"
-     - *Ômega 3*: "Ultra Purificado"
-     - *Colágeno*: "Beleza & Firmeza"
-
-2. **Alinhamento Inline de Preços e Avaliação (Meta Row)**:
-   - Em vez de blocos separados, o preço (De / Por) e a avaliação do produto (estrela gold + número) agora compartilham a mesma linha horizontal logo abaixo do nome do produto.
-   - Preço De (antigo) com traço em cinza claro, preço Por (atual) em negrito e preto `#1A1A1A`, e estrela gold com a nota (ex: `★ 4.8`) alinhada à direita.
-
-3. **Botão de Adicionar ao Carrinho (Visual Clean)**:
-   - Removida a borda outline e o ícone de sacola para adotar um estilo minimalista premium.
-   - Fundo bege claro sólido (`#F5F0EB`) com texto marrom escuro em negrito (`#4A3E3D`).
-   - Efeito hover premium: transiciona suavemente para o azul principal da marca (`#015CAB`) com texto em branco e uma sombra sutil projetada.
-   - Atualizada a lógica Javascript de feedback para que, ao clicar no novo botão bege, ele transicione para o feedback de sucesso verde "✓ Adicionado!" por 1 segundo e retorne suavemente à cor original.
-
-4. **Proporção e Imagem Genérica Temporária**:
-   - Ajustada a proporção do wrapper da imagem (`.product-img-wrapper`) para **aspect ratio 4:5** conforme a referência.
-   - Definido o ajuste de encaixe da imagem para `object-fit: cover` para cobrir o espaço inteiro da proporção.
-   - Configurada a imagem [generic-product.jpg](file:///E:/LANDING%20PAGE%20BNS/generic-product.jpg) como imagem genérica em todos os 8 cards de produtos para visualização rápida do layout real.
+- Alinhado com a nova referência visual solicitada pelo usuário, todos os 8 cards de produtos (Bloco 4: Best Sellers e Bloco 11: Recomendados Para Você) foram reestruturados e estilizados:
+  1. **Badge de Sabor / Benefício (Pílula Overlay)**:
+     - Posicionamento absoluto e centralizado na base do wrapper da imagem do produto.
+     - Fundo branco limpo com texto em azul da marca (`#015CAB`) em negrito, criando um contraste premium.
+     - Textos adaptados para cada produto:
+       - *Whey*: "Sabor do Coco de Verdade"
+       - *Creatina*: "100% Pura & Importada"
+       - *Termogênico*: "Fórmula Fit Clean"
+       - *Multivitamínico*: "A-Z Vitaminas e Minerais"
+       - *Vitamina D3+K2*: "Saúde Imunológica"
+       - *Ômega 3*: "Ultra Purificado"
+       - *Colágeno*: "Beleza & Firmeza"
+  2. **Alinhamento Inline de Preços e Avaliação (Meta Row)**:
+     - Em vez de blocos separados, o preço (De / Por) e a avaliação do produto (estrela gold + número) agora compartilham a mesma linha horizontal logo abaixo do nome do produto.
+     - Preço De (antigo) com traço em cinza claro, preço Por (atual) em negrito e preto `#1A1A1A`, e estrela gold com a nota (ex: `★ 4.8`) alinhada à direita.
+  3. **Botão de Adicionar ao Carrinho (Visual Clean)**:
+     - Removida a borda outline e o ícone de sacola para adotar um estilo minimalista premium.
+     - Fundo bege claro sólido (`#F5F0EB`) com texto marrom escuro em negrito (`#4A3E3D`).
+     - Efeito hover premium: transiciona suavemente para o azul principal da marca (`#015CAB`) com texto em branco e uma sombra sutil projetada.
+  4. **Proporção e Imagem Genérica Temporária**:
+     - Ajustada a proporção do wrapper da imagem (`.product-img-wrapper`) para **aspect ratio 4:5** conforme a referência.
+     - Definido o ajuste de encaixe da imagem para `object-fit: cover` para cobrir o espaço inteiro da proporção.
+     - Configurada a imagem [generic-product.jpg](file:///E:/LANDING PAGE BNS/generic-product.jpg) como imagem genérica em todos os 8 cards de produtos para visualização rápida do layout real.
 
 ---
 
 ## 🥤 Substituição da Seção de Artigos por Card de Nova Fórmula
-
-A seção de "Artigos" (Bloco 5) foi totalmente substituída por um card promocional moderno e responsivo que destaca a **Nova Fórmula** do suplemento *True Energyzer & Focus*:
-
-1. **Recorte de Imagens de Alta Fidelidade**:
-   - Desenvolvido um script em Python que localizou e extraiu de forma automatizada os elementos da imagem de referência.
-   - O pote do produto foi salvo como [canister-product.png](file:///E:/LANDING%20PAGE%20BNS/canister-product.png) (com fundo branco).
-   - O bloco contendo a bebida no copo com morangos/gelo e fundo coral foi salvo como [drink-banner.png](file:///E:/LANDING%20PAGE%20BNS/drink-banner.png) (com cantos arredondados).
-
-2. **Desenvolvimento do Layout (.formula-card)**:
-   - **Estrutura Bipartida**: Grid responsivo de duas colunas (50%/50% no desktop, empilhando-se verticalmente no mobile).
-   - **Estilo Visual**: Adotado fundo bege claro (`#F5F0EB`) e bordas bem arredondadas (`28px`), idêntico ao modelo.
-   - **Controles e Alinhamento**: O lado esquerdo exibe o pote de produto, a tipografia limpa da chamada, descrição resumida e uma linha de controles com um botão CTA azul da marca (`#015CAB`) e setas de navegação circulares brancas. O lado direito exibe a imagem coral completa da bebida.
+- A seção de "Artigos" (Bloco 5) foi totalmente substituída por um card promocional moderno e responsivo que destaca a **Nova Fórmula** do suplemento *True Energyzer & Focus*:
+  1. **Recorte de Imagens de Alta Fidelidade**:
+     - O pote do produto foi salvo como [canister-product.webp](file:///E:/LANDING PAGE BNS/canister-product.webp).
+     - O bloco contendo a bebida no copo foi salvo como [drink-banner.webp](file:///E:/LANDING PAGE BNS/drink-banner.webp).
+  2. **Desenvolvimento do Layout (.formula-card)**:
+     - Grid responsivo de duas colunas (50%/50% no desktop, empilhando-se verticalmente no mobile).
+     - Adotado fundo bege claro (`#F5F0EB`) e bordas bem arredondadas (`28px`), idêntico ao modelo.
+     - O lado esquerdo exibe o pote de produto, a tipografia limpa da chamada, descrição resumida e botões. O lado direito exibe a imagem coral completa da bebida.
 
 ---
 
 ## 🎠 Carrossel Dinâmico de 12 Produtos no Card de Fórmula
-
-O bloco promocional de fórmula foi transformado em um carrossel interativo e funcional que navega entre 12 produtos da marca contidos na pasta `formula-card/`:
-
-1. **Troca Dinâmica de Elementos**:
-   - Ao clicar nas setas de navegação (`#formulaPrev` e `#formulaNext`), o card atualiza em tempo real as seguintes informações:
-     - Imagem do pote do produto (buscada da pasta local `formula-card/`).
-     - Título e nome do produto (ex: *Complexo B*, *Cafeína Anidra*, *Coenzima Q10*, *Magnésio Malato*, etc.).
-     - Descrição com os benefícios e diferenciais específicos de cada fórmula.
-     - Imagem promocional de fundo na coluna direita (buscada da pasta `formula-card-banners/`).
-
-2. **Geração das Imagens Promocionais (Banners)**:
-   - Geramos 12 banners fotográficos conceituais em alta definição utilizando IA para o lado direito de cada produto, todos salvos em [formula-card-banners/](file:///E:/LANDING%20PAGE%20BNS/formula-card-banners/) com proporção 4:5.
-   - Cada banner reflete visualmente a proposta do produto correspondente (ex: grãos de café dinâmicos para a Cafeína, frutas frescas para o Polivitamínico, raios solares para a Vitamina D3, etc.).
-
-3. **Efeito de Transição Suave (Fade Transition)**:
-   - Implementamos a classe CSS `.formula-fade` combinada com o JavaScript para aplicar um efeito suave de esmaecimento e leve deslocamento vertical (`transform: translateY`) a cada transição de slide, prevenindo cortes bruscos nas imagens e textos.
+- O bloco promocional de fórmula foi transformado em um carrossel interativo e funcional que navega entre 12 produtos da marca contidos na pasta `formula-card/`:
+  1. **Troca Dinâmica de Elementos**:
+     - Ao clicar nas setas de navegação (`#formulaPrev` e `#formulaNext`), o card atualiza em tempo real as seguintes informações:
+       - Imagem do pote do produto (buscada da pasta local `formula-card/`).
+       - Título e nome do produto.
+       - Descrição com os benefícios e diferenciais específicos de cada fórmula.
+       - Imagem promocional de fundo na coluna direita.
+  2. **Efeito de Transição Suave (Fade Transition)**:
+     - Implementamos a classe CSS `.formula-fade` combinada com o JavaScript para aplicar um efeito suave de esmaecimento e leve deslocamento vertical (`transform: translateY`) a cada transição de slide.
 
 ---
 
 ## 🌟 Destaque de Produto Hero: Cabelo, Pele & Unhas
-
-A seção de **Destaque de Produto Hero (Bloco 6)** foi atualizada para promover o produto **Cabelo, Pele & Unhas** em vez de *Ferro Liposomal*, alinhando-se com a estratégia de exclusividade definida pelo usuário:
-
-1. **Alteração de Mídia**:
-   - Substituído o placeholder anterior pela imagem real do pote do produto [CABELO, PELE E UNHA.png](file:///E:/LANDING%20PAGE%20BNS/formula-card/CABELO,%20PELE%20E%20UNHA.png), posicionada perfeitamente acima do círculo de fundo da seção.
-2. **Atualização Textual & Benefícios**:
-    - Título alterado para "Cabelo, Pele & Unhas" com o subtítulo "Brilho, Força e Elasticidade".
-    - Descrição reescrita destacando a sinergia entre a biotina concentrada, colágeno hidrolisado e minerais quelatos.
-    - Lista de diferenciais atualizada para:
-      - *Estimula a produção de colágeno*
-      - *Fios mais fortes e menos queda*
-      - *Fortalecimento profundo das unhas*
-      - *Fórmula pura com biotina e quelatos*
-    - Preço no botão ajustado de forma atrativa para **R$ 89,90**.
+- A seção de **Destaque de Produto Hero (Bloco 6)** foi atualizada para promover o produto **Cabelo, Pele & Unhas**:
+  1. **Alteração de Mídia**:
+     - Substituído o pote anterior pela imagem real do pote do produto [CABELO, PELE E UNHA.webp](file:///E:/LANDING PAGE BNS/formula-card/CABELO,%20PELE%20E%20UNHA.webp).
+  2. **Atualização Textual & Benefícios**:
+     - Título alterado para "Cabelo, Pele & Unhas" com o subtítulo "Brilho, Força e Elasticidade".
+     - Descrição reescrita destacando a sinergia entre a biotina concentrada, colágeno hidrolisado e minerais quelatos.
+     - Preço no botão ajustado de forma atrativa para **R$ 89,90**.
 
 ---
 
 ## ⚓ Rolagem Suave com Offset para Menu Desktop e Mobile
-
-Para atender à solicitação de que a navegação e rolagens automáticas surtam efeito perfeito também na versão mobile:
-
-1. **Ajuste de Margem de Rolagem (CSS scroll-margin-top)**:
-   - Adicionada a propriedade `scroll-margin-top: 130px` no desktop e `90px` no mobile para as seções `#bestSellers`, `#productHero`, `#trueFoods`, `#categories`, `#reviews` e `#recommended`.
-   - Isso garante que a rolagem nativa deixe um espaçamento adequado no topo, impedindo que a barra de cabeçalho fixa/sticky cubra os títulos das seções ao rolar a página.
-
-2. **Interceptador de Cliques do Menu Drawer (JavaScript)**:
-   - Implementado um tratador de eventos em JS para todos os links do menu drawer do mobile (`.mobile-menu-links a`).
-   - Quando um link é clicado, o drawer inicia seu fechamento deslizante (que leva 300ms) e é executado um `setTimeout` de 300ms antes de rolar. Isso evita engasgos e reposicionamentos incorretos durante a transição do menu.
-   - O cálculo de rolagem é dinâmico: `targetElement.getBoundingClientRect().top + window.scrollY - headerHeight`, garantindo precisão milimétrica em qualquer resolução.
+- Para atender à solicitação de que a navegação e rolagens automáticas surtam efeito perfeito também na versão mobile:
+  1. **Ajuste de Margem de Rolagem (CSS scroll-margin-top)**:
+     - Unificamos a propriedade `scroll-margin-top: 140px` tanto no desktop quanto no mobile para as seções `#bestSellers`, `#productHero`, `#trueFoods`, `#categories`, `#reviews` e `#recommended`.
+     - Isso garante que a rolagem nativa deixe um espaçamento adequado no topo, impedindo que a barra de cabeçalho fixa/sticky (que ficou ligeiramente mais alta no mobile com a nova barra de categorias) cubra os títulos das seções.
+  2. **Interceptador de Cliques do Menu Drawer (JavaScript)**:
+     - Implementado um tratador de eventos em JS para todos os links do menu drawer do mobile (`.mobile-menu-links a`).
+     - Quando um link é clicado, o drawer inicia seu fechamento deslizante (que leva 300ms) e é executado um `setTimeout` de 300ms antes de rolar. Isso evita engasgos e reposicionamentos incorretos durante a transição do menu.
+     - O cálculo de rolagem é dinâmico: `targetElement.getBoundingClientRect().top + window.scrollY - headerHeight`, garantindo precisão milimétrica em qualquer resolução.
 
 ---
 
-## 📱 Banner Hero Exclusivo para Versão Mobile
+## 📱 Banner Hero Exclusivo para Versão Mobile (VERSAO_MOBILE.webp)
+- Conforme solicitado, substituímos a exibição de textos em HTML sobrepostos no mobile por uma versão de **altíssima fidelidade** baseada na nova imagem de alta qualidade enviada pelo usuário:
+  1. **Conversão e Otimização para WebP**:
+     - Localizamos o arquivo `VERSAO_MOBILE.png` na raiz do projeto.
+     - Convertemos a imagem para o formato moderno **`VERSAO_MOBILE.webp`** com qualidade premium de **`95%`**, mantendo os detalhes visuais nítidos para telas de retina (alta densidade).
+     - O tamanho do arquivo foi otimizado para apenas **36.7 KB**, mantendo excelente velocidade de carregamento.
+     - Removemos a imagem `.png` original e o antigo `.webp` de menor resolução do repositório.
+  2. **Exibição Responsiva via CSS/HTML**:
+     - Criamos as classes utilitárias `.hero-desktop-only` e `.hero-mobile-only`.
+     - Em telas mobile (largura menor que `768px`), o banner em HTML com textos e botão dinâmicos é ocultado e a imagem de alta fidelidade `VERSAO_MOBILE.webp` é exibida.
+     - Para manter a experiência de compra, a imagem inteira do banner no mobile funciona como um link clicável apontando diretamente para `#bestSellers`.
 
-Conforme solicitado, substituímos a exibição de textos em HTML sobrepostos no mobile por uma versão otimizada e de alta fidelidade baseada na imagem enviada pelo usuário:
+---
 
-1. **Conversão e Otimização para WebP**:
-   - Localizamos o arquivo `BANNER_MOBILE.png` na raiz do projeto.
-   - Convertemos a imagem para o formato moderno `BANNER_MOBILE.webp` via Python/Pillow com qualidade `85%`.
-   - O tamanho do arquivo foi reduzido para apenas **25.5 KB** (~26KB), garantindo o carregamento instantâneo no mobile.
-   - Removemos a imagem `.png` original do repositório para manter a pasta limpa.
-
-2. **Exibição Responsiva via CSS/HTML**:
-   - Criamos duas classes utilitárias de exibição: `.hero-desktop-only` e `.hero-mobile-only`.
-   - Em telas mobile (largura menor que `768px`), o banner em HTML com textos e botão dinâmicos é ocultado completamente. Em seu lugar, é renderizada a imagem otimizada `BANNER_MOBILE.webp`.
-   - Para manter a experiência de compra, a imagem inteira do banner no mobile funciona como um link clicável apontando diretamente para `#bestSellers`.
-   - A imagem possui cantos arredondados (`border-radius: 24px`) e sombra sutil (`box-shadow`), integrando-se organicamente ao design.
+## 🧭 Barra de Navegação Horizontal Scrollable no Mobile
+- Atendendo à primeira solicitação, trouxemos a barra de categorias secundária (sub-menu de navegação) para a versão mobile:
+  1. **Ativação da Navegação Secundária**:
+     - O contêiner `.header-nav` agora está visível em todas as resoluções (`display: block` global).
+  2. **Interatividade e Ajuste para Telas Estreitas (CSS)**:
+     - Adicionamos a propriedade `overflow-x: auto` e `-webkit-overflow-scrolling: touch` para habilitar a rolagem por arrasto horizontal (*scroll-snap/swipe*) em smartphones.
+     - Ocultamos a barra de rolagem usando `scrollbar-width: none` e `-webkit-scrollbar { display: none }` para uma estética limpa.
+     - O contêiner `.nav-container` foi configurado com `width: max-content` e `flex-wrap: nowrap` para forçar todos os itens (Botão "Todos os produtos", separadores `•` e links) a permanecerem em uma única linha contínua que pode ser deslizada lateralmente.
+     - Adicionamos uma linha divisória superior (`border-top: 1px solid var(--border-color)`) e fundo branco para delimitar o menu perfeitamente.
