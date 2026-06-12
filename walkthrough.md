@@ -178,16 +178,11 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
      - O tamanho total das fotos caiu de ~35MB para apenas **~440KB** somados (redução de 98.7% no peso dos arquivos), otimizando drasticamente a velocidade de carregamento.
   2. **Paleta de Cores Pastéis Ampliada**:
      - Criamos novas classes CSS (`.tf-purple`, `.tf-orange`, `.tf-yellow`) com fundos pastéis harmônicos para os 3 novos produtos.
-  3. **Identidade dos Produtos**:
-     - **Card 1 (Rosa - tf-pink)**: `foods/001.webp` - Pasta de Amendoim BNS+ (R$ 29,66)
-     - **Card 2 (Chocolate - tf-chocolate)**: `foods/002.webp` - Proteína em Barra BNS+ (R$ 12,66)
-     - **Card 3 (Caramelo - tf-caramel)**: `foods/003.webp` - Granola Proteica BNS+ (R$ 25,42)
-     - **Card 4 (Verde - tf-green)**: `foods/004.webp` - Bebida Proteica Matcha BNS+ (R$ 16,06)
-     - **Card 5 (Roxo - tf-purple)**: `foods/005.webp` - Cookies Proteicos BNS+ (R$ 16,91) [NOVO]
-     - **Card 6 (Laranja - tf-orange)**: `foods/006.webp` - Creme de Avelã Proteico BNS+ (R$ 33,91) [NOVO]
-     - **Card 7 (Amarelo - tf-yellow)**: `foods/007.webp` - Chips de Coco BNS+ (R$ 10,96) [NOVO]
-  4. **Preservação de Regras**:
-     - Todos os cards novos utilizam o botão `"Conhecer produto"`, sem fluxo de carrinho direto ("adicionar à sacola").
+  3. **Identidade e Novo Layout dos Cards**:
+     - Removidos completamente os blocos de preços (antigo/promocional) e as pílulas com o sabor/nome do produto (ex: "Pasta de Amendoim") que sobrepunham a imagem na base.
+     - As avaliações de estrelas (ex: `★ 4.8`) foram movidas para a parte interna superior-direita do wrapper da imagem, estilizadas como um badge absoluto (`.product-rating-badge`) elegante com fundo branco, cantos arredondados e sombra suave.
+     - Mantivemos estritamente apenas o botão `"Conhecer produto"` na base da informação do produto.
+  4. **Responsividade**:
      - Grid 100% responsivo: no desktop os 7 cards dividem-se de forma fluida, e no mobile continuam com o comportamento de scroll horizontal por arrasto/touch.
 
 ---
