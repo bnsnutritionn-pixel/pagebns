@@ -1653,6 +1653,43 @@
     .product-img-wrapper.tf-caramel { background-color: #FCF1E1; }
     .product-img-wrapper.tf-green { background-color: #E3F2FD; }
 
+    @media (max-width: 767px) {
+      .true-foods-grid {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 10px 0;
+        scrollbar-width: none;
+        cursor: grab;
+        user-select: none;
+        -webkit-user-select: none;
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .true-foods-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .true-foods-grid .product-card {
+        width: 366px;
+        height: 546px;
+        flex: 0 0 366px;
+        scroll-snap-align: start;
+      }
+      .true-foods-grid .product-img-wrapper {
+        width: 366px;
+        height: 451px;
+        aspect-ratio: auto;
+      }
+      .true-foods-grid .product-flavor-badge {
+        left: 24px;
+        bottom: 24px;
+        width: 239px;
+      }
+    }
+
     /* ----------------------------------------------------
        9. BLOCO DEPOIMENTO DESTAQUE (FULL-WIDTH)
        ---------------------------------------------------- */
@@ -2132,6 +2169,10 @@
       margin-bottom: 20px;
     }
 
+    .footer-chevron {
+      display: none;
+    }
+
     .footer-col-links {
       list-style: none;
       display: flex;
@@ -2218,6 +2259,14 @@
     .formula-section {
       padding: 32px 0;
       background-color: var(--bg-white);
+    }
+
+    .formula-desktop-view {
+      display: block;
+    }
+
+    .formula-mobile-view {
+      display: none;
     }
 
     .formula-card {
@@ -2356,6 +2405,139 @@
         min-height: 280px;
       }
     }
+
+    @media (max-width: 767px) {
+      .formula-desktop-view {
+        display: none !important;
+      }
+      .formula-mobile-view {
+        display: block !important;
+      }
+      
+      .section-header-mobile {
+        margin-bottom: 24px;
+        text-align: left;
+      }
+      .section-header-mobile .section-title {
+        color: var(--text-dark);
+        margin-bottom: 4px;
+      }
+      .section-header-mobile .section-subtitle {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+      
+      .objectives-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      .objective-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--bg-beige-dark);
+        border-radius: 20px;
+        padding: 20px 24px;
+        height: 110px;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid rgba(0,0,0,0.02);
+      }
+      
+      .objective-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+      
+      .objective-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        z-index: 2;
+        max-width: 65%;
+      }
+      
+      .objective-name {
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #3C302F;
+        line-height: 1.2;
+      }
+      
+      .objective-desc {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        line-height: 1.3;
+      }
+      
+      .objective-img-wrapper {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 12px;
+        bottom: 0;
+        z-index: 1;
+      }
+      
+      .objective-img-wrapper img {
+        max-width: 100%;
+        max-height: 105%;
+        object-fit: contain;
+        transform: rotate(5deg);
+        filter: drop-shadow(0 8px 16px rgba(0,0,0,0.06));
+      }
+
+      /* Rodapé Acordeão */
+      .footer-links-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 32px;
+      }
+      .footer-links-grid > div {
+        border-bottom: 1px solid var(--border-color);
+      }
+      .footer-col-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 16px 0;
+        margin-bottom: 0 !important;
+      }
+      .footer-chevron {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        color: var(--text-muted);
+      }
+      .footer-col-links {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+        padding-bottom: 0;
+        gap: 8px;
+      }
+      .footer-links-grid > div.active {
+        border-bottom: 2px solid var(--primary);
+      }
+      .footer-links-grid > div.active .footer-chevron {
+        transform: rotate(180deg);
+        color: var(--primary);
+      }
+      .footer-links-grid > div.active .footer-col-links {
+        max-height: 250px;
+        padding-bottom: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2401,13 +2583,7 @@
             </svg>
             <span class="action-text">Precisa de<br>ajuda?</span>
           </a>
-          <!-- Carrinho -->
-          <a href="#" class="action-btn" id="cartBtn" title="Carrinho de Compras">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-            </svg>
-            <span class="cart-count" id="cartCounter">0</span>
-          </a>
+
           <!-- Menu Hamburger Mobile -->
           <button class="menu-toggle" id="menuToggleBtn">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -2744,30 +2920,87 @@
     <!-- 5. SEÇÃO NOVA FÓRMULA (Substituta de Artigos) -->
     <section class="formula-section">
       <div class="container">
-        <div class="formula-card">
-          <!-- Coluna Esquerda: Produto e Textos -->
-          <div class="formula-left-col">
-            <img id="formulaProductImg" src="formula-card/B-COMPLEX.png" alt="Complexo B" class="formula-product-img">
-            <h2 id="formulaTitle" class="formula-title">Complexo B</h2>
-            <p id="formulaDesc" class="formula-desc">Energia, foco e vitalidade metabólica. Fórmula ultra concentrada com todas as vitaminas essenciais do complexo B.</p>
-            <div class="formula-controls">
-              <a id="formulaCta" href="#" class="formula-btn-cta">Confira!</a>
-              <button id="formulaPrev" class="formula-nav-btn formula-nav-prev" aria-label="Fórmula Anterior">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
-                </svg>
-              </button>
-              <button id="formulaNext" class="formula-nav-btn formula-nav-next" aria-label="Próxima Fórmula">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
+        <!-- Visão Desktop: Carrossel Interativo -->
+        <div class="formula-desktop-view">
+          <div class="formula-card">
+            <!-- Coluna Esquerda: Produto e Textos -->
+            <div class="formula-left-col">
+              <img id="formulaProductImg" src="formula-card/B-COMPLEX.png" alt="Complexo B" class="formula-product-img">
+              <h2 id="formulaTitle" class="formula-title">Complexo B</h2>
+              <p id="formulaDesc" class="formula-desc">Energia, foco e vitalidade metabólica. Fórmula ultra concentrada com todas as vitaminas essenciais do complexo B.</p>
+              <div class="formula-controls">
+                <a id="formulaCta" href="#" class="formula-btn-cta">Confira!</a>
+                <button id="formulaPrev" class="formula-nav-btn formula-nav-prev" aria-label="Fórmula Anterior">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </button>
+                <button id="formulaNext" class="formula-nav-btn formula-nav-next" aria-label="Próxima Fórmula">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Coluna Direita: Imagem do Drink -->
+            <div class="formula-right-col">
+              <img id="formulaDrinkImg" src="formula-card-banners/b_complex_banner.png" alt="Bebida refrescante de Complexo B" class="formula-drink-img">
             </div>
           </div>
+        </div>
+
+        <!-- Visão Mobile: Lista de 4 Objetivos -->
+        <div class="formula-mobile-view">
+          <div class="section-header-mobile">
+            <h2 class="section-title">Encontre a sua fórmula</h2>
+            <p class="section-subtitle">De acordo com o seu objetivo</p>
+          </div>
           
-          <!-- Coluna Direita: Imagem do Drink -->
-          <div class="formula-right-col">
-            <img id="formulaDrinkImg" src="formula-card-banners/b_complex_banner.png" alt="Bebida refrescante de Complexo B" class="formula-drink-img">
+          <div class="objectives-list">
+            <!-- Card 1: Saúde e Imunidade -->
+            <a href="#categories" class="objective-card">
+              <div class="objective-info">
+                <h3 class="objective-name">Saúde e imunidade</h3>
+                <p class="objective-desc">O melhor do extrato de ativos naturais</p>
+              </div>
+              <div class="objective-img-wrapper">
+                <img src="formula-card/POLIVITAMÍNICO.png" alt="Saúde e Imunidade">
+              </div>
+            </a>
+
+            <!-- Card 2: Massa muscular -->
+            <a href="#categories" class="objective-card">
+              <div class="objective-info">
+                <h3 class="objective-name">Massa muscular</h3>
+                <p class="objective-desc">Proteínas puras e aminoácidos essenciais</p>
+              </div>
+              <div class="objective-img-wrapper">
+                <img src="canister-product.png" alt="Massa muscular">
+              </div>
+            </a>
+
+            <!-- Card 3: Energia -->
+            <a href="#categories" class="objective-card">
+              <div class="objective-info">
+                <h3 class="objective-name">Energia</h3>
+                <p class="objective-desc">Performance máxima e foco absoluto</p>
+              </div>
+              <div class="objective-img-wrapper">
+                <img src="formula-card/CAFEÍNA.png" alt="Energia">
+              </div>
+            </a>
+
+            <!-- Card 4: Saúde e bem-estar -->
+            <a href="#categories" class="objective-card">
+              <div class="objective-info">
+                <h3 class="objective-name">Saúde e bem-estar</h3>
+                <p class="objective-desc">Equilíbrio e suporte diário completo</p>
+              </div>
+              <div class="objective-img-wrapper">
+                <img src="formula-card/MAGNÉSIO MALATO.png" alt="Saúde e bem-estar">
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -2958,7 +3191,7 @@
           </a>
         </div>
 
-        <div class="true-foods-grid">
+        <div class="true-foods-grid" id="trueFoodsGrid">
           <!-- Card 1 (Rosa) -->
           <div class="product-card">
             <div class="product-img-wrapper tf-pink">
@@ -3299,7 +3532,12 @@
       <div class="footer-links-grid">
         <!-- Col 1 -->
         <div>
-          <h4 class="footer-col-title">Empresa</h4>
+          <h4 class="footer-col-title">
+            Empresa
+            <svg class="footer-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h4>
           <ul class="footer-col-links">
             <li><a href="#">Sobre nós</a></li>
             <li><a href="#">Blog</a></li>
@@ -3309,7 +3547,12 @@
         </div>
         <!-- Col 2 -->
         <div>
-          <h4 class="footer-col-title">Ajuda</h4>
+          <h4 class="footer-col-title">
+            Ajuda
+            <svg class="footer-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h4>
           <ul class="footer-col-links">
             <li><a href="#">FAQ</a></li>
             <li><a href="#">Frete</a></li>
@@ -3319,7 +3562,12 @@
         </div>
         <!-- Col 3 -->
         <div>
-          <h4 class="footer-col-title">Produtos</h4>
+          <h4 class="footer-col-title">
+            Produtos
+            <svg class="footer-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h4>
           <ul class="footer-col-links">
             <li><a href="#trueFoods">Whey Protein</a></li>
             <li><a href="#bestSellers">Creatina</a></li>
@@ -3330,7 +3578,12 @@
         </div>
         <!-- Col 4 -->
         <div>
-          <h4 class="footer-col-title">Contato</h4>
+          <h4 class="footer-col-title">
+            Contato
+            <svg class="footer-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h4>
           <ul class="footer-col-links">
             <li><a href="#">WhatsApp</a></li>
             <li><a href="#">Instagram</a></li>
@@ -3448,41 +3701,7 @@
       link.addEventListener('click', closeMenu);
     });
 
-    // 3. Simulação de Carrinho
-    const cartCounter = document.getElementById('cartCounter');
-    let cartItemsCount = 0;
 
-    document.querySelectorAll('.add-to-cart-btn, .tf-btn-cart').forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        cartItemsCount++;
-        cartCounter.textContent = cartItemsCount;
-        
-        // Pequena animação no contador de carrinho
-        cartCounter.style.transform = 'scale(1.3)';
-        setTimeout(() => {
-          cartCounter.style.transform = 'scale(1)';
-        }, 200);
-
-        // Feedback de sucesso
-        const originalText = button.innerHTML;
-        if (button.classList.contains('add-to-cart-btn') && !button.classList.contains('btn-primary') && !button.classList.contains('tf-btn-cart')) {
-          button.style.backgroundColor = 'var(--accent-green)';
-          button.style.color = '#fff';
-          button.innerHTML = '✓ Adicionado!';
-          setTimeout(() => {
-            button.style.backgroundColor = '';
-            button.style.color = '';
-            button.innerHTML = originalText;
-          }, 1000);
-        } else if (button.classList.contains('btn-primary')) {
-          button.innerHTML = '✓ Adicionado ao carrinho';
-          setTimeout(() => {
-            button.innerHTML = originalText;
-          }, 1000);
-        }
-      });
-    });
 
     // 3.1. Carrossel de 12 Fórmulas
     const formulaProducts = [
@@ -3652,9 +3871,13 @@
     const recGrid = document.getElementById('recGrid');
     enableDragScroll(recGrid);
 
-    // 6. Carrossel Avaliações Lifestyle (Scroll via click-and-drag)
+     // 6. Carrossel Avaliações Lifestyle (Scroll via click-and-drag)
     const reviewsGrid = document.getElementById('reviewsGrid');
     enableDragScroll(reviewsGrid);
+
+    // 6.1. Carrossel True Foods (Scroll via click-and-drag no mobile)
+    const trueFoodsGrid = document.getElementById('trueFoodsGrid');
+    enableDragScroll(trueFoodsGrid);
 
     // 7. Troca de Depoimentos Destaque (Carrossel Simulado)
     const tdQuotes = [
@@ -3799,6 +4022,23 @@
       closePdfModal.addEventListener('click', closeModal);
       pdfModalOverlay.addEventListener('click', closeModal);
     }
+
+    // 11. Rodapé Acordeão no Mobile
+    document.querySelectorAll('.footer-col-title').forEach(title => {
+      title.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          const parent = title.parentElement;
+          parent.classList.toggle('active');
+          
+          // Fechar os outros itens do acordeão
+          document.querySelectorAll('.footer-links-grid > div').forEach(item => {
+            if (item !== parent) {
+              item.classList.remove('active');
+            }
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
