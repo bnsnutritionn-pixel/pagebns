@@ -741,6 +741,41 @@
       }
     }
 
+    /* Utilitários de exibição para Banner Hero (Mobile / Desktop) */
+    .hero-desktop-only {
+      display: flex !important;
+    }
+
+    .hero-mobile-only {
+      display: none !important;
+    }
+
+    @media (max-width: 767px) {
+      .hero-desktop-only {
+        display: none !important;
+      }
+      .hero-mobile-only {
+        display: block !important;
+      }
+      .hero-banner-mobile-link {
+        display: block;
+        width: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition-smooth);
+      }
+      .hero-banner-mobile-link:hover {
+        transform: scale(1.01);
+      }
+      .hero-banner-mobile-link img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 24px;
+      }
+    }
+
     .hero-content {
       max-width: 580px;
       text-align: center;
@@ -2663,7 +2698,8 @@
     <!-- 2. BANNER HERO PRINCIPAL -->
     <section class="hero-section">
       <div class="container">
-        <div class="hero-banner-inner">
+        <!-- Banner Versão Desktop -->
+        <div class="hero-banner-inner hero-desktop-only">
           <!-- Textos Hero -->
           <div class="hero-content">
             <span class="hero-top-label">O Ritual Diário que Desperta a sua Verdade</span>
@@ -2692,6 +2728,11 @@
             <p class="hero-footer-text">*20% Off válido em toda a linha Dragon. Brindes não acumulativos e válidos enquanto durarem os estoques.</p>
           </div>
         </div>
+
+        <!-- Banner Versão Mobile -->
+        <a href="#bestSellers" class="hero-banner-mobile-link hero-mobile-only">
+          <img src="BANNER_MOBILE.webp" alt="Toda a linha Dragon com 20% Off - Kit Ritual do Treino a partir de R$ 319 e Intra-Treino ou Cúrcuma a partir de R$ 589">
+        </a>
       </div>
     </section>
 
