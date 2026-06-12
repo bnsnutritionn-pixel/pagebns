@@ -7,3 +7,5 @@ CAPA_CATALOGO_ORIGINAL.png
 __pycache__/
 *.pyc
 scratch/
+
+.vercel
