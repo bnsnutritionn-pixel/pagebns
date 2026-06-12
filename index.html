@@ -534,7 +534,7 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; /* Firefox */
-        padding: 12px 0;
+        padding: 14px 0;
         border-top: 1px solid var(--border-color);
         background-color: var(--bg-white);
       }
@@ -545,25 +545,37 @@
         display: flex !important;
         flex-wrap: nowrap !important;
         align-items: center;
-        gap: 16px;
         width: max-content;
         padding: 0 16px;
       }
       .nav-links {
-        display: contents; /* Mantém os itens como filhos diretos flex da nav-container */
+        display: flex !important; /* Torna nav-links um flex container no mobile */
+        flex-direction: row !important;
+        align-items: center;
+        gap: 20px; /* Menu fica junto/compacto como na referência */
+        list-style: none;
+        padding: 0;
+        margin: 0;
       }
-      .nav-links li, .nav-dot {
-        display: flex;
+      .nav-links li {
+        display: flex !important;
         align-items: center;
         white-space: nowrap !important;
         flex-shrink: 0;
       }
+      .nav-links a {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        color: var(--text-dark) !important;
+      }
+      .nav-links a.promo-link {
+        color: var(--primary) !important;
+      }
       .btn-all-products {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-        height: 36px;
-        flex-shrink: 0;
-        box-shadow: none;
+        display: none !important; /* Remove "Todos os produtos" da versão mobile */
+      }
+      .nav-dot {
+        display: none !important; /* Remove os pontos separadores */
       }
     }
 
