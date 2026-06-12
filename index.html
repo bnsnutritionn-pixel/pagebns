@@ -1739,10 +1739,28 @@
       aspect-ratio: 366 / 451;
     }
 
-    .true-foods-grid .product-flavor-badge {
-      left: 16px;
-      bottom: 16px;
-      width: calc(100% - 32px);
+    .true-foods-grid .product-rating-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background-color: var(--bg-white);
+      padding: 6px 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #FFB300;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      z-index: 2;
+    }
+
+    .true-foods-grid .product-rating-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: #FFB300;
+      margin: 0;
     }
 
     .product-img-wrapper.tf-pink { background-color: #FFF0F2; }
@@ -1782,11 +1800,6 @@
         width: 366px;
         height: 451px;
         aspect-ratio: auto;
-      }
-      .true-foods-grid .product-flavor-badge {
-        left: 24px;
-        bottom: 24px;
-        width: 239px;
       }
     }
 
@@ -3302,19 +3315,12 @@
           <div class="product-card">
             <div class="product-img-wrapper tf-pink">
               <img src="foods/001.webp" alt="Pasta de Amendoim BNS+">
-              <div class="product-flavor-badge">Pasta de Amendoim</div>
+              <div class="product-rating-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>4.8</span>
+              </div>
             </div>
             <div class="product-info">
-              <div class="product-meta-row">
-                <div class="product-prices">
-                  <span class="price-old">R$ 34,90</span>
-                  <span class="price-current">R$ 29,66</span>
-                </div>
-                <div class="product-rating-inline">
-                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <span>4.8</span>
-                </div>
-              </div>
               <button class="add-to-cart-btn">
                 Conhecer produto
               </button>
@@ -3325,19 +3331,12 @@
           <div class="product-card">
             <div class="product-img-wrapper tf-chocolate">
               <img src="foods/002.webp" alt="Proteína em Barra BNS+">
-              <div class="product-flavor-badge">Proteína em Barra</div>
+              <div class="product-rating-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>4.7</span>
+              </div>
             </div>
             <div class="product-info">
-              <div class="product-meta-row">
-                <div class="product-prices">
-                  <span class="price-old">R$ 14,90</span>
-                  <span class="price-current">R$ 12,66</span>
-                </div>
-                <div class="product-rating-inline">
-                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <span>4.7</span>
-                </div>
-              </div>
               <button class="add-to-cart-btn">
                 Conhecer produto
               </button>
@@ -3348,19 +3347,12 @@
           <div class="product-card">
             <div class="product-img-wrapper tf-caramel">
               <img src="foods/003.webp" alt="Granola Proteica BNS+">
-              <div class="product-flavor-badge">Granola Proteica</div>
+              <div class="product-rating-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>3.9</span>
+              </div>
             </div>
             <div class="product-info">
-              <div class="product-meta-row">
-                <div class="product-prices">
-                  <span class="price-old">R$ 29,90</span>
-                  <span class="price-current">R$ 25,42</span>
-                </div>
-                <div class="product-rating-inline">
-                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <span>3.9</span>
-                </div>
-              </div>
               <button class="add-to-cart-btn">
                 Conhecer produto
               </button>
@@ -3371,19 +3363,12 @@
           <div class="product-card">
             <div class="product-img-wrapper tf-green">
               <img src="foods/004.webp" alt="Bebida Proteica Matcha BNS+">
-              <div class="product-flavor-badge">Bebida Proteica</div>
+              <div class="product-rating-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>4.5</span>
+              </div>
             </div>
             <div class="product-info">
-              <div class="product-meta-row">
-                <div class="product-prices">
-                  <span class="price-old">R$ 18,90</span>
-                  <span class="price-current">R$ 16,06</span>
-                </div>
-                <div class="product-rating-inline">
-                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <span>4.5</span>
-                </div>
-              </div>
               <button class="add-to-cart-btn">
                 Conhecer produto
               </button>
@@ -3394,19 +3379,12 @@
           <div class="product-card">
             <div class="product-img-wrapper tf-purple">
               <img src="foods/005.webp" alt="Cookies Proteicos BNS+">
-              <div class="product-flavor-badge">Cookies Proteicos</div>
+              <div class="product-rating-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>4.6</span>
+              </div>
             </div>
             <div class="product-info">
-              <div class="product-meta-row">
-                <div class="product-prices">
-                  <span class="price-old">R$ 19,90</span>
-                  <span class="price-current">R$ 16,91</span>
-                </div>
-                <div class="product-rating-inline">
-                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <span>4.6</span>
-                </div>
-              </div>
               <button class="add-to-cart-btn">
                 Conhecer produto
               </button>
@@ -3417,19 +3395,12 @@
           <div class="product-card">
             <div class="product-img-wrapper tf-orange">
               <img src="foods/006.webp" alt="Creme de Avelã Proteico BNS+">
-              <div class="product-flavor-badge">Creme de Avelã</div>
+              <div class="product-rating-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>4.9</span>
+              </div>
             </div>
             <div class="product-info">
-              <div class="product-meta-row">
-                <div class="product-prices">
-                  <span class="price-old">R$ 39,90</span>
-                  <span class="price-current">R$ 33,91</span>
-                </div>
-                <div class="product-rating-inline">
-                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <span>4.9</span>
-                </div>
-              </div>
               <button class="add-to-cart-btn">
                 Conhecer produto
               </button>
@@ -3440,19 +3411,12 @@
           <div class="product-card">
             <div class="product-img-wrapper tf-yellow">
               <img src="foods/007.webp" alt="Chips de Coco BNS+">
-              <div class="product-flavor-badge">Chips de Coco</div>
+              <div class="product-rating-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>4.4</span>
+              </div>
             </div>
             <div class="product-info">
-              <div class="product-meta-row">
-                <div class="product-prices">
-                  <span class="price-old">R$ 12,90</span>
-                  <span class="price-current">R$ 10,96</span>
-                </div>
-                <div class="product-rating-inline">
-                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <span>4.4</span>
-                </div>
-              </div>
               <button class="add-to-cart-btn">
                 Conhecer produto
               </button>
