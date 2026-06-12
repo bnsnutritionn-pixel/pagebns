@@ -185,3 +185,21 @@ Para atender à solicitação de que a navegação e rolagens automáticas surta
    - Implementado um tratador de eventos em JS para todos os links do menu drawer do mobile (`.mobile-menu-links a`).
    - Quando um link é clicado, o drawer inicia seu fechamento deslizante (que leva 300ms) e é executado um `setTimeout` de 300ms antes de rolar. Isso evita engasgos e reposicionamentos incorretos durante a transição do menu.
    - O cálculo de rolagem é dinâmico: `targetElement.getBoundingClientRect().top + window.scrollY - headerHeight`, garantindo precisão milimétrica em qualquer resolução.
+
+---
+
+## 📱 Banner Hero Exclusivo para Versão Mobile
+
+Conforme solicitado, substituímos a exibição de textos em HTML sobrepostos no mobile por uma versão otimizada e de alta fidelidade baseada na imagem enviada pelo usuário:
+
+1. **Conversão e Otimização para WebP**:
+   - Localizamos o arquivo `BANNER_MOBILE.png` na raiz do projeto.
+   - Convertemos a imagem para o formato moderno `BANNER_MOBILE.webp` via Python/Pillow com qualidade `85%`.
+   - O tamanho do arquivo foi reduzido para apenas **25.5 KB** (~26KB), garantindo o carregamento instantâneo no mobile.
+   - Removemos a imagem `.png` original do repositório para manter a pasta limpa.
+
+2. **Exibição Responsiva via CSS/HTML**:
+   - Criamos duas classes utilitárias de exibição: `.hero-desktop-only` e `.hero-mobile-only`.
+   - Em telas mobile (largura menor que `768px`), o banner em HTML com textos e botão dinâmicos é ocultado completamente. Em seu lugar, é renderizada a imagem otimizada `BANNER_MOBILE.webp`.
+   - Para manter a experiência de compra, a imagem inteira do banner no mobile funciona como um link clicável apontando diretamente para `#bestSellers`.
+   - A imagem possui cantos arredondados (`border-radius: 24px`) e sombra sutil (`box-shadow`), integrando-se organicamente ao design.
