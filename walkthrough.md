@@ -161,15 +161,34 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 
 ---
 
-## 📱 Banner Hero Exclusivo para Versão Mobile (VERSAO_MOBILE.webp - Alta Qualidade)
-- Para solucionar o problema de qualidade do banner de capa no mobile, adotamos um processo de aprimoramento de densidade de pixels:
-  1. **Upscaling por Lanczos (3x Densidade)**:
-     - O arquivo original `VERSAO_MOBILE.png` foi processado em Python e redimensionado para **`990x1155`** pixels (três vezes a resolução anterior) utilizando a interpolação Lanczos.
-     - Isso cria pixels físicos extras para serem lidos pelas telas Retina e de alta definição (High-DPI) do mobile, removendo completamente a aparência embaçada/pixelada sem estourar o tamanho do arquivo.
-     - Convertemos a imagem final para WebP com qualidade de **`95%`**, resultando em um arquivo super nítido de apenas **144 KB**.
-  2. **Exibição Responsiva via CSS/HTML**:
-     - O banner em HTML com textos sobrepostos é ocultado no mobile, dando lugar ao `VERSAO_MOBILE.webp` em alta definição.
-     - A imagem inteira é encapsulada em um link ativo que aponta diretamente para a seção `#bestSellers`.
+## 📱 Banner Hero Exclusivo para Versão Mobile (VERSAO_MOBILE_ALTA.webp - Alta Qualidade)
+- Para solucionar definitivamente a questão de resolução do banner mobile:
+  1. **Conversão e Otimização**:
+     - O arquivo de alta resolução `VERSAO_MOBILE_ALTA.png` (3MB) foi processado e salvo como `VERSAO_MOBILE_ALTA.webp` com largura limitada a `1000px` (proporção mantida), garantindo nitidez impecável em telas Retina de smartphones.
+     - O tamanho final do arquivo foi reduzido para apenas **113 KB** (otimização de ~96%).
+  2. **Substituição no HTML**:
+     - Atualizada a tag de imagem do banner mobile em [index.html](file:///E:/LANDING%20PAGE%20BNS/index.html) para apontar para `VERSAO_MOBILE_ALTA.webp`.
+
+---
+
+## 🥗 Seção True Foods Expandida (7 Cards & Fotos Reais)
+- A seção **True Foods (Bloco 8)** foi reestruturada para exibir **7 cards ao todo** (uma adição de 3 novos cards):
+  1. **Fotos Reais e Otimizadas**:
+     - As 7 imagens fornecidas na pasta `foods/` (de 500KB a 10MB) foram redimensionadas para largura máxima de `800px` e convertidas para WebP.
+     - O tamanho total das fotos caiu de ~35MB para apenas **~440KB** somados (redução de 98.7% no peso dos arquivos), otimizando drasticamente a velocidade de carregamento.
+  2. **Paleta de Cores Pastéis Ampliada**:
+     - Criamos novas classes CSS (`.tf-purple`, `.tf-orange`, `.tf-yellow`) com fundos pastéis harmônicos para os 3 novos produtos.
+  3. **Identidade dos Produtos**:
+     - **Card 1 (Rosa - tf-pink)**: `foods/001.webp` - Pasta de Amendoim BNS+ (R$ 29,66)
+     - **Card 2 (Chocolate - tf-chocolate)**: `foods/002.webp` - Proteína em Barra BNS+ (R$ 12,66)
+     - **Card 3 (Caramelo - tf-caramel)**: `foods/003.webp` - Granola Proteica BNS+ (R$ 25,42)
+     - **Card 4 (Verde - tf-green)**: `foods/004.webp` - Bebida Proteica Matcha BNS+ (R$ 16,06)
+     - **Card 5 (Roxo - tf-purple)**: `foods/005.webp` - Cookies Proteicos BNS+ (R$ 16,91) [NOVO]
+     - **Card 6 (Laranja - tf-orange)**: `foods/006.webp` - Creme de Avelã Proteico BNS+ (R$ 33,91) [NOVO]
+     - **Card 7 (Amarelo - tf-yellow)**: `foods/007.webp` - Chips de Coco BNS+ (R$ 10,96) [NOVO]
+  4. **Preservação de Regras**:
+     - Todos os cards novos utilizam o botão `"Conhecer produto"`, sem fluxo de carrinho direto ("adicionar à sacola").
+     - Grid 100% responsivo: no desktop os 7 cards dividem-se de forma fluida, e no mobile continuam com o comportamento de scroll horizontal por arrasto/touch.
 
 ---
 
