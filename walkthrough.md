@@ -162,12 +162,26 @@ A seção de **Destaque de Produto Hero (Bloco 6)** foi atualizada para promover
 1. **Alteração de Mídia**:
    - Substituído o placeholder anterior pela imagem real do pote do produto [CABELO, PELE E UNHA.png](file:///E:/LANDING%20PAGE%20BNS/formula-card/CABELO,%20PELE%20E%20UNHA.png), posicionada perfeitamente acima do círculo de fundo da seção.
 2. **Atualização Textual & Benefícios**:
-   - Título alterado para "Cabelo, Pele & Unhas" com o subtítulo "Brilho, Força e Elasticidade".
-   - Descrição reescrita destacando a sinergia entre a biotina concentrada, colágeno hidrolisado e minerais quelatos.
-   - Lista de diferenciais atualizada para:
-     - *Estimula a produção de colágeno*
-     - *Fios mais fortes e menos queda*
-     - *Fortalecimento profundo das unhas*
-     - *Fórmula pura com biotina e quelatos*
-   - Preço no botão ajustado de forma atrativa para **R$ 89,90**.
+    - Título alterado para "Cabelo, Pele & Unhas" com o subtítulo "Brilho, Força e Elasticidade".
+    - Descrição reescrita destacando a sinergia entre a biotina concentrada, colágeno hidrolisado e minerais quelatos.
+    - Lista de diferenciais atualizada para:
+      - *Estimula a produção de colágeno*
+      - *Fios mais fortes e menos queda*
+      - *Fortalecimento profundo das unhas*
+      - *Fórmula pura com biotina e quelatos*
+    - Preço no botão ajustado de forma atrativa para **R$ 89,90**.
 
+---
+
+## ⚓ Rolagem Suave com Offset para Menu Desktop e Mobile
+
+Para atender à solicitação de que a navegação e rolagens automáticas surtam efeito perfeito também na versão mobile:
+
+1. **Ajuste de Margem de Rolagem (CSS scroll-margin-top)**:
+   - Adicionada a propriedade `scroll-margin-top: 130px` no desktop e `90px` no mobile para as seções `#bestSellers`, `#productHero`, `#trueFoods`, `#categories`, `#reviews` e `#recommended`.
+   - Isso garante que a rolagem nativa deixe um espaçamento adequado no topo, impedindo que a barra de cabeçalho fixa/sticky cubra os títulos das seções ao rolar a página.
+
+2. **Interceptador de Cliques do Menu Drawer (JavaScript)**:
+   - Implementado um tratador de eventos em JS para todos os links do menu drawer do mobile (`.mobile-menu-links a`).
+   - Quando um link é clicado, o drawer inicia seu fechamento deslizante (que leva 300ms) e é executado um `setTimeout` de 300ms antes de rolar. Isso evita engasgos e reposicionamentos incorretos durante a transição do menu.
+   - O cálculo de rolagem é dinâmico: `targetElement.getBoundingClientRect().top + window.scrollY - headerHeight`, garantindo precisão milimétrica em qualquer resolução.
