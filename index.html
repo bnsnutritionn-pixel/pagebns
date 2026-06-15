@@ -539,15 +539,70 @@
 
     @media (max-width: 1023px) {
       .header-main {
-        padding: 10px 0 !important;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0 !important;
+        transition: padding 0.3s ease;
       }
+      .logo {
+        order: 1;
+        width: 110px !important;
+        transition: width 0.3s ease;
+      }
+      .logo img {
+        max-width: 110px !important;
+        transition: max-width 0.3s ease;
+      }
+      .header-actions {
+        order: 2;
+      }
+      .search-bar {
+        order: 3;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 10px 0 0 0 !important;
+        flex: 0 0 100% !important;
+        transition: all 0.3s ease;
+      }
+      .search-bar input {
+        height: 44px !important;
+        transition: height 0.3s ease;
+      }
+
+      /* Mobile Scrolled Layout - Single Row Collapse */
+      .header-wrapper.scrolled .header-main {
+        flex-wrap: nowrap !important;
+        padding: 8px 0 !important;
+      }
+      .header-wrapper.scrolled .logo {
+        width: 85px !important;
+      }
+      .header-wrapper.scrolled .logo img {
+        max-width: 85px !important;
+      }
+      .header-wrapper.scrolled .search-bar {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        margin: 0 12px !important;
+      }
+      .header-wrapper.scrolled .search-bar input {
+        height: 38px !important;
+      }
+      .header-wrapper.scrolled .header-nav {
+        display: none !important;
+      }
+
       .header-nav {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; /* Firefox */
-        padding: 14px 0;
+        padding: 12px 0;
         border-top: 1px solid var(--border-color);
         background-color: var(--bg-white);
+        transition: all 0.3s ease;
       }
       .header-nav::-webkit-scrollbar {
         display: none; /* Chrome/Safari */
