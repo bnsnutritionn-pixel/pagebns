@@ -596,9 +596,7 @@
       }
 
       .header-nav {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
+        overflow: visible !important;
         padding: 12px 0;
         border-top: 1px solid var(--border-color);
         background-color: var(--bg-white);
@@ -609,19 +607,21 @@
       }
       .nav-container {
         display: flex !important;
-        flex-wrap: nowrap !important;
+        flex-wrap: wrap !important;
         align-items: center;
-        width: max-content;
-        padding: 0 16px;
+        width: 100% !important;
+        padding: 0 !important;
       }
       .nav-links {
-        display: flex !important; /* Torna nav-links um flex container no mobile */
+        display: flex !important;
         flex-direction: row !important;
+        flex-wrap: wrap !important;
         align-items: center;
-        gap: 12px; /* Menu fica junto/compacto como na referência */
+        gap: 8px 16px !important;
         list-style: none;
         padding: 0;
         margin: 0;
+        width: 100% !important;
       }
       .nav-links li {
         display: flex !important;
@@ -1197,9 +1197,9 @@
       position: relative;
       scroll-snap-align: start;
       transition: var(--transition-smooth);
-      width: 366px;
-      height: 546px;
-      flex: 0 0 366px;
+      width: 290px;
+      height: 440px;
+      flex: 0 0 290px;
       box-sizing: border-box;
       overflow: hidden;
     }
@@ -1215,8 +1215,8 @@
     .product-img-wrapper {
       background-color: var(--bg-beige);
       border-radius: 20px 20px 0 0;
-      width: 366px;
-      height: 451px;
+      width: 290px;
+      height: 340px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1235,13 +1235,13 @@
 
     .product-flavor-badge {
       position: absolute;
-      bottom: 24px;
-      left: 24px;
-      width: 239px;
+      bottom: 20px;
+      left: 15px;
+      width: calc(100% - 30px);
       height: 32px;
       background-color: var(--bg-white);
       color: var(--primary);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       border-radius: 50px;
       white-space: nowrap;
@@ -1441,82 +1441,104 @@
     /* ----------------------------------------------------
        6. DESTAQUE DE PRODUTO HERO (FULL-WIDTH)
        ---------------------------------------------------- */
-    .product-hero-section {
-      background-color: var(--bg-beige);
-      padding: 32px 0;
-      position: relative;
-      overflow: hidden;
+        .product-hero-section {
+      background-color: var(--bg-white);
+      padding: 48px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .product-hero-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: center;
-      gap: 48px;
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      background-color: #FAF5F0;
+      border-radius: 32px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.03);
     }
 
-    @media (min-width: 1024px) {
-      .product-hero-container {
-        grid-template-columns: 1.2fr 0.8fr;
-      }
+    .product-hero-image-wrapper {
+      width: 100%;
+      height: 340px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .product-hero-image-wrapper:hover img {
+      transform: scale(1.03);
+    }
+
+    .product-hero-circle-bg {
+      display: none;
     }
 
     .product-hero-content {
-      position: relative;
-      z-index: 2;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .product-hero-tag {
       font-family: var(--font-heading);
       font-weight: 700;
-      color: var(--primary);
+      color: #FF5E14;
       letter-spacing: 2px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       margin-bottom: 12px;
       display: block;
     }
 
     .product-hero-title {
-      font-family: var(--font-serif);
-      font-size: 2.6rem;
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--text-dark);
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .product-hero-title {
-        font-size: 3.4rem;
-      }
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #3C302F;
+      margin-bottom: 12px;
     }
 
     .product-hero-title span {
       display: block;
-      font-family: var(--font-body);
-      font-weight: 800;
-      font-size: 1.8rem;
-      color: var(--primary);
-      letter-spacing: -1px;
-      margin-top: -5px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 4px;
+      letter-spacing: 0;
     }
 
     .product-hero-desc {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      max-width: 600px;
+      font-size: 0.95rem;
+      color: #5C5248;
+      margin-bottom: 24px;
+      line-height: 1.45;
+      max-width: 100%;
     }
 
     .product-hero-benefits {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
-      margin-bottom: 36px;
+      gap: 12px;
+      width: 100%;
+      margin-bottom: 28px;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 480px) {
       .product-hero-benefits {
         grid-template-columns: 1fr 1fr;
       }
@@ -1525,49 +1547,83 @@
     .benefit-tag {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       background: var(--bg-white);
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-size: 0.88rem;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.8rem;
       font-weight: 600;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.02);
     }
 
     .benefit-tag svg {
-      width: 20px;
-      height: 20px;
-      color: var(--primary);
+      width: 16px;
+      height: 16px;
+      color: #FF5E14;
       flex-shrink: 0;
     }
 
-    .product-hero-image-wrapper {
+    .product-hero-footer {
       display: flex;
-      justify-content: center;
-      position: relative;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      margin-top: 8px;
     }
 
-    .product-hero-image-wrapper img {
-      z-index: 2;
-      width: 90%;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
+    .product-hero-footer .btn-cta-hero {
+      background-color: #FF5E14;
+      color: var(--bg-white);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(255, 94, 20, 0.25);
       transition: var(--transition-smooth);
+      border: none;
+      cursor: pointer;
     }
 
-    .product-hero-image-wrapper:hover img {
-      transform: translateY(-8px) rotate(-1deg);
+    .product-hero-footer .btn-cta-hero:hover {
+      background-color: #E04D0A;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255, 94, 20, 0.35);
     }
 
-    .product-hero-circle-bg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 320px;
-      height: 320px;
+    .product-hero-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .product-hero-nav-btn {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background-color: var(--bg-beige-dark);
-      z-index: 1;
+      background-color: var(--bg-white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3C302F;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .product-hero-nav-btn:hover {
+      background-color: #FAF5F0;
+      color: #FF5E14;
+      transform: translateY(-1px);
+    }
+
+    .product-hero-nav-btn svg {
+      width: 18px;
+      height: 18px;
     }
 
     /* ----------------------------------------------------
@@ -1631,13 +1687,13 @@
       overflow: hidden;
       position: relative;
       scroll-snap-align: start;
-      width: 376px;
-      height: 668px;
-      flex: 0 0 376px;
+      width: 290px;
+      height: 520px;
+      flex: 0 0 290px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 24px;
+      padding: 20px;
       border: 1px solid var(--border-color);
       transition: var(--transition-smooth);
       box-sizing: border-box;
@@ -1763,9 +1819,10 @@
 
     @media (max-width: 480px) {
       .review-card-lifestyle {
-        flex: 0 0 85vw;
-        height: 500px;
+        flex: 0 0 290px;
+        height: 520px;
         padding: 16px;
+        max-width: 85vw;
       }
       .review-username {
         top: 16px;
@@ -2638,32 +2695,41 @@
       }
       
       .objective-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: var(--bg-beige-dark);
+        display: flex !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
+        background-color: transparent !important;
         border-radius: 20px;
-        padding: 20px 24px;
-        height: 110px;
+        height: 120px;
         text-decoration: none;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.06);
+        padding: 0 !important;
         position: relative;
-        border: 1px solid rgba(0,0,0,0.02);
       }
       
       .objective-card:hover {
         transform: translateY(-2px);
-        box-shadow: var(--shadow-sm);
+        box-shadow: var(--shadow-md);
       }
       
       .objective-info {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 4px;
         z-index: 2;
-        max-width: 65%;
+        flex: 1 1 60%;
+        padding: 16px 20px;
+        text-align: left;
+        box-sizing: border-box;
       }
+      
+      .objective-card:nth-child(1) .objective-info { background-color: #F8B182; } /* Peach/Orange */
+      .objective-card:nth-child(2) .objective-info { background-color: #FAF6F0; } /* Cream */
+      .objective-card:nth-child(3) .objective-info { background-color: #FDE4C3; } /* Soft Yellow */
+      .objective-card:nth-child(4) .objective-info { background-color: #FAF6F0; } /* Cream */
       
       .objective-name {
         font-family: var(--font-heading);
@@ -2675,28 +2741,31 @@
       
       .objective-desc {
         font-size: 0.8rem;
-        color: var(--text-muted);
+        color: #5C5248;
         line-height: 1.3;
       }
       
       .objective-img-wrapper {
-        width: 100px;
-        height: 100px;
+        flex: 0 0 40%;
+        background-color: #FFFFFF;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: absolute;
-        right: 12px;
-        bottom: 0;
-        z-index: 1;
+        position: relative !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: auto !important;
+        height: auto !important;
+        overflow: hidden;
+        border-left: 1px solid rgba(0,0,0,0.03);
       }
       
       .objective-img-wrapper img {
-        max-width: 100%;
-        max-height: 105%;
-        object-fit: contain;
-        transform: rotate(5deg);
-        filter: drop-shadow(0 8px 16px rgba(0,0,0,0.06));
+        max-width: 90% !important;
+        max-height: 90% !important;
+        object-fit: contain !important;
+        transform: none !important;
+        filter: none !important;
       }
 
       /* Rodapé Acordeão */
@@ -3205,7 +3274,11 @@
     <section class="product-hero-section" id="productHero">
       <div class="container">
         <div class="product-hero-container">
-          <!-- Textos -->
+          <!-- Imagem Destaque -->
+          <div class="product-hero-image-wrapper">
+            <img src="formula-card-banners/cabelo_pele_unha_banner.webp" alt="Suplemento Cabelo, Pele e Unhas BNS+">
+          </div>
+          <!-- Textos e Conteúdo -->
           <div class="product-hero-content">
             <span class="product-hero-tag">Destaque da Semana</span>
             <h2 class="product-hero-title">Cabelo, Pele & Unhas <span>Brilho, Força e Elasticidade</span></h2>
@@ -3238,17 +3311,24 @@
               </div>
             </div>
 
-            <button class="btn-primary add-to-cart-btn">
-              Conhecer produto
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-              </svg>
-            </button>
-          </div>
-          <!-- Imagem Destaque -->
-          <div class="product-hero-image-wrapper">
-            <div class="product-hero-circle-bg"></div>
-            <img src="formula-card/CABELO, PELE E UNHA.webp" alt="Suplemento Cabelo, Pele e Unhas BNS+">
+            <!-- Footer do Card (Botão CTA e Setas de Navegação) -->
+            <div class="product-hero-footer">
+              <button class="btn-cta-hero add-to-cart-btn">
+                Conhecer produto
+              </button>
+              <div class="product-hero-nav">
+                <button class="product-hero-nav-btn" aria-label="Anterior">
+                  <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </button>
+                <button class="product-hero-nav-btn" aria-label="Próximo">
+                  <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
