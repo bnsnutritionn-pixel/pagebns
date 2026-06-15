@@ -203,7 +203,12 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 ## 🎨 Outros Ajustes Mobile Premium
 1. **Logo Otimizada**:
    * O arquivo da logomarca `logo_blue.webp` foi recortado via script para remover bordas transparentes desnecessárias no topo e na base (reduzido de `1920x933` para `1735x791`).
-   * Reduzimos a altura e o padding vertical do contêiner do cabeçalho `.header-main` no mobile para **`10px`**, deixando o header muito mais limpo e compacto.
-2. **Ícones de Categorias de 85px**:
-   * Redimensionamos os círculos das categorias no mobile de `60px` para **`85px`** de diâmetro para maior visibilidade.
+2. **Colapso do Cabeçalho Mobile ao Rolar (Scrolled)**:
+   * **Estado Padrão**: A barra de busca fica em uma segunda linha dedicada, facilitando buscas rápidas no topo, enquanto o logo e os botões de ação ficam na primeira linha.
+   * **Estado Scrolled**: Ao rolar a página para baixo, o cabeçalho se contrai de **duas linhas para uma única linha compacta**:
+     * A logo é redimensionada suavemente para **`85px`**.
+     * A barra de busca se transforma em um campo compacto no centro da linha (`height: 38px`).
+     * O menu secundário de navegação horizontal (Mais Vendidos, Catálogo, etc.) é ocultado temporariamente para liberar o espaço de tela útil de leitura.
+3. **Ícones de Categorias com 85px**:
+   * Redimensionamos os círculos das categorias no mobile para **`85px`** de diâmetro para maior visibilidade.
    * Ajustamos os ícones internos (SVGs) para **`36px`** e o tamanho do card para **`100px`** de largura, mantendo a proporção ideal.
