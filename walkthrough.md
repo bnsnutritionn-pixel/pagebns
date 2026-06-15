@@ -20,13 +20,12 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 1. **Header Fixo**:
    - Barra superior promocional com anúncio de frete grátis (personalizado para compras acima de R$ 99).
    - Logomarca principal apontando para o arquivo de imagem personalizado `logo_blue.png` com dimensões e proporções otimizadas via CSS.
-   - Barra de pesquisa integrada (com lupa SVG).
    - Ícones de ações atualizados com rótulos de texto no desktop ("Faça seu login ou cadastre-se" ao lado de Usuário, "Precisa de ajuda?" ao lado do ícone de Ajuda adicionado, e contador na Sacola).
    - Sub-menu de navegação contendo o botão de destaque "**Todos os produtos**" em azul à esquerda, links alinhados à referência (`Compre por objetivo`, `Mais Vendidos`, `Lançamentos`, `Destaque da Semana`, `GLP-1 Support`, `Assinatura`), pequenos **separadores de bolinhas cinzas (`•`)** com espaçamento ajustado de `16px`, e ícone de chevron na categoria `Compre por objetivo`.
    - Menu mobile drawer adaptado com a mesma lista de links correspondente.
-   - **Comportamento Scrolled / Fixo (Novo)**: Ao rolar a página para baixo, o cabeçalho se contrai de duas linhas para **uma única linha ultra compacta**, alinhada perfeitamente com a referência visual:
-     - Reordena dinamicamente os elementos usando Flexbox e `display: contents` no CSS, sem alterar a estrutura do DOM.
-     - A ordem dos elementos torna-se: `Logo` | `Todos os produtos` | `Compre por objetivo` (com chevron) | `Assinatura` | `Barra de Busca` (em formato de pílula compacta de fundo bege `#F5F0EB` e ícone de lupa alinhado à direita) | `Ações do Header` (Minha Conta, Ajuda e Sacola de compras).
+   - **Comportamento Scrolled / Fixo (Novo)**: Ao rolar a página para baixo, o cabeçalho se contrai de forma ultra compacta, alinhado perfeitamente com a referência visual:
+     - Reordena dinamicamente os elementos usando Flexbox and `display: contents` no CSS, sem alterar a estrutura do DOM.
+     - A ordem dos elementos torna-se: `Logo` | `Todos os produtos` | `Compre por objetivo` (com chevron) | `Assinatura` | `Ações do Header` (Minha Conta, Ajuda e Sacola de compras).
      - Oculta de forma inteligente os links intermediários (`Mais Vendidos`, `Lançamentos`, `Destaque da Semana`, `GLP-1 Support`) e os pontos separadores.
      - Esconde o botão de Favoritos e o texto dos ícones de login e ajuda em resoluções abaixo de `1200px` para evitar sobreposições, mantendo o cabeçalho 100% responsivo e elegante.
 
@@ -204,10 +203,9 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 1. **Logo Otimizada**:
    * O arquivo da logomarca `logo_blue.webp` foi recortado via script para remover bordas transparentes desnecessárias no topo e na base (reduzido de `1920x933` para `1735x791`).
 2. **Colapso do Cabeçalho Mobile ao Rolar (Scrolled)**:
-   * **Estado Padrão**: A barra de busca fica em uma segunda linha dedicada, facilitando buscas rápidas no topo, enquanto o logo e os botões de ação ficam na primeira linha.
-   * **Estado Scrolled**: Ao rolar a página para baixo, o cabeçalho se contrai de **duas linhas para uma única linha compacta**:
+   * **Estado Padrão**: Layout limpo com a logo e os botões de ação no topo, e o menu de navegação de categorias secundárias logo abaixo.
+   * **Estado Scrolled**: Ao rolar a página para baixo, o cabeçalho se contrai para uma única linha ultra compacta:
      * A logo é redimensionada suavemente para **`85px`**.
-     * A barra de busca se transforma em um campo compacto no centro da linha (`height: 38px`).
      * O menu secundário de navegação horizontal (Mais Vendidos, Catálogo, etc.) é ocultado temporariamente para liberar o espaço de tela útil de leitura.
 3. **Ícones de Categorias com 85px**:
    * Redimensionamos os círculos das categorias no mobile para **`85px`** de diâmetro para maior visibilidade.
