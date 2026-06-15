@@ -193,7 +193,17 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
      - Ocultamos completamente o botão azul `"Todos os produtos"` (`.btn-all-products`) no mobile para evitar poluição visual.
      - Removemos todos os círculos/pontos separadores (`.nav-dot`) para manter o menu clean.
   2. **Agrupamento e Espaçamento (CSS)**:
-     - Modificamos a classe `.nav-links` no mobile para se comportar como um contêiner flex (`display: flex !important; flex-direction: row !important; gap: 20px`).
-     - O critério de rolagem e toque aproxima as opções de navegação (`Mais Vendidos`, `Destaque da Semana`, `Foods`, `Catálogo`), agrupando-as lateralmente de forma compacta como na referência.
-     - A tipografia foi atualizada para uma cor escura premium (`var(--text-dark)`) com peso negrito (`600`) para melhor leitura.
+     - Modificamos a classe `.nav-links` no mobile para se comportar como um contêiner flex (`display: flex !important; flex-direction: row !important; gap: 12px;`).
+     - Removemos completamente os círculos cinzas separadores (`.nav-dot` / `li.nav-dot`) na versão mobile para melhor aproveitamento do espaço.
+     - A tipografia dos links foi reduzida para **`0.8rem`** e peso **`600`**, aproximando as opções e permitindo que mais itens apareçam simultaneamente na tela.
      - A navegação secundária permanece scrollável horizontalmente sem quebras de linha em qualquer dispositivo móvel.
+
+---
+
+## 🎨 Outros Ajustes Mobile Premium
+1. **Logo Otimizada**:
+   * O arquivo da logomarca `logo_blue.webp` foi recortado via script para remover bordas transparentes desnecessárias no topo e na base (reduzido de `1920x933` para `1735x791`).
+   * Reduzimos a altura e o padding vertical do contêiner do cabeçalho `.header-main` no mobile para **`10px`**, deixando o header muito mais limpo e compacto.
+2. **Ícones de Categorias de 85px**:
+   * Redimensionamos os círculos das categorias no mobile de `60px` para **`85px`** de diâmetro para maior visibilidade.
+   * Ajustamos os ícones internos (SVGs) para **`36px`** e o tamanho do card para **`100px`** de largura, mantendo a proporção ideal.
