@@ -210,3 +210,37 @@ A landing page completa e responsiva para a marca de suplementos premium **BNS+*
 3. **Ícones de Categorias com 85px**:
    * Redimensionamos os círculos das categorias no mobile para **`85px`** de diâmetro para maior visibilidade.
    * Ajustamos os ícones internos (SVGs) para **`36px`** e o tamanho do card para **`100px`** de largura, mantendo a proporção ideal.
+
+---
+
+## 📄 Páginas Explicativas de Categorias (Páginas de Detalhes de Produto)
+Desenvolvemos 9 novas páginas explicativas de categorias (estilo página de detalhes de produto) baseadas na referência visual solicitada pelo usuário:
+1. **Páginas Criadas**:
+   - [categoria-whey.html](file:///e:/LANDING%20PAGE%20BNS/categoria-whey.html) (Whey Protein)
+   - [categoria-pre-treino.html](file:///e:/LANDING%20PAGE%20BNS/categoria-pre-treino.html) (Pré-Treino)
+   - [categoria-creatina.html](file:///e:/LANDING%20PAGE%20BNS/categoria-creatina.html) (Creatina)
+   - [categoria-vitaminas.html](file:///e:/LANDING%20PAGE%20BNS/categoria-vitaminas.html) (Vitaminas)
+   - [categoria-omega-3.html](file:///e:/LANDING%20PAGE%20BNS/categoria-omega-3.html) (Ômega 3)
+   - [categoria-colageno.html](file:///e:/LANDING%20PAGE%20BNS/categoria-colageno.html) (Colágeno)
+   - [categoria-true-foods.html](file:///e:/LANDING%20PAGE%20BNS/categoria-true-foods.html) (True Foods)
+   - [categoria-emagrecedores.html](file:///e:/LANDING%20PAGE%20BNS/categoria-emagrecedores.html) (Emagrecedores)
+   - [categoria-vitamina-d.html](file:///e:/LANDING%20PAGE%20BNS/categoria-vitamina-d.html) (Vitamina D)
+2. **Automação via Python**:
+   - Criamos o gerador `scratch/generate_category_pages.py` que lê de forma dinâmica as seções globais (CSS, Header, Mobile Menu Drawer e Rodapé) do `index.html` e compila todos os 9 arquivos HTML contendo metadados específicos para cada produto/categoria.
+3. **Seções de Alta Fidelidade**:
+   - **Área de Compra**: Galeria interativa de fotos, breadcrumbs, avaliação, seletor de Sabor/Tamanho, simulador de assinatura (20% Off com frequência de entrega) e botão laranja.
+   - **Ingredientes Ativos**: Destaques numéricos de nutrientes sob foto conceitual de fundo.
+   - **Metáfora Visual**: Texto explicativo com analogia de cotidiano (lado esquerdo) e canister transparente (lado direito).
+   - **Como Ele Te Ajuda**: Grid de 4 cards de benefícios ilustrados.
+   - **Ciência Clínica**: Parágrafo científico e badges circulares com estatísticas percentuais de eficiência comprovada.
+   - **Consumo**: Modo de preparo sugerido acompanhado de imagem editorial.
+   - **Acordeão de FAQ**: 5 perguntas frequentes retráteis com abertura/fechamento dinâmico e suave em JS.
+   - **Ingredientes e Alergênicos**: Parágrafo detalhado com avisos e orientações.
+   - **Tabela Nutricional**: Tabela vertical limpa e de fácil leitura (%VD inclusos).
+   - **Avaliações**: Placar de satisfação estilo Trustvox com avaliações de clientes reais.
+4. **Navegação Integrada**:
+   - Atualizamos o carrossel de categorias da página inicial (`index.html`) para linkar para as novas páginas.
+   - Atualizamos a listagem do rodapé de produtos para apontar diretamente para as novas páginas.
+   - Os links de navegação do cabeçalho nas páginas de categoria apontam de volta para as respectivas seções da página inicial (`index.html#secao`).
+5. **Implantação na Vercel**:
+   - Os novos arquivos foram integrados e implantados com sucesso em produção na Vercel: https://pagebns.vercel.app.
