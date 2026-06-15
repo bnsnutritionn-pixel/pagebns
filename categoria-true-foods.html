@@ -3762,6 +3762,303 @@
       gap: 4px;
     }
     
+    /* Novos Estilos de Layout para Alinhamento com a Referência */
+    .btn-buy-now-accent {
+      background-color: #FFB300; /* Amarelo ouro premium */
+      color: #231F20;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(255, 179, 0, 0.25);
+      transition: var(--transition-smooth);
+    }
+    .btn-buy-now-accent:hover {
+      background-color: #FFA000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 179, 0, 0.35);
+    }
+    
+    /* Highlights Banner */
+    .highlights-banner {
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-top: 40px;
+      box-shadow: var(--shadow-md);
+      height: 380px;
+    }
+    .highlights-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Circular Stats */
+    .science-stats-row-centered {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .stat-badge-circle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      flex: 1 1 180px;
+      text-align: center;
+    }
+    .stat-circle-outer {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) calc(var(--pct-val) * 1%), #EADBC8 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+    .stat-circle-inner {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background-color: var(--bg-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stat-circle-pct {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #3C302F;
+    }
+    .stat-circle-lbl {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #5C5248;
+      line-height: 1.3;
+      max-width: 150px;
+    }
+    
+    /* Science Images */
+    .science-images-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    @media (min-width: 768px) {
+      .science-images-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .science-img-col {
+      border-radius: 20px;
+      overflow: hidden;
+      height: 220px;
+      box-shadow: var(--shadow-sm);
+    }
+    .science-img-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Suggested Use (Full Width Banner style) */
+    .usage-section-full {
+      position: relative;
+      padding: 100px 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      min-height: 480px;
+    }
+    .usage-section-full::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.15);
+      z-index: 1;
+    }
+    .usage-card-overlay {
+      position: relative;
+      z-index: 2;
+      background-color: var(--bg-beige);
+      padding: 40px;
+      border-radius: 24px;
+      max-width: 480px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    @media (max-width: 767px) {
+      .usage-section-full {
+        padding: 40px 0;
+        background-image: none !important;
+        background-color: var(--bg-beige-dark);
+        min-height: auto;
+      }
+      .usage-section-full::before {
+        display: none;
+      }
+      .usage-card-overlay {
+        max-width: 100%;
+        padding: 24px;
+        box-shadow: none;
+        background: transparent;
+      }
+    }
+    
+    /* Testimonials Recommends */
+    .recommends-section-dark {
+      background-color: #231F20;
+      padding: 60px 0;
+      color: var(--bg-white);
+      text-align: center;
+    }
+    .recommends-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--bg-white);
+      margin-bottom: 40px;
+    }
+    .recommends-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    @media (min-width: 768px) {
+      .recommends-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+      }
+    }
+    .recommend-card {
+      border-radius: 24px;
+      overflow: hidden;
+      height: 350px;
+    }
+    .recommend-card.img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .recommend-card.quote-card {
+      background-color: #FFB300;
+      color: #231F20;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .quote-stars {
+      font-size: 1.25rem;
+      color: #231F20;
+      letter-spacing: 2px;
+    }
+    .quote-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.5;
+      font-family: var(--font-serif);
+    }
+    .quote-author {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* FAQ Section Split */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .faq-grid {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 60px;
+      }
+    }
+    .faq-left-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      height: 450px;
+      box-shadow: var(--shadow-md);
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .faq-left-card {
+        display: block;
+      }
+    }
+    .faq-left-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .faq-left-card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      padding: 30px;
+      color: var(--bg-white);
+      text-align: left;
+    }
+    .faq-left-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .faq-left-desc {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .faq-title-mobile {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #3C302F;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    @media (min-width: 1024px) {
+      .faq-title-mobile {
+        display: none;
+      }
+    }
+    
     </style>
 </head>
 <body>
@@ -3854,7 +4151,7 @@
     <main>
         
     <!-- 2. PRODUTO COMPRA E DETALHES -->
-    <section class="product-detail-section">
+    <section class="product-detail-section" id="buyArea">
       <div class="container">
         <div class="product-detail-grid">
           <!-- Galeria de Fotos -->
@@ -3954,7 +4251,7 @@
 
     <!-- 3. HIGHLIGHTS / INGREDIENTES ATIVOS -->
     <section class="highlights-section">
-      <div class="container">
+      <div class="container" style="text-align: center;">
         <h2 class="highlights-title">Seu melhor aliado para sua energia limpa e foco matinal</h2>
         <div class="highlights-grid">
           
@@ -3979,6 +4276,10 @@
               <p class="highlight-desc">Mistura homogênea na xícara quente em 5 segundos.</p>
             </div>
         </div>
+        <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-top: 30px; margin-bottom: 20px;">Comprar Agora</button>
+        <div class="highlights-banner">
+          <img src="drink-banner.webp" alt="Rotina de Bem-Estar e Foco">
+        </div>
       </div>
     </section>
 
@@ -3990,6 +4291,7 @@
             <span class="whatis-tag">Insumos Limpos</span>
             <h2 class="whatis-title">O que é o True Morning Coffee?</h2>
             <p class="whatis-text">Pense no seu início de dia como o decolar de um avião. Se você abastece com combustível comum (carboidratos simples), tem uma explosão rápida de energia que dura pouco e te faz cair logo em seguida. O True Morning entrega energia limpa de queima lenta (TCM), que mantém o foco e disposição estáveis por horas, sem picos e quedas bruscas.</p>
+            <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-top: 20px;">Comprar Agora</button>
           </div>
           <div class="whatis-img-wrapper">
             <img src="foods/001.webp" alt="True Morning Coffee">
@@ -4000,7 +4302,7 @@
 
     <!-- 5. COMO TE AJUDA (BENEFÍCIOS) -->
     <section class="benefits-section">
-      <div class="container">
+      <div class="container" style="text-align: center;">
         <h2 class="benefits-title">Como ele te ajuda?</h2>
         <div class="benefits-cards-grid">
           
@@ -4041,64 +4343,113 @@
               </div>
             </div>
         </div>
+        <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-top: 40px;">Comprar Agora</button>
       </div>
     </section>
 
     <!-- 6. CIÊNCIA E ESTATÍSTICAS -->
     <section class="science-section">
-      <div class="container">
-        <div class="science-grid">
-          <div class="science-content">
-            <h2 class="science-title">A sinergia entre Cafeína e TCM</h2>
-            <p class="science-desc">Os Triglicerídeos de Cadeia Média (TCM) são convertidos rapidamente em cetonas no fígado, servindo de combustível alternativo super limpo para o cérebro. Aliado à Cafeína, estimulam a performance cognitiva e aumentam a termogênese basal.</p>
-            <div class="science-stats-row">
-              
-            <div class="stat-badge">
-              <span class="stat-pct">96%</span>
-              <span class="stat-lbl">sentiram clareza mental prolongada</span>
+      <div class="container" style="text-align: center;">
+        <h2 class="science-title" style="text-align: center; margin-bottom: 20px;">A sinergia entre Cafeína e TCM</h2>
+        <p class="science-desc" style="max-width: 800px; margin: 0 auto 40px auto; text-align: center;">Os Triglicerídeos de Cadeia Média (TCM) são convertidos rapidamente em cetonas no fígado, servindo de combustível alternativo super limpo para o cérebro. Aliado à Cafeína, estimulam a performance cognitiva e aumentam a termogênese basal.</p>
+        
+        <div class="science-stats-row-centered">
+          
+            <div class="stat-badge-circle" style="--pct-val: 96;">
+              <div class="stat-circle-outer">
+                <div class="stat-circle-inner">
+                  <span class="stat-circle-pct">96%</span>
+                </div>
+              </div>
+              <span class="stat-circle-lbl">sentiram clareza mental prolongada</span>
             </div>
-            <div class="stat-badge">
-              <span class="stat-pct">84%</span>
-              <span class="stat-lbl">relataram redução de fome matinal</span>
+            <div class="stat-badge-circle" style="--pct-val: 84;">
+              <div class="stat-circle-outer">
+                <div class="stat-circle-inner">
+                  <span class="stat-circle-pct">84%</span>
+                </div>
+              </div>
+              <span class="stat-circle-lbl">relataram redução de fome matinal</span>
             </div>
-            <div class="stat-badge">
-              <span class="stat-pct">4h</span>
-              <span class="stat-lbl">de foco e produtividade sem letargia</span>
+            <div class="stat-badge-circle" style="--pct-val: 4;">
+              <div class="stat-circle-outer">
+                <div class="stat-circle-inner">
+                  <span class="stat-circle-pct">4h</span>
+                </div>
+              </div>
+              <span class="stat-circle-lbl">de foco e produtividade sem letargia</span>
             </div>
-            <div class="stat-badge">
-              <span class="stat-pct">0g</span>
-              <span class="stat-lbl">de picos de insulina gerados</span>
+            <div class="stat-badge-circle" style="--pct-val: 0;">
+              <div class="stat-circle-outer">
+                <div class="stat-circle-inner">
+                  <span class="stat-circle-pct">0g</span>
+                </div>
+              </div>
+              <span class="stat-circle-lbl">de picos de insulina gerados</span>
             </div>
-            </div>
+        </div>
+        
+        <div class="science-images-grid" style="margin-top: 50px;">
+          <div class="science-img-col">
+            <img src="foods/002.webp" alt="Estudo Clínico 1">
           </div>
-          <div class="science-img-wrapper">
-            <img src="foods/001.webp" alt="Pesquisa Científica">
+          <div class="science-img-col">
+            <img src="foods/003.webp" alt="Estudo Clínico 2">
+          </div>
+          <div class="science-img-col">
+            <img src="foods/004.webp" alt="Estudo Clínico 3">
           </div>
         </div>
       </div>
     </section>
 
     <!-- 7. SUGESTÃO DE CONSUMO -->
-    <section class="usage-section">
+    <section class="usage-section-full" style="background-image: url('foods/005.webp');">
       <div class="container">
-        <div class="usage-grid">
-          <div class="usage-img-wrapper">
-            <img src="foods/005.webp" alt="Como Tomar">
+        <div class="usage-card-overlay">
+          <h2 class="usage-title">Sugestão de consumo</h2>
+          <p class="usage-text">Diluir 1 sachê (10g) em 100ml de água quente. Misturar bem até a dissolução completa. Consumir pela manhã ou no início da tarde.</p>
+          <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-top: 24px; align-self: flex-start;">Comprar Agora</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7.1. QUEM USA, RECOMENDA -->
+    <section class="recommends-section-dark">
+      <div class="container">
+        <h2 class="recommends-title">Quem usa, recomenda</h2>
+        <div class="recommends-grid">
+          <div class="recommend-card img-card">
+            <img src="foods/005.webp" alt="Influenciador BNS+">
           </div>
-          <div class="usage-content">
-            <h2 class="usage-title">Sugestão de consumo</h2>
-            <p class="usage-text">Diluir 1 sachê (10g) em 100ml de água quente. Misturar bem até a dissolução completa. Consumir pela manhã ou no início da tarde.</p>
+          <div class="recommend-card quote-card">
+            <span class="quote-stars">★★★★★</span>
+            <p class="quote-text">"Fórmula extremamente limpa, sabor incrível e resultados visíveis em poucas semanas. Super recomendo!"</p>
+            <span class="quote-author">Dra. Patrícia Lima</span>
+          </div>
+          <div class="recommend-card img-card">
+            <img src="foods/006.webp" alt="Influenciador BNS+">
           </div>
         </div>
+        <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-top: 40px; margin-left: auto; margin-right: auto;">Comprar Agora</button>
       </div>
     </section>
 
     <!-- 8. FAQ ACCORDION -->
     <section class="faq-section">
       <div class="container">
-        <h2 class="faq-title">Perguntas Frequentes</h2>
-        <div class="faq-container">
-          
+        <div class="faq-grid">
+          <div class="faq-left-card">
+            <img src="foods/007.webp" alt="Dúvidas Frequentes">
+            <div class="faq-left-card-overlay">
+              <h2 class="faq-left-title">Perguntas Frequentes</h2>
+              <p class="faq-left-desc">Tire todas as suas dúvidas sobre o produto e como inseri-lo na sua rotina.</p>
+            </div>
+          </div>
+          <div class="faq-right-accordion">
+            <h2 class="faq-title-mobile">Perguntas Frequentes</h2>
+            <div class="faq-container">
+              
             <div class="faq-item">
               <div class="faq-header">
                 <span class="faq-q">Quebra o jejum metabólico?</span>
@@ -4164,6 +4515,8 @@
                 </div>
               </div>
             </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -4176,6 +4529,10 @@
             <h2 class="nutrition-title">Ingredientes</h2>
             <p class="ingredients-desc">Café solúvel arábica, triglicerídeos de cadeia média (TCM), cacau em pó, canela em pó, adoçante natural stevia. NÃO CONTÉM GLÚTEN.</p>
             <p class="warnings-desc"><strong>RECOMENDAÇÃO:</strong> Este produto não substitui uma alimentação equilibrada e seu consumo deve ser orientado por nutricionista ou médico. Gestantes, lactantes e crianças devem consumir apenas sob recomendação médica.</p>
+            <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-top: 24px; margin-bottom: 30px;">Comprar Agora</button>
+            <div class="nutrition-left-img" style="margin-top: 20px; border-radius: 16px; overflow: hidden; height: 250px;">
+              <img src="canister-product.webp" alt="Produto BNS+" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
           </div>
           <div class="nutrition-right">
             <h3 class="table-header">Tabela Nutricional</h3>
@@ -4857,6 +5214,14 @@
             }
           });
         });
+        
+        // Scroll to buy area helper
+        function scrollToBuy() {
+          const buyArea = document.getElementById('buyArea');
+          if (buyArea) {
+            buyArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
         </script>
         
 </body>
