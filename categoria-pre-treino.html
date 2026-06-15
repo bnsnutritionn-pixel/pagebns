@@ -3501,21 +3501,42 @@
       line-height: 1.6;
     }
     
-    .science-stats-row-ref {
+    .science-stats-carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 40px auto;
+      overflow: hidden;
+      padding: 20px 0;
+    }
+    
+    .science-stats-track {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 50px;
+      gap: 30px;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      align-items: center;
+      width: max-content;
+      padding-left: calc(50% - 90px);
+      padding-right: calc(50% - 90px);
+      box-sizing: border-box;
     }
     
     .stat-circle-box {
+      width: 180px;
+      flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      flex: 1 1 180px;
       text-align: center;
+      transition: all 0.4s ease;
+      opacity: 0.4;
+      transform: scale(0.8);
+      cursor: pointer;
+    }
+    
+    .stat-circle-box.active {
+      opacity: 1;
+      transform: scale(1.15);
     }
     
     .stat-circle-wrapper {
@@ -3535,13 +3556,13 @@
     
     .stat-circle-bg {
       fill: none;
-      stroke: #EADBC8;
+      stroke: #F4EFEA;
       stroke-width: 8;
     }
     
     .stat-circle-val {
       fill: none;
-      stroke: var(--primary);
+      stroke: #FFB300;
       stroke-width: 8;
       stroke-linecap: round;
       stroke-dasharray: 314;
@@ -3554,15 +3575,64 @@
       font-family: var(--font-heading);
       font-size: 1.65rem;
       font-weight: 800;
+      color: #7C7063;
+      transition: color 0.4s ease, font-size 0.4s ease;
+    }
+    
+    .stat-circle-box.active .stat-circle-inner-txt {
       color: #3C302F;
+      font-size: 1.85rem;
     }
     
     .stat-circle-lbl-ref {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #3C302F;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #7C7063;
       line-height: 1.35;
       max-width: 160px;
+      transition: all 0.4s ease;
+      opacity: 0.7;
+    }
+    
+    .stat-circle-box.active .stat-circle-lbl-ref {
+      color: #3C302F;
+      font-size: 0.95rem;
+      font-weight: 700;
+      opacity: 1;
+    }
+    
+    /* Navigation Buttons */
+    .stats-carousel-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .stats-nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #FFB300;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(255, 179, 0, 0.25);
+      transition: all 0.2s ease;
+      color: #231F20;
+    }
+    
+    .stats-nav-btn:hover {
+      background-color: #FFA000;
+      transform: scale(1.05);
+    }
+    
+    .stats-nav-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
     }
     
     .science-img-row-ref {
@@ -4387,8 +4457,9 @@
         <h2 class="science-title-ref">A ciência do tamponamento muscular</h2>
         <p class="science-desc-ref">A Beta-Alanina eleva os estoques intramusculares de carnosina, que neutraliza a acidez muscular (íons H+) produzida no treino intenso. A combinação com a Cafeína otimiza o uso de gorduras como combustível primário, poupando o glicogênio.</p>
         
-        <div class="science-stats-row-ref">
-          
+        <div class="science-stats-carousel-container">
+          <div class="science-stats-track" id="statsTrack">
+            
             <div class="stat-circle-box" style="--pct-val: 100;">
               <div class="stat-circle-wrapper">
                 <svg class="stat-circle-svg" viewBox="0 0 120 120">
@@ -4429,6 +4500,16 @@
               </div>
               <span class="stat-circle-lbl-ref">de ganho no número total de repetições</span>
             </div>
+          </div>
+          <!-- Navigation Buttons -->
+          <div class="stats-carousel-nav">
+            <button class="stats-nav-btn prev" onclick="shiftStats(-1); event.stopPropagation();">
+              <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            </button>
+            <button class="stats-nav-btn next" onclick="shiftStats(1); event.stopPropagation();">
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg>
+            </button>
+          </div>
         </div>
         
         <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
@@ -4890,6 +4971,59 @@
             buyArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }
+        
+        // Science Stats Slider/Carousel
+        let activeStatIndex = 1;
+        function updateStatsSlider() {
+          const track = document.getElementById('statsTrack');
+          if (!track) return;
+          const items = track.querySelectorAll('.stat-circle-box');
+          if (items.length === 0) return;
+          
+          if (activeStatIndex < 0) activeStatIndex = 0;
+          if (activeStatIndex >= items.length) activeStatIndex = items.length - 1;
+          
+          items.forEach((item, idx) => {
+            if (idx === activeStatIndex) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+          
+          const itemWidth = 180;
+          const gap = 30;
+          const shift = -activeStatIndex * (itemWidth + gap);
+          track.style.transform = `translateX(${shift}px)`;
+        }
+        
+        function shiftStats(dir) {
+          const track = document.getElementById('statsTrack');
+          if (!track) return;
+          const items = track.querySelectorAll('.stat-circle-box');
+          activeStatIndex += dir;
+          if (activeStatIndex < 0) activeStatIndex = items.length - 1;
+          if (activeStatIndex >= items.length) activeStatIndex = 0;
+          updateStatsSlider();
+        }
+        
+        // Initial setup for Science Stats
+        function initScienceStats() {
+          const track = document.getElementById('statsTrack');
+          if (track) {
+            const items = track.querySelectorAll('.stat-circle-box');
+            items.forEach((item, idx) => {
+              item.addEventListener('click', () => {
+                activeStatIndex = idx;
+                updateStatsSlider();
+              });
+            });
+            // Set middle item active by default
+            activeStatIndex = Math.floor(items.length / 2);
+            updateStatsSlider();
+          }
+        }
+        initScienceStats();
         </script>
         
 </body>
