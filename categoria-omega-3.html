@@ -3103,16 +3103,48 @@
     }
     
     .product-breadcrumbs {
-      font-size: 0.75rem;
-      color: var(--text-light);
-      margin-bottom: 10px;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: #9E9E9E;
+      margin-bottom: 12px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 0.5px;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .product-breadcrumbs a {
+      color: #9E9E9E;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s ease;
     }
     
     .product-breadcrumbs a:hover {
-      color: var(--primary);
+      color: #FF6D00;
+    }
+    
+    .product-breadcrumbs .home-icon {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+    }
+    
+    .product-breadcrumbs .breadcrumb-separator {
+      color: #D3C9C7;
+      font-weight: 400;
+      user-select: none;
+      font-size: 0.8rem;
+    }
+    
+    .product-breadcrumbs .breadcrumb-current {
+      color: #7A706F;
+      font-weight: 600;
     }
     
     .product-brand-tag {
@@ -3126,12 +3158,13 @@
     }
     
     .product-detail-title {
-      font-family: var(--font-serif);
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      font-weight: 800;
       color: #3C302F;
-      line-height: 1.2;
-      margin-bottom: 12px;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      letter-spacing: -0.3px;
     }
     
     .product-rating-row {
@@ -4603,7 +4636,16 @@
         <!-- Mobile Header (Breadcrumbs + Title at the top on mobile) -->
         <div class="product-header-mobile">
           <div class="product-breadcrumbs">
-            <a href="index.html">Home</a> &gt; <a href="index.html#categories">Ômega 3</a>
+            <a href="index.html" class="breadcrumb-home-link">
+              <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="index.html#categories">Produtos</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Ômega 3</span>
           </div>
           <h1 class="product-detail-title">True Ômega 3 Premium</h1>
         </div>
@@ -4645,7 +4687,16 @@
             <!-- Desktop Header (Breadcrumbs + Title inside buy info on desktop) -->
             <div class="product-header-desktop">
               <div class="product-breadcrumbs">
-                <a href="index.html">Home</a> &gt; <a href="index.html#categories">Ômega 3</a>
+                <a href="index.html" class="breadcrumb-home-link">
+                  <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                  </svg>
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="index.html#categories">Produtos</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Ômega 3</span>
               </div>
               <div class="product-brand-tag">BNS+ Premium</div>
               <h1 class="product-detail-title">True Ômega 3 Premium</h1>
