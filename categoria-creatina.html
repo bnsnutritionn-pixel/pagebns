@@ -2814,190 +2814,12 @@
       }
     }
 
-    /* Active category nav link highlight */
-    .nav-links a.active-category {
-      font-weight: 700 !important;
-      color: #3C302F !important;
-      border-bottom: 2px solid #FF6D00;
-      padding-bottom: 4px;
-    }
-
-    /* WhatsApp Floating Button styling */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 85px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.25);
-      z-index: 999;
-      transition: transform 0.2s ease;
-    }
-    .whatsapp-float:active {
-      transform: scale(0.9);
-    }
-
-    /* Cashback Badge styling */
-    .cashback-badge {
-      position: absolute;
-      bottom: 24px;
-      right: 24px;
-      background-color: #FF6D00;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: 10px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      box-shadow: 0 4px 10px rgba(255, 109, 0, 0.3);
-      text-transform: uppercase;
-      z-index: 10;
-    }
-
     /* ----------------------------------------------------
        ESTILOS EXCLUSIVOS DA PÁGINA DE CATEGORIA/PRODUTO
        ---------------------------------------------------- */
-    /* Mobile header modifications alignment */
-    @media (max-width: 1023px) {
-      /* Show Profile, Ajuda, and Cart on Mobile header */
-      .action-btn[title="Favoritos"] {
-        display: none !important;
-      }
-      .action-btn[title="Minha Conta"],
-      .action-btn[title="Ajuda"],
-      .header-cart-btn {
-        display: flex !important;
-      }
-      .action-btn .action-text {
-        display: none !important;
-      }
-      
-      /* Orange circular Hamburger Toggle Button */
-      .menu-toggle {
-        background-color: #FF6D00 !important;
-        color: #FFFFFF !important;
-        width: 36px !important;
-        height: 36px !important;
-        border-radius: 50% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        border: none !important;
-        box-shadow: 0 2px 6px rgba(255, 109, 0, 0.2) !important;
-        padding: 0 !important;
-        cursor: pointer !important;
-      }
-      .menu-toggle svg {
-        width: 18px !important;
-        height: 18px !important;
-        stroke: #FFFFFF !important;
-      }
-
-      /* Search Bar mobile alignment */
-      .search-bar svg {
-        left: auto !important;
-        right: 18px !important;
-      }
-      .search-bar input {
-        padding-left: 20px !important;
-        padding-right: 48px !important;
-        background-color: #F6F1EA !important;
-        border: none !important;
-      }
-      
-      /* Add bottom padding to body for the sticky buy bar */
-      body {
-        padding-bottom: 80px !important;
-      }
-    }
-
-    /* Product Title Responsive Position Wrappers */
-    .product-header-mobile {
-      display: none;
-      text-align: left;
-      margin-bottom: 24px;
-      padding: 0 20px;
-    }
-    .product-header-desktop {
-      display: block;
-      width: 100%;
-    }
-    @media (max-width: 1023px) {
-      .product-header-mobile {
-        display: block;
-      }
-      .product-header-desktop {
-        display: none;
-      }
-    }
-
-    /* Sticky Buy Bar for Mobile Viewports */
-    .mobile-sticky-buy-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: #FFFFFF;
-      padding: 12px 16px;
-      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08);
-      z-index: 1000;
-      display: none;
-    }
-    
-    @media (max-width: 1023px) {
-      .mobile-sticky-buy-bar {
-        display: block;
-      }
-    }
-    
-    .btn-sticky-buy {
-      width: 100%;
-      height: 52px;
-      background-color: #8BC34A; /* organic apple green */
-      color: #FFFFFF;
-      border-radius: 8px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 4px 12px rgba(139, 195, 74, 0.25);
-      letter-spacing: 0.5px;
-      transition: background-color 0.2s ease;
-    }
-    
-    .btn-sticky-buy:active {
-      background-color: #7CB342;
-    }
-    
-    .sticky-cart-icon {
-      width: 20px;
-      height: 20px;
-      stroke: #FFFFFF !important;
-    }
-
     .product-detail-section {
       padding: 60px 0;
       background-color: var(--bg-white);
-    }
-    
-    @media (min-width: 1024px) {
-      .product-detail-section .container {
-        padding: 0 30px !important;
-      }
     }
     
     .product-detail-grid {
@@ -3008,10 +2830,8 @@
     
     @media (min-width: 1024px) {
       .product-detail-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-        max-width: 1380px;
-        margin: 0 auto;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
       }
     }
     
@@ -3023,32 +2843,22 @@
     }
     
     .main-image-wrapper {
-      background-color: #FFFFFF;
-      border-radius: 0;
+      background-color: var(--bg-beige);
+      border-radius: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-      border: none;
-      width: 100%;
-      max-width: 674px;
-      aspect-ratio: 1;
-      height: auto;
+      padding: 40px;
+      border: 1px solid rgba(0,0,0,0.02);
+      height: 480px;
       position: relative;
-      box-sizing: border-box;
     }
     
     .main-image-wrapper img {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 85%;
+      max-height: 85%;
       object-fit: contain;
       filter: drop-shadow(0 15px 30px rgba(0,0,0,0.05));
-      transition: opacity 0.25s ease;
-      opacity: 1;
-    }
-    
-    .main-image-wrapper img.fade-out {
-      opacity: 0;
     }
     
     .product-gold-badge {
@@ -3115,48 +2925,16 @@
     }
     
     .product-breadcrumbs {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      color: #9E9E9E;
-      margin-bottom: 12px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1.5px;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    
-    .product-breadcrumbs a {
-      color: #9E9E9E;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      transition: color 0.2s ease;
     }
     
     .product-breadcrumbs a:hover {
-      color: #FF6D00;
-    }
-    
-    .product-breadcrumbs .home-icon {
-      width: 14px;
-      height: 14px;
-      stroke: currentColor;
-      stroke-width: 2.2;
-    }
-    
-    .product-breadcrumbs .breadcrumb-separator {
-      color: #D3C9C7;
-      font-weight: 400;
-      user-select: none;
-      font-size: 0.8rem;
-    }
-    
-    .product-breadcrumbs .breadcrumb-current {
-      color: #7A706F;
-      font-weight: 600;
+      color: var(--primary);
     }
     
     .product-brand-tag {
@@ -3170,13 +2948,12 @@
     }
     
     .product-detail-title {
-      font-family: var(--font-body);
-      font-size: 1.6rem;
-      font-weight: 800;
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 700;
       color: #3C302F;
-      line-height: 1.3;
-      margin-bottom: 14px;
-      letter-spacing: -0.3px;
+      line-height: 1.2;
+      margin-bottom: 12px;
     }
     
     .product-rating-row {
@@ -3244,11 +3021,11 @@
     /* Box de Compra/Recorrência */
     .price-card-box {
       width: 100%;
-      background-color: #F5F5F5;
-      border-radius: 24px;
-      border: none;
-      padding: 24px;
-      margin-bottom: 20px;
+      background-color: #FFFFFF;
+      border-radius: 20px;
+      border: 1px solid #E5E0DA;
+      padding: 20px;
+      margin-bottom: 24px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -3261,25 +3038,21 @@
       gap: 12px;
       cursor: pointer;
       padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid transparent;
-      background-color: transparent;
-      transition: all 0.2s ease;
-      width: 100%;
-      box-sizing: border-box;
+      border-radius: 12px;
+      border: 1px solid #E5E0DA;
+      transition: var(--transition-smooth);
     }
     
     .purchase-type-row.active {
       border-color: #5D9C3F;
-      background-color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      background-color: #F4F8F1;
     }
     
     .purchase-radio {
       appearance: none;
-      width: 18px;
-      height: 18px;
-      border: 2px solid #CCCCCC;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #BCB0A3;
       border-radius: 50%;
       outline: none;
       display: flex;
@@ -3288,20 +3061,17 @@
       cursor: pointer;
       position: relative;
       background-color: #FFFFFF;
-      flex-shrink: 0;
-      margin: 0;
     }
     
     .purchase-type-row.active .purchase-radio {
       border-color: #5D9C3F;
-      background-color: #5D9C3F;
     }
     
     .purchase-radio:checked::after {
       content: '';
-      width: 6px;
-      height: 6px;
-      background-color: #FFFFFF;
+      width: 10px;
+      height: 10px;
+      background-color: #5D9C3F;
       border-radius: 50%;
       display: block;
     }
@@ -3313,43 +3083,33 @@
     }
     
     .purchase-title {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 700;
       color: #3C302F;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
     }
     
     .purchase-price {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: #1A1A1A;
       margin-top: 4px;
       display: flex;
       align-items: center;
       gap: 8px;
-      line-height: 1.2;
     }
     
     .purchase-price span {
       text-decoration: line-through;
       font-size: 0.95rem;
-      color: #9E9E9E;
-      font-weight: 500;
-    }
-    
-    .purchase-installment {
-      font-size: 0.72rem;
-      color: #7A706F;
-      margin-top: 2px;
+      color: var(--text-light);
       font-weight: 500;
     }
     
     .subscription-badge {
       display: inline-flex;
       background-color: #E8F5E9;
-      color: #5D9C3F;
-      font-size: 0.65rem;
+      color: var(--accent-green);
+      font-size: 0.68rem;
       font-weight: 700;
       padding: 2px 8px;
       border-radius: 4px;
@@ -3358,60 +3118,67 @@
     }
     
     .subscription-options {
-      margin-top: 4px;
+      margin-top: 8px;
+      padding-left: 32px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
       transition: all 0.3s ease;
-      width: 100%;
     }
     
     .frequency-selector {
       width: 100%;
       height: 42px;
       border-radius: 8px;
-      border: 1px solid #CCCCCC;
+      border: 1px solid #E5E0DA;
       padding: 0 12px;
       font-size: 0.85rem;
       font-weight: 600;
-      background-color: #FFFFFF;
+      background-color: var(--bg-white);
       color: #3C302F;
-      outline: none;
+    }
+    
+    /* Action Row: Quantidade e Carrinho */
+    .action-row {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+      align-items: center;
     }
     
     .quantity-selector {
       display: flex;
       align-items: center;
-      border: 1px solid #CCCCCC;
-      border-radius: 8px;
-      height: 40px;
-      padding: 2px;
+      border: 1px solid #E5E0DA;
+      border-radius: 50px;
+      height: 52px;
+      padding: 4px;
       background-color: #FFFFFF;
-      width: fit-content;
+      flex-shrink: 0;
     }
     
     .qty-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: #3C302F;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: var(--transition-smooth);
     }
     
     .qty-btn:hover {
-      background-color: #F0F0F0;
+      background-color: #FAF6F0;
     }
     
     .qty-input {
-      width: 32px;
+      width: 40px;
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #3C302F;
       border: none;
@@ -3420,22 +3187,22 @@
     }
     
     .btn-add-to-cart {
-      width: 100%;
+      flex-grow: 1;
       height: 52px;
       background-color: #5D9C3F;
       color: #FFFFFF;
-      border-radius: 12px;
-      font-size: 1rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       border: none;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px rgba(93, 156, 63, 0.2);
-      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(93, 156, 63, 0.2);
+      transition: var(--transition-smooth);
     }
     
     .btn-add-to-cart:hover {
@@ -3444,135 +3211,27 @@
       box-shadow: 0 6px 20px rgba(93, 156, 63, 0.3);
     }
     
-    /* Options Pills Style - True Clone */
-    .flavor-options .option-btn.active {
-      background-color: #FF6D00;
-      border-color: #FF6D00;
-      color: #FFFFFF;
-    }
-    
-    .flavor-options .option-btn.active::before {
-      content: "✓ ";
-      font-weight: 800;
-      margin-right: 4px;
-    }
-    
-    .size-options {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    
-    .size-options .option-btn {
-      width: 48px;
-      height: 48px;
-      padding: 0;
-      border-radius: 50% !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.82rem;
-      font-weight: 700;
-      background-color: #FFFFFF;
-      border: 1px solid #CCCCCC;
-      color: #3C302F;
-      transition: all 0.2s ease;
-    }
-    
-    .size-options .option-btn.active,
-    .size-options .option-btn:hover {
-      background-color: #FF6D00;
-      border-color: #FF6D00;
-      color: #FFFFFF;
-    }
-    
-    .product-gold-badge {
-      display: none !important;
-    }
-    
-    .product-rating-row {
-      display: none !important;
-    }
-    
     /* 2. Allied Section */
     .allied-section {
       background-color: #FAF6F0;
-      padding: 60px 0 0 0;
+      padding: 80px 0 0 0;
       text-align: center;
     }
     
-    /* Day/Night Toggle Switch styling */
-    .allied-toggle-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-    
-    .day-night-toggle {
-      width: 80px;
-      height: 38px;
-      background-color: #3C302F;
-      border-radius: 50px;
-      position: relative;
-      cursor: pointer;
-      padding: 3px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      user-select: none;
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
-    }
-    
-    .toggle-icon {
-      width: 32px;
-      height: 32px;
-      display: flex;
+    .allied-badge {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      z-index: 2;
-      transition: all 0.3s ease;
-    }
-    
-    .toggle-icon-svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-    
-    .toggle-icon.sun {
-      margin-left: 2px;
-      color: #FFA000;
-    }
-    
-    .toggle-icon.moon {
-      margin-right: 2px;
-      color: #FFB300;
-    }
-    
-    .toggle-thumb {
-      position: absolute;
-      width: 32px;
-      height: 32px;
-      background-color: #FFC107;
-      border-radius: 50%;
-      top: 3px;
-      left: 3px;
-      transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-      z-index: 1;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-    
-    .day-night-toggle.night .toggle-thumb {
-      transform: translateX(42px);
-    }
-    
-    .day-night-toggle.night .toggle-icon.sun {
-      color: #8C7D70;
-    }
-    
-    .day-night-toggle.night .toggle-icon.moon {
-      color: #3C302F;
+      width: 46px;
+      height: 26px;
+      background-color: #D2A267;
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
     }
     
     .allied-title {
@@ -3581,117 +3240,77 @@
       color: #3C302F;
       font-weight: 700;
       margin-bottom: 40px;
-      max-width: 850px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.25;
-      padding: 0 20px;
     }
     
     .allied-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
-      max-width: 1200px;
+      gap: 30px;
+      max-width: 1100px;
       margin: 0 auto 50px auto;
-      padding: 0 20px;
-      box-sizing: border-box;
     }
     
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       .allied-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .allied-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
       }
     }
     
     .allied-col {
-      background-color: #FFFFFF;
-      border: 1px solid #E5E0DA;
-      border-radius: 20px;
-      padding: 32px 24px;
-      text-align: left;
-      box-sizing: border-box;
-      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
       position: relative;
+      padding: 0 16px;
     }
     
-    .allied-col:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(93, 156, 63, 0.08);
-      border-color: #5D9C3F;
+    @media (min-width: 768px) {
+      .allied-col:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: -10px;
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background-color: #E5E0DA;
+      }
     }
     
     .allied-val {
-      font-family: var(--font-heading);
-      font-size: 2.1rem;
+      font-size: 2.6rem;
       font-weight: 800;
       color: #3C302F;
       display: block;
-      margin-bottom: 6px;
-      line-height: 1.1;
+      margin-bottom: 8px;
+      line-height: 1;
     }
     
     .allied-lbl {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #3C302F;
       display: block;
-      margin-bottom: 12px;
-      line-height: 1.2;
+      margin-bottom: 8px;
     }
     
     .allied-desc {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: #7C7063;
-      line-height: 1.5;
-      margin: 0;
+      line-height: 1.45;
     }
     
     .allied-banner {
       width: 100%;
       height: 480px;
       overflow: hidden;
-      position: relative;
     }
     
     .allied-banner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-    }
-    
-    .allied-banner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 160px;
-      background: linear-gradient(to bottom, #FAF6F0 0%, rgba(250, 246, 240, 0) 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-    
-    @media (max-width: 767px) {
-      .allied-banner {
-        height: 280px;
-      }
-      .allied-banner::before {
-        height: 100px;
-      }
     }
     
     /* Yellow gold action button */
@@ -3879,42 +3498,21 @@
       line-height: 1.6;
     }
     
-    .science-stats-carousel-container {
-      position: relative;
-      width: 100%;
-      max-width: 1000px;
-      margin: 40px auto;
-      overflow: hidden;
-      padding: 20px 0;
-    }
-    
-    .science-stats-track {
+    .science-stats-row-ref {
       display: flex;
-      gap: 30px;
-      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      align-items: center;
-      width: max-content;
-      padding-left: calc(50% - 90px);
-      padding-right: calc(50% - 90px);
-      box-sizing: border-box;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 50px;
     }
     
     .stat-circle-box {
-      width: 180px;
-      flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 12px;
+      flex: 1 1 180px;
       text-align: center;
-      transition: all 0.4s ease;
-      opacity: 0.4;
-      transform: scale(0.8);
-      cursor: pointer;
-    }
-    
-    .stat-circle-box.active {
-      opacity: 1;
-      transform: scale(1.15);
     }
     
     .stat-circle-wrapper {
@@ -3934,13 +3532,13 @@
     
     .stat-circle-bg {
       fill: none;
-      stroke: #F4EFEA;
+      stroke: #EADBC8;
       stroke-width: 8;
     }
     
     .stat-circle-val {
       fill: none;
-      stroke: #FFB300;
+      stroke: var(--primary);
       stroke-width: 8;
       stroke-linecap: round;
       stroke-dasharray: 314;
@@ -3953,64 +3551,15 @@
       font-family: var(--font-heading);
       font-size: 1.65rem;
       font-weight: 800;
-      color: #7C7063;
-      transition: color 0.4s ease, font-size 0.4s ease;
-    }
-    
-    .stat-circle-box.active .stat-circle-inner-txt {
       color: #3C302F;
-      font-size: 1.85rem;
     }
     
     .stat-circle-lbl-ref {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #7C7063;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #3C302F;
       line-height: 1.35;
       max-width: 160px;
-      transition: all 0.4s ease;
-      opacity: 0.7;
-    }
-    
-    .stat-circle-box.active .stat-circle-lbl-ref {
-      color: #3C302F;
-      font-size: 0.95rem;
-      font-weight: 700;
-      opacity: 1;
-    }
-    
-    /* Navigation Buttons */
-    .stats-carousel-nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-    }
-    
-    .stats-nav-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background-color: #FFB300;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(255, 179, 0, 0.25);
-      transition: all 0.2s ease;
-      color: #231F20;
-    }
-    
-    .stats-nav-btn:hover {
-      background-color: #FFA000;
-      transform: scale(1.05);
-    }
-    
-    .stats-nav-btn svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
     }
     
     .science-img-row-ref {
@@ -4611,14 +4160,6 @@
         <a href="index.html" class="logo">
           <img src="logo_blue.webp" alt="BNS+">
         </a>
-        <!-- Busca -->
-        <div class="search-bar">
-          <input type="text" placeholder="O que você procura?">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-        </div>
-        
 
         <!-- Ações do Header -->
         <div class="header-actions">
@@ -4642,17 +4183,6 @@
             </svg>
             <span class="action-text">Precisa de<br>ajuda?</span>
           </a>
-          <!-- Sacola/Carrinho -->
-          <a href="#" class="action-btn header-cart-btn" title="Sacola" id="cartBtn">
-            <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width: 22px; height: 22px;">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-              </svg>
-              <span class="cart-count" style="position: absolute; top: -6px; right: -8px; background-color: #FF6D00; color: #FFFFFF; font-size: 0.65rem; font-weight: 700; width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1;">0</span>
-            </div>
-            <span class="action-text">Minha<br>Sacola</span>
-          </a>
-    
 
           <!-- Menu Hamburger Mobile -->
           <button class="menu-toggle" id="menuToggleBtn">
@@ -4664,15 +4194,26 @@
       </div>
 
       <!-- Menu de Navegação -->
-      
       <nav class="header-nav">
         <div class="nav-container">
+          <button class="btn-all-products">
+            Todos os produtos
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <span class="nav-dot">•</span>
           <ul class="nav-links">
-            <li><a href="index.html" >Todos os produtos</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-whey.html" >Whey Protein</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-creatina.html" class="active-category">Creatina</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-pre-treino.html" >Pré-Treino</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-vitaminas.html" >Vitaminas</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-omega-3.html" >Ômega-3</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-colageno.html" >Colágeno</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-true-foods.html" >True Foods</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-emagrecedores.html" >Emagrecedores</a></li> <li class='nav-dot'>•</li> <li><a href="categoria-vitamina-d.html" >Vitamina D</a></li>
+            <li><a href="index.html#bestSellers">Mais Vendidos</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="index.html#productHero" class="promo-link">Destaque da Semana</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="index.html#trueFoods">Foods</a></li>
+            <li class="nav-dot">•</li>
+            <li><a href="index.html#catalogSection">Catálogo</a></li>
           </ul>
         </div>
       </nav>
-        
     </div>
   </header>
 
@@ -4698,27 +4239,10 @@
   </div>
     
     <main>
-        
+        '
     <!-- 2. PRODUTO COMPRA E DETALHES -->
     <section class="product-detail-section" id="buyArea">
       <div class="container">
-        <!-- Mobile Header (Breadcrumbs + Title at the top on mobile) -->
-        <div class="product-header-mobile">
-          <div class="product-breadcrumbs">
-            <a href="index.html" class="breadcrumb-home-link">
-              <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </a>
-            <span class="breadcrumb-separator">/</span>
-            <a href="index.html#categories">Produtos</a>
-            <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-current">Creatina</span>
-          </div>
-          <h1 class="product-detail-title">True Creatine 100% Pure</h1>
-        </div>
-
         <div class="product-detail-grid">
           <!-- Galeria de Fotos -->
           <div class="product-gallery">
@@ -4729,39 +4253,31 @@
                 <span style="font-size:0.55rem; opacity:0.8;">100% Clean</span>
               </div>
               <img id="mainProductDetailImg" src="PRODUTOS/CREATINA DARK/CREA_DARK.webp" alt="True Creatine 100% Pure">
-              
-              <!-- Cashback Badge -->
-              <div class="cashback-badge">
-                <span>Cashback</span>
-                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;">
-                  <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-                </svg>
-              </div>
+            </div>
+            <div class="thumbnails-grid">
+              <button class="thumbnail-btn active" onclick="switchMainImage('PRODUTOS/CREATINA DARK/CREA_DARK.webp', this)">
+                <img src="PRODUTOS/CREATINA DARK/CREA_DARK.webp" alt="Foto 1">
+              </button>
+              <button class="thumbnail-btn" onclick="switchMainImage('generic-product.webp', this)">
+                <img src="generic-product.webp" alt="Foto 2">
+              </button>
+              <button class="thumbnail-btn" onclick="switchMainImage('canister-product.webp', this)">
+                <img src="canister-product.webp" alt="Foto 3">
+              </button>
             </div>
           </div>
           
           <!-- Lado de Compra -->
           <div class="product-buy-info">
-            <!-- Desktop Header (Breadcrumbs + Title inside buy info on desktop) -->
-            <div class="product-header-desktop">
-              <div class="product-breadcrumbs">
-                <a href="index.html" class="breadcrumb-home-link">
-                  <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                    <polyline points="9 22 9 12 15 12 15 22"/>
-                  </svg>
-                </a>
-                <span class="breadcrumb-separator">/</span>
-                <a href="index.html#categories">Produtos</a>
-                <span class="breadcrumb-separator">/</span>
-                <span class="breadcrumb-current">Creatina</span>
-              </div>
-              <div class="product-brand-tag">BNS+ Premium</div>
-              <h1 class="product-detail-title">True Creatine 100% Pure</h1>
+            <div class="product-breadcrumbs">
+              <a href="index.html">Home</a> &gt; <a href="index.html#categories">Creatina</a>
             </div>
+            <div class="product-brand-tag">BNS+ Premium</div>
+            <h1 class="product-detail-title">True Creatine 100% Pure</h1>
             
             <div class="product-rating-row">
               <div class="rating-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -4770,46 +4286,45 @@
               <span>4.8 (903 avaliações)</span>
             </div>
             
-                       <!-- Opção de Sabor -->
-            <div class="option-group flavor-group">
+            <!-- Opção de Sabor -->
+            <div class="option-group">
               <span class="option-label">Sabor</span>
-              <div class="options-buttons flavor-options">
-                <button class="option-btn active" onclick="selectFlavor(this, 'Pura (Sem Sabor)')">Pura (Sem Sabor)</button>
+              <div class="options-buttons">
+                <button class="option-btn active">Pura (Sem Sabor)</button>
               </div>
             </div>
             
             <!-- Opção de Tamanho -->
-            <div class="option-group size-group">
+            <div class="option-group">
               <span class="option-label">Tamanho</span>
-              <div class="options-buttons size-options">
+              <div class="options-buttons">
                 <button class="option-btn active">300g</button><button class="option-btn ">150g</button>
               </div>
             </div>
             
             <!-- Box de Compra/Assinatura -->
             <div class="price-card-box">
-              <!-- Compra Única (Sem Assinatura) -->
-              <div class="purchase-type-row" onclick="togglePurchaseType('single')">
-                <input type="radio" name="purchase_type" id="type_single" class="purchase-radio">
-                <div class="purchase-details">
-                  <span class="purchase-title">Sem Assinatura:</span>
-                  <span class="purchase-price"><span>R$ 109,90</span>R$ 93,42</span>
-                  <span class="purchase-installment">ou em até 6x sem juros no Cartão</span>
-                </div>
-              </div>
-
-              <!-- Compra com Assinatura (Com Assinatura, Checked por Padrão) -->
+              <!-- Compra com Assinatura (Checked por Padrão) -->
               <div class="purchase-type-row active" onclick="togglePurchaseType('sub')">
                 <input type="radio" name="purchase_type" id="type_sub" class="purchase-radio" checked>
                 <div class="purchase-details">
-                  <span class="purchase-title">Com assinatura: <span class="subscription-badge">Economize 20%</span></span>
-                  <span class="purchase-price monthly-price">R$ 87,92 <span style="font-size:0.85rem; font-weight:500; color:#5D9C3F; margin-left:4px;">à vista no Cartão</span></span>
+                  <span class="purchase-title">Compra recorrente <span class="subscription-badge">Economize 20%</span></span>
+                  <span class="purchase-price">R$ 87,92</span>
+                </div>
+              </div>
+              
+              <!-- Compra Única -->
+              <div class="purchase-type-row" onclick="togglePurchaseType('single')">
+                <input type="radio" name="purchase_type" id="type_single" class="purchase-radio">
+                <div class="purchase-details">
+                  <span class="purchase-title">Compra única</span>
+                  <span class="purchase-price"><span>R$ 109,90</span>R$ 93,42</span>
                 </div>
               </div>
               
               <!-- Opções de Assinatura -->
               <div class="subscription-options" id="subOptionsBlock">
-                <span class="option-label" style="font-size:0.75rem; margin-bottom:4px; letter-spacing:0.5px; text-transform: none; color: #777;">Selecione a Frequência de entrega</span>
+                <span class="option-label" style="font-size:0.75rem; margin-bottom:4px; letter-spacing:0.5px;">Frequência de Entrega</span>
                 <select class="frequency-selector">
                   <option>Receber a cada 1 mês</option>
                   <option>Receber a cada 2 meses</option>
@@ -4817,52 +4332,28 @@
                 </select>
                 <p style="font-size:0.75rem; color:var(--text-muted); line-height:1.35; margin: 4px 0 0 0;">✔ Frete grátis em todas as recorrências. Cancele ou altere a qualquer momento sem taxas.</p>
               </div>
-
-              <!-- Quantity Selector Inside Gray Card -->
-              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
-                <span class="option-label" style="font-size:0.75rem; margin-bottom:0; letter-spacing:0.5px; text-transform: none; color: #777;">Quantidade</span>
-                <div class="quantity-selector">
-                  <span class="qty-btn" onclick="adjustQty(-1)">-</span>
-                  <input type="text" class="qty-input" id="buyQtyInput" value="1" readonly>
-                  <span class="qty-btn" onclick="adjustQty(1)">+</span>
-                </div>
-              </div>
             </div>
             
-            <!-- Botão de Compra (Full Width abaixo do box) -->
-            <button class="btn-add-to-cart" onclick="triggerCartAnimation()">
-              Adicionar ao Carrinho
-            </button>
+            <!-- Action Row: Seletor Quantidade + Botão Comprar -->
+            <div class="action-row">
+              <div class="quantity-selector">
+                <span class="qty-btn" onclick="adjustQty(-1)">-</span>
+                <input type="text" class="qty-input" id="buyQtyInput" value="1" readonly>
+                <span class="qty-btn" onclick="adjustQty(1)">+</span>
+              </div>
+              <button class="btn-add-to-cart" onclick="triggerCartAnimation()">
+                Adicionar ao Carrinho
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Floating Sticky Buy Bar for Mobile -->
-      <div class="mobile-sticky-buy-bar">
-        <button class="btn-sticky-buy" onclick="scrollToBuyMobile()">
-          <span>Comprar</span>
-          <svg class="sticky-cart-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-          </svg>
-        </button>
       </div>
     </section>
 
     <!-- 3. HIGHLIGHTS / INGREDIENTES ATIVOS -->
     <section class="allied-section">
       <div class="container">
-        <!-- Day/Night Toggle Switch -->
-        <div class="allied-toggle-container">
-          <div class="day-night-toggle night" onclick="toggleAlliedMode()">
-            <div class="toggle-thumb"></div>
-            <div class="toggle-icon sun">
-              <svg viewBox="0 0 24 24" class="toggle-icon-svg" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zM5.99 16.95l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0z"/></svg>
-            </div>
-            <div class="toggle-icon moon">
-              <svg viewBox="0 0 24 24" class="toggle-icon-svg" fill="currentColor"><path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.6-.1 1.2.3 1.3.9.1.6-.3 1.2-.9 1.3-3.5.7-6 3.8-6 7.6 0 4.4 3.6 8 8 8 3.8 0 6.9-2.5 7.6-6 .1-.6.7-1 1.3-.9.6.1 1 .7.9 1.3-.9 4.7-5 8.2-9.8 8.2z"/></svg>
-            </div>
-          </div>
-        </div>
+        <div class="allied-badge">BNS+</div>
         <h2 class="allied-title">Seu melhor aliado para o ganho de força e volume muscular rápido</h2>
         <div class="allied-grid">
           
@@ -4887,9 +4378,9 @@
               <p class="allied-desc">Partículas menores que facilitam a diluição no copo.</p>
             </div>
         </div>
-        <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-bottom: 50px;">Aumentar minha força</button>
+        <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-bottom: 50px;">Comprar Agora</button>
         <div class="allied-banner">
-          <img src="sleeping-woman-banner.jpg" alt="Rotina de Bem-Estar e Foco">
+          <img src="drink-banner.webp" alt="Rotina de Bem-Estar e Foco">
         </div>
       </div>
     </section>
@@ -4974,30 +4465,30 @@
     <!-- 6. CIÊNCIA E ESTATÍSTICAS -->
     <section class="science-section-ref">
       <div class="container">
-        <h2 class="science-title-ref" style="margin-bottom: 40px;">A percepção de bem-estar</h2>
+        <h2 class="science-title-ref">O suplemento número 1 em evidências</h2>
+        <p class="science-desc-ref">A Creatina aumenta os estoques musculares de fosfocreatina, que atua doando fosfato para recarregar o ADP de volta a ATP. Esse processo é fundamental para manter treinos de alta intensidade e adiar a fadiga neuromuscular.</p>
         
-        <div class="science-stats-carousel-container">
-          <div class="science-stats-track" id="statsTrack">
-            
-            <div class="stat-circle-box" style="--pct-val: 64;">
+        <div class="science-stats-row-ref">
+          
+            <div class="stat-circle-box" style="--pct-val: 95;">
               <div class="stat-circle-wrapper">
                 <svg class="stat-circle-svg" viewBox="0 0 120 120">
                   <circle class="stat-circle-bg" cx="60" cy="60" r="50"></circle>
                   <circle class="stat-circle-val" cx="60" cy="60" r="50"></circle>
                 </svg>
-                <span class="stat-circle-inner-txt">64%</span>
+                <span class="stat-circle-inner-txt">95%</span>
               </div>
-              <span class="stat-circle-lbl-ref">dos participantes se sentiram mais dispostos</span>
+              <span class="stat-circle-lbl-ref">relataram ganho perceptível de força</span>
             </div>
-            <div class="stat-circle-box" style="--pct-val: 42;">
+            <div class="stat-circle-box" style="--pct-val: 80;">
               <div class="stat-circle-wrapper">
                 <svg class="stat-circle-svg" viewBox="0 0 120 120">
                   <circle class="stat-circle-bg" cx="60" cy="60" r="50"></circle>
                   <circle class="stat-circle-val" cx="60" cy="60" r="50"></circle>
                 </svg>
-                <span class="stat-circle-inner-txt">42%</span>
+                <span class="stat-circle-inner-txt">80%</span>
               </div>
-              <span class="stat-circle-lbl-ref">relataram melhora da qualidade do sono</span>
+              <span class="stat-circle-lbl-ref">observaram volume muscular preenchido</span>
             </div>
             <div class="stat-circle-box" style="--pct-val: 40;">
               <div class="stat-circle-wrapper">
@@ -5007,17 +4498,7 @@
                 </svg>
                 <span class="stat-circle-inner-txt">40%</span>
               </div>
-              <span class="stat-circle-lbl-ref">reduziram ou interromperam o uso de medicamentos para dormir</span>
-            </div>
-            <div class="stat-circle-box" style="--pct-val: 30;">
-              <div class="stat-circle-wrapper">
-                <svg class="stat-circle-svg" viewBox="0 0 120 120">
-                  <circle class="stat-circle-bg" cx="60" cy="60" r="50"></circle>
-                  <circle class="stat-circle-val" cx="60" cy="60" r="50"></circle>
-                </svg>
-                <span class="stat-circle-inner-txt">30%</span>
-              </div>
-              <span class="stat-circle-lbl-ref">sentiram que pegaram no sono mais rápido</span>
+              <span class="stat-circle-lbl-ref">de aceleração no repouso entre séries</span>
             </div>
             <div class="stat-circle-box" style="--pct-val: 20;">
               <div class="stat-circle-wrapper">
@@ -5027,18 +4508,8 @@
                 </svg>
                 <span class="stat-circle-inner-txt">20%</span>
               </div>
-              <span class="stat-circle-lbl-ref">relataram redução de dores corporais</span>
+              <span class="stat-circle-lbl-ref">de suporte metabólico a nível mitocondrial</span>
             </div>
-          </div>
-          <!-- Navigation Buttons -->
-          <div class="stats-carousel-nav">
-            <button class="stats-nav-btn prev" onclick="shiftStats(-1); event.stopPropagation();">
-              <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-            </button>
-            <button class="stats-nav-btn next" onclick="shiftStats(1); event.stopPropagation();">
-              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg>
-            </button>
-          </div>
         </div>
         
         <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
@@ -5813,38 +5284,9 @@
         };
         </script>
         
-    
+    '
         <script>
         // Custom Category Detail Interactions
-        function toggleAlliedMode() {
-          const toggle = document.querySelector('.day-night-toggle');
-          if (toggle) {
-            toggle.classList.toggle('night');
-          }
-        }
-
-        function selectFlavor(btnEl, flavorName) {
-          const group = btnEl.parentElement;
-          group.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
-          btnEl.classList.add('active');
-          
-          if (categoryId === 'whey') {
-            const mainImg = document.getElementById('mainProductDetailImg');
-            const newSrc = wheyFlavorImages[flavorName];
-            if (mainImg && newSrc) {
-              mainImg.classList.add('fade-out');
-              setTimeout(() => {
-                mainImg.src = newSrc;
-                const firstThumb = document.querySelector('.thumbnail-btn img');
-                if (firstThumb) {
-                  firstThumb.src = newSrc;
-                }
-                mainImg.classList.remove('fade-out');
-              }, 250);
-            }
-          }
-        }
-
         function switchMainImage(imgSrc, btnEl) {
           document.getElementById('mainProductDetailImg').src = imgSrc;
           // Deactivate all thumbnails
@@ -5855,22 +5297,22 @@
         }
         
         function togglePurchaseType(type) {
+          const singleRow = document.querySelector('.purchase-type-row:nth-child(2)');
+          const subRow = document.querySelector('.purchase-type-row:nth-child(1)');
+          const subBlock = document.getElementById('subOptionsBlock');
           const radioSingle = document.getElementById('type_single');
           const radioSub = document.getElementById('type_sub');
-          const singleRow = radioSingle ? radioSingle.closest('.purchase-type-row') : null;
-          const subRow = radioSub ? radioSub.closest('.purchase-type-row') : null;
-          const subBlock = document.getElementById('subOptionsBlock');
           
           if (type === 'single') {
-            if (singleRow) singleRow.classList.add('active');
-            if (subRow) subRow.classList.remove('active');
-            if (subBlock) subBlock.style.display = 'none';
-            if (radioSingle) radioSingle.checked = true;
+            singleRow.classList.add('active');
+            subRow.classList.remove('active');
+            subBlock.style.display = 'none';
+            radioSingle.checked = true;
           } else {
-            if (singleRow) singleRow.classList.remove('active');
-            if (subRow) subRow.classList.add('active');
-            if (subBlock) subBlock.style.display = 'flex';
-            if (radioSub) radioSub.checked = true;
+            singleRow.classList.remove('active');
+            subRow.classList.add('active');
+            subBlock.style.display = 'flex';
+            radioSub.checked = true;
           }
         }
         
@@ -5922,73 +5364,7 @@
             buyArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }
-        
-        // Science Stats Slider/Carousel
-        let activeStatIndex = 1;
-        function updateStatsSlider() {
-          const track = document.getElementById('statsTrack');
-          if (!track) return;
-          const items = track.querySelectorAll('.stat-circle-box');
-          if (items.length === 0) return;
-          
-          if (activeStatIndex < 0) activeStatIndex = 0;
-          if (activeStatIndex >= items.length) activeStatIndex = items.length - 1;
-          
-          items.forEach((item, idx) => {
-            if (idx === activeStatIndex) {
-              item.classList.add('active');
-            } else {
-              item.classList.remove('active');
-            }
-          });
-          
-          const itemWidth = 180;
-          const gap = 30;
-          const shift = -activeStatIndex * (itemWidth + gap);
-          track.style.transform = `translateX(${shift}px)`;
-        }
-        
-        function shiftStats(dir) {
-          const track = document.getElementById('statsTrack');
-          if (!track) return;
-          const items = track.querySelectorAll('.stat-circle-box');
-          activeStatIndex += dir;
-          if (activeStatIndex < 0) activeStatIndex = items.length - 1;
-          if (activeStatIndex >= items.length) activeStatIndex = 0;
-          updateStatsSlider();
-        }
-        
-        // Initial setup for Science Stats
-        function initScienceStats() {
-          const track = document.getElementById('statsTrack');
-          if (track) {
-            const items = track.querySelectorAll('.stat-circle-box');
-            items.forEach((item, idx) => {
-              item.addEventListener('click', () => {
-                activeStatIndex = idx;
-                updateStatsSlider();
-              });
-            });
-            // Set middle item active by default
-            activeStatIndex = Math.floor(items.length / 2);
-            updateStatsSlider();
-          }
-        }
-        initScienceStats();
-        
-        function scrollToBuyMobile() {
-          const buyArea = document.getElementById('buyArea');
-          if (buyArea) {
-            buyArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        }
         </script>
         
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5561981962126" target="_blank" rel="noopener noreferrer" class="whatsapp-float" title="WhatsApp">
-      <svg viewBox="0 0 24 24" fill="#fff" style="width: 32px; height: 32px;">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.53 1.98 14.07 .957 11.997.957c-5.444 0-9.866 4.372-9.87 9.802 0 1.63.43 3.224 1.246 4.634L2.35 21.66l6.297-1.653c1.472.804 3.125 1.228 4.79 1.23zM18.54 15.65c-.29-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.46.13-.61.13-.13.29-.34.44-.51.15-.17.2-.29.3-.49.1-.2.05-.38-.02-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.19 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.08 1.74-.71 1.98-1.4.25-.7.25-1.3.17-1.42-.08-.12-.29-.19-.58-.34z"/>
-      </svg>
-    </a>
 </body>
 </html>

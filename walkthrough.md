@@ -1,246 +1,93 @@
-# Entrega da Landing Page Premium - BNS+
+# Walkthrough de Ajustes, Otimização e Navegação (BNS+)
 
-A landing page completa e responsiva para a marca de suplementos premium **BNS+** foi criada com sucesso. O arquivo está localizado em [index.html](file:///e:/LANDING%20PAGE%20BNS/index.html).
-
----
-
-## 🛠️ Tecnologias e Recursos Utilizados
-- **HTML5 Semântico**: Estruturação limpa com tags semânticas (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`).
-- **CSS3 Moderno**: Utilização de variáveis globais de CSS, Flexbox, CSS Grid, media queries (Mobile-First) e animações personalizadas.
-- **Tipografia**:
-  - `Poppins` para cabeçalhos e elements fortes.
-  - `Inter` para leitura agradável e corrida.
-  - `Playfair Display` para títulos editoriais com apelo elegante (ex: Destaque de Produto Hero).
-- **Sem Dependências Externas**: Ícones construídos nativamente via vetores SVG in-line para otimizar velocidade de carregamento e evitar dependências de CDNs terceiros.
+As alterações de reestruturação visual, design premium, novos componentes e alinhamento do layout mobile para a landing page e páginas de categorias da **BNS+** foram implementadas com sucesso.
 
 ---
 
-## 📐 Estrutura de Blocos Desenvolvida (Ordem Estrita)
+## 🌟 Novidade: Troca de Sabor com Efeito Esmaecer (Apenas Whey Protein)
 
-1. **Header Fixo**:
-   - Barra superior promocional com anúncio de frete grátis (personalizado para compras acima de R$ 99).
-   - Logomarca principal apontando para o arquivo de imagem personalizado `logo_blue.png` com dimensões e proporções otimizadas via CSS.
-   - Ícones de ações atualizados com rótulos de texto no desktop ("Faça seu login ou cadastre-se" ao lado de Usuário, "Precisa de ajuda?" ao lado do ícone de Ajuda adicionado, e contador na Sacola).
-   - Sub-menu de navegação contendo o botão de destaque "**Todos os produtos**" em azul à esquerda, links alinhados à referência (`Compre por objetivo`, `Mais Vendidos`, `Lançamentos`, `Destaque da Semana`, `GLP-1 Support`, `Assinatura`), pequenos **separadores de bolinhas cinzas (`•`)** com espaçamento ajustado de `16px`, e ícone de chevron na categoria `Compre por objetivo`.
-   - Menu mobile drawer adaptado com a mesma lista de links correspondente.
-   - **Comportamento Scrolled / Fixo (Novo)**: Ao rolar a página para baixo, o cabeçalho se contrai de forma ultra compacta, alinhado perfeitamente com a referência visual:
-     - Reordena dinamicamente os elementos usando Flexbox and `display: contents` no CSS, sem alterar a estrutura do DOM.
-     - A ordem dos elementos torna-se: `Logo` | `Todos os produtos` | `Compre por objetivo` (com chevron) | `Assinatura` | `Ações do Header` (Minha Conta, Ajuda e Sacola de compras).
-     - Oculta de forma inteligente os links intermediários (`Mais Vendidos`, `Lançamentos`, `Destaque da Semana`, `GLP-1 Support`) e os pontos separadores.
-     - Esconde o botão de Favoritos e o texto dos ícones de login e ajuda em resoluções abaixo de `1200px` para evitar sobreposições, mantendo o cabeçalho 100% responsivo e elegante.
+Implementamos a funcionalidade interativa de troca da foto principal do produto ao selecionar um sabor na página do **New Whey Protein**, agregando dinamismo e otimização de performance:
 
-2. **Banner Hero Principal**:
-   - Configurado como um **card centralizado e responsivo** dentro da largura do container, utilizando a imagem enviada pelo usuário (`dragon-gtx-banner.png`) como imagem de fundo e contendo bordas arredondadas (`border-radius: 24px`) com `overflow: hidden` e uma máscara WebKit (`-webkit-mask-image`) para forçar o arredondamento perfeito de todos os cantos no navegador, incluindo os dois cantos inferiores.
-   - Remoção do estiramento de tela cheia nas laterais, com a seção externa adotando fundo branco limpo, mantendo o foco centralizado no conteúdo.
-   - Posicionamento da imagem de fundo (`dragon-gtx-banner.png`) deslocado `220px` para a direita e largura do conteúdo limitada a `520px` no desktop, evitando sobreposição com os produtos da imagem e mantendo o pote próximo à borda direita.
-   - Disposição interna dos elementos reestruturada para seguir fielmente a referência: rótulo superior, headline grande, **ticket de brindes com bordas pontilhadas e duas colunas** (`Kit Ritual do Treino` e `Intra-Treino ou Cúrcuma`), botão CTA primário e nota de rodapé informativa.
+### 1. Otimização de Performance (PNG para WebP)
+Para manter o carregamento do site ultra-rápido, convertemos as imagens brutas em alta resolução de cada sabor de Whey Protein de PNG (~5MB cada) para o formato moderno e otimizado WebP (~180KB cada), mantendo a qualidade cristalina das embalagens:
+- `WHEY BAUNILHA.png` ➔ `WHEY BAUNILHA.webp` (4.47 MB para 175.7 KB)
+- `WHEY CHOCOLATE.png` ➔ `WHEY CHOCOLATE.webp` (4.83 MB para 193.9 KB)
+- `WHEY COCO.png` ➔ `WHEY COCO.webp` (5.03 MB para 229.8 KB)
+- `WHEY COOKIES.png` ➔ `WHEY COOKIES.webp` (4.85 MB para 201.1 KB)
+- `WHEY DOCE DE LEITE.png` ➔ `WHEY DOCE DE LEITE.webp` (4.80 MB para 185.8 KB)
+- `WHEY LEITINHO.png` ➔ `WHEY LEITINHO.webp` (3.92 MB para 147.2 KB)
+- `WHEY MORANGO.png` ➔ `WHEY MORANGO.webp` (5.22 MB para 229.7 KB)
 
-3. **Carrossel de Categorias**:
-   - Scroll horizontal fluido com 9 categorias representadas por círculos pastéis e ícones SVG temáticos (com a categoria "Proteínas Veganas" removida de acordo com a customização).
+### 2. Transição com Esmaecer (Fade Effect)
+- Adicionamos regras CSS de transição de opacidade (`transition: opacity 0.25s ease;`) na imagem principal e criamos a classe `.fade-out { opacity: 0; }`.
+- Ao clicar em um botão de sabor, a imagem atual esmaece suavemente até sumir em 250ms, a URL da imagem correspondente ao sabor é atualizada (junto com a miniatura da galeria), e a imagem ressurge com fade-in.
 
-4. **Seção Best Sellers (Best Sellers)**:
-   - Título e link para listagem geral.
-   - Grid horizontal scrollável com setas de navegação desktop.
-   - Cards com badge de desconto, avaliação de estrelas, preços antigo/novo e botão de carrinho com animação de pulso.
-
-5. **Seção Editorial / Blog Preview**:
-   - Grid 2x2 responsiva com as 4 postagens solicitadas (Saúde, Vitaminas, Fitness) e títulos idênticos à referência.
-
-6. **Destaque de Produto Hero ("Cabelo, Pele & Unhas")**:
-   - Seção full-width de fundo bege médio com tipografia serifada gigante e benefícios organizados em cards brancos de destaque.
-
-7. **Seção "Quem Usa, Recomenda"**:
-   - Carrossel horizontal de influencers com depoimento, foto em estilo retrato com gradiente escuro e botão de compra rápida.
-
-8. **Seção True Foods**:
-   - Grid de 4 produtos com fundos pastéis coloridos vibrantes (rosa, marrom, caramelo e azul/verde), preço e botão circular de compra rápida.
-
-9. **Bloco Depoimento Destaque**:
-   - Banner de destaque em azul sólido `#015CAB`.
-   - Foto grande do produto à esquerda. Aspas gigantes e carrossel interativo em JS com troca automática/manual de depoimentos à direita.
-
-10. **Bloco Depoimento Médico**:
-    - Fundo off-white `#F5F0EB` com foco em autoridade.
-    - Foto circular de especialista à esquerda e declaração oficial em itálico à direita com setas funcionais de navegação.
-
-11. **Seção "Recomendados Para Você"**:
-    - Grid de 4 produtos com descontos e estilo idêntico à seção Best Sellers.
-
-12. **Banner Institucional**:
-    - Fundo suave e layout moderno conectando o propósito da marca (insumos limpos e naturais) com uma foto editorial sofisticada.
-
-13. **Footer Completo**:
-    - Logo, assinatura de newsletter com botão azul brand, links corporativos e de ajuda estruturados em 4 colunas responsivas, selo SSL seguro, selos de segurança adicionais e ícones de cartões/Pix.
+### 3. Exclusividade da Categoria Whey
+- Definimos uma variável `categoryId` global para cada página gerada e um mapa de imagens apenas na categoria `'whey'`.
+- O comportamento de atualização de imagem e animação de fade é executado exclusivamente se a categoria atual for Whey Protein, mantendo as demais páginas com funcionamento padrão e sem comportamento indesejado.
 
 ---
 
-## 💫 Interações Funcionais Desenvolvidas (via JavaScript Embutido)
-- **Header Dinâmico**: Diminui de tamanho e adiciona sombra leve (`backdrop-filter`) ao rolar a página para baixo.
-- **Carrinho Interativo**: Ao clicar em "Conhecer produto", o contador do cabeçalho incrementa dinamicamente com uma animação de salto (scale) e o botão exibe um status temporário de "✓ Adicionado!".
-- **Carrosséis Horizontais**: Setas funcionais de navegação horizontal no grid de Best Sellers, Recomendados e Influencers.
-- **Sliders de Depoimento**:
-  - Depoimentos Destaque (Azul) alternam textos e autores por meio de setas sem recarregar a página.
-  - Depoimentos Médicos (Autoridade) contam com navegação funcional para múltiplas citações médicas.
-- **Newsletter**: Validação de e-mail e popup interativo confirmando a assinatura.
+## 🎨 Reestruturação Visual e Alinhamento de Layout (Mockup True)
+
+Restruturamos o layout responsivo das 9 páginas de categorias para clonar fielmente a referência visual e funcional da True:
+
+1. **Header Mobile Otimizado**: 
+   - Exibição em linha do logotipo BNS+ (à esquerda) e das quatro ações (Perfil, Suporte, Carrinho de Compras com badge de contagem de itens e botão de Hambúrguer styled como círculo laranja com ícone branco).
+2. **Barra de Pesquisa**:
+   - Redesenhada no mobile para ocupar largura total, fundo bege suave (`#F6F1EA`) e lupa alinhada à direita.
+3. **Navegação de Categorias Horizontal**:
+   - Barra de navegação com scroll lateral no mobile, destacando visualmente a categoria ativa com cor laranja e sublinhado de destaque.
+4. **Navegação por Migalhas (Breadcrumbs) & Título no Estilo True**:
+   - Clonagem com exatidão da estrutura e tipografia da True:
+     - Substituição do link de texto 'Home' por um **ícone de casa minimalista (Home Icon)** em formato SVG.
+     - Substituição do caractere separador `>` por barras `/` elegantes com espaçamento adequado (`/ PRODUTOS / CATEGORIA`).
+     - Tipografia sem serifa compacta, limpa e moderna (usando a fonte principal `Inter`) para as migalhas e o título do produto (substituindo a antiga fonte serifada `Playfair Display`), apresentando um visual muito mais limpo, profissional e alinhado ao design da True.
+     - Mudança de ordem no mobile: o título do produto e a navegação por breadcrumbs agora aparecem no topo do viewport, logo acima do carrossel/imagens do produto. No desktop, eles permanecem na barra lateral de compra.
+5. **Selo de Cashback**:
+   - Um selo retangular laranja com ícone de carteira exibido no canto inferior direito da imagem principal do produto (oculto no desktop para manter a simplicidade da galeria).
+6. **Botão de WhatsApp Flutuante**:
+   - Ícone circular verde do WhatsApp que flutua no canto inferior direito, logo acima do menu inferior fixo.
+7. **Botão de Compra Fixo (Sticky Buy Bar)**:
+   - Um menu fixo no rodapé no mobile contendo um botão de compra verde de largura total (`#8BC34A`) e ícone de carrinho com contorno (outline).
+   - Ao ser clicado, realiza uma rolagem suave (`scrollIntoView`) direto para a seção de seleção de sabores e quantidades.
+8. **Galeria de Fotos Limpa (Pure White) & Sem Carrossel**:
+   - **Remoção de Carrossel**: Removemos completamente a grade de miniaturas (`.thumbnails-grid`) para manter apenas a imagem principal do produto, sem distrações secundárias.
+   - **Proporções do Grid (1440px)**: Alinhamos o grid de exibição (`.product-detail-grid`) na largura máxima de `1440px` (com padding lateral de `30px`), dividindo-o em duas colunas idênticas de **674px** de largura com um espaçamento central (gap) exato de **32px** no desktop.
+   - **Proporção da Imagem Principal**: Ajustamos a área da imagem principal (`.main-image-wrapper`) com uma proporção de tela quadrada perfeita de **1:1** (`aspect-ratio: 1`) com largura de 100% e altura fluida até o máximo de `674px`.
+   - **Cor de Fundo**: Alteramos a cor de fundo do container da imagem principal para **branco puro (`#FFFFFF`)**, removendo bordas e sombras para reproduzir com exatidão a simplicidade premium da True.
+   - **Selo e Estrelas Ocultados**: Ocultamos o selo dourado circular no desktop (`.product-gold-badge { display: none !important; }`) e ocultamos a linha de avaliação com estrelas (`.product-rating-row`) para manter o visual limpo como na referência.
+9. **Controles de Opções Premium (Sabor e Tamanho)**:
+   - **Pílula de Sabor Ativa**: Agora preenchida na cor laranja da BNS (`#FF6D00`) com texto branco e um ícone de marca de verificação (`✓`) inserido automaticamente via CSS.
+   - **Tamanho Circular**: As pílulas de tamanho agora são **botões perfeitamente circulares** (`width: 48px; height: 48px; border-radius: 50%`), mudando para fundo laranja com texto branco quando ativas, imitando fielmente o seletor da True.
+10. **Card Único Cinza de Preços & Ações**:
+    - Agrupamos as informações de preços, opções de compra e seleção de quantidade em um **card único com fundo cinza claro (`#F5F5F5`) e bordas arredondadas (`24px`)**.
+    - Reordenamos as opções: a opção de compra única ('Sem Assinatura:') agora aparece no topo com destaque para o preço cheio e parcelamento, e a opção recorrente ('Com assinatura:') aparece logo abaixo destacando o preço com desconto.
+    - O seletor de quantidade foi reformulado para ser uma caixa compacta com borda cinza, botões de `+` e `-` e fundo branco, posicionado de forma limpa dentro do card cinza.
+    - O botão de 'Adicionar ao Carrinho' foi posicionado em largura total logo abaixo do card cinza.
 
 ---
 
-## 🎨 Novo Layout Premium dos Cards de Produto
-- Alinhado com a nova referência visual solicitada pelo usuário, todos os 8 cards de produtos (Bloco 4: Best Sellers e Bloco 11: Recomendados Para Você) foram reestruturados e estilizados:
-  1. **Badge de Sabor / Benefício (Pílula Overlay)**:
-     - Posicionamento absoluto e centralizado na base do wrapper da imagem do produto.
-     - Fundo branco limpo com texto em azul da marca (`#015CAB`) em negrito, criando um contraste premium.
-     - Textos adaptados para cada produto:
-       - *Whey*: "Sabor do Coco de Verdade"
-       - *Creatina*: "100% Pura & Importada"
-       - *Termogênico*: "Fórmula Fit Clean"
-       - *Multivitamínico*: "A-Z Vitaminas e Minerais"
-       - *Vitamina D3+K2*: "Saúde Imunológica"
-       - *Ômega 3*: "Ultra Purificado"
-       - *Colágeno*: "Beleza & Firmeza"
-  2. **Alinhamento Inline de Preços e Avaliação (Meta Row)**:
-     - Em vez de blocos separados, o preço (De / Por) e a avaliação do produto (estrela gold + número) agora compartilham a mesma linha horizontal logo abaixo do nome do produto.
-     - Preço De (antigo) com traço em cinza claro, preço Por (atual) em negrito e preto `#1A1A1A`, e estrela gold com a nota (ex: `★ 4.8`) alinhada à direita.
-  3. **Botão de Adicionar ao Carrinho (Visual Clean)**:
-     - Removida a borda outline e o ícone de sacola para adotar um estilo minimalista premium.
-     - Fundo bege claro sólido (`#F5F0EB`) com texto marrom escuro em negrito (`#4A3E3D`).
-     - Efeito hover premium: transiciona suavemente para o azul principal da marca (`#015CAB`) com texto em branco e uma sombra sutil projetada.
-  4. **Proporção e Imagem Genérica Temporária**:
-     - Ajustada a proporção do wrapper da imagem (`.product-img-wrapper`) para **aspect ratio 4:5** conforme a referência.
-     - Definido o ajuste de encaixe da imagem para `object-fit: cover` para cobrir o espaço inteiro da proporção.
-     - Configurada a imagem [generic-product.jpg](file:///E:/LANDING PAGE BNS/generic-product.jpg) como imagem genérica em todos os 8 cards de produtos para visualização rápida do layout real.
+## 🛠️ Separação de Layouts e Correção de Bugs (Últimos Ajustes)
+
+Para atender à solicitação de aplicar o design True mobile exclusivamente à página de Whey Protein e reverter/manter as demais 8 categorias no layout padrão BNS+, implementamos as seguintes melhorias técnicas:
+
+1. **Separação de Modelos (Templates)**:
+   - Extraímos os templates de CSS, HTML e Javascript específicos do Whey (layout True) a partir da página funcional `categoria-whey.html`.
+   - Modificamos o compilador de páginas (`generate_category_pages.py`) para definir condicionalmente as variáveis de layout (`detail_html`, `combined_style` e `cat_script_extensions`) com base no `id` da categoria (`cat["id"] == "whey"`).
+   - Isso garante que a página de Whey carregue o layout True mobile com pílulas, card de assinatura inferior cinza, botão verde fixo e sem miniaturas de imagens, enquanto todas as outras 8 páginas de categorias (`categoria-creatina.html`, etc.) carregam a estrutura padrão BNS+ (Playfair Display, galeria com miniaturas e card tradicional).
+
+2. **Correção de Bug nas Estatísticas (Science Stats)**:
+   - Identificamos e corrigimos um erro de escape de barra invertida (`\\`) no padrão de expressão regular (`re.findall`) usado para calcular o percentual do gráfico de pizza de estatísticas científicas. 
+   - A correção (`\\\\d+` para `\\\\\\\\d+` na cadeia de codificação Python) permite a extração correta de valores como `64%` para o atributo CSS `--pct-val: 64`, permitindo que os círculos SVG renderizem o progresso correto em vez de reverter para 100%.
+
+3. **Verificação Automatizada**:
+   - Desenvolvemos e executamos o validador `scratch/verify_layouts.py`, confirmando que todas as 9 páginas foram geradas com sucesso com seus respectivos layouts corretos.
 
 ---
 
-## 🥤 Substituição da Seção de Artigos por Card de Nova Fórmula
-- A seção de "Artigos" (Bloco 5) foi totalmente substituída por um card promocional moderno e responsivo que destaca a **Nova Fórmula** do suplemento *True Energyzer & Focus*:
-  1. **Recorte de Imagens de Alta Fidelidade**:
-     - O pote do produto foi salvo como [canister-product.webp](file:///E:/LANDING PAGE BNS/canister-product.webp).
-     - O bloco contendo a bebida no copo foi salvo como [drink-banner.webp](file:///E:/LANDING PAGE BNS/drink-banner.webp).
-  2. **Desenvolvimento do Layout (.formula-card)**:
-     - Grid responsivo de duas colunas (50%/50% no desktop, empilhando-se verticalmente no mobile).
-     - Adotado fundo bege claro (`#F5F0EB`) e bordas bem arredondadas (`28px`), idêntico ao modelo.
-     - O lado esquerdo exibe o pote de produto, a tipografia limpa da chamada, descrição resumida e botões. O lado direito exibe a imagem coral completa da bebida.
+## 🚀 Links Oficiais e Publicação
 
----
+- **Repositório GitHub:** [pagebns no GitHub](https://github.com/bnsnutritionn-pixel/pagebns.git)
+- **URL Oficial de Produção (Vercel):** [pagebns.vercel.app](https://pagebns.vercel.app)
 
-## 🎠 Carrossel Dinâmico de 12 Produtos no Card de Fórmula
-- O bloco promocional de fórmula foi transformado em um carrossel interativo e funcional que navega entre 12 produtos da marca contidos na pasta `formula-card/`:
-  1. **Troca Dinâmica de Elementos**:
-     - Ao clicar nas setas de navegação (`#formulaPrev` e `#formulaNext`), o card atualiza em tempo real as seguintes informações:
-       - Imagem do pote do produto (buscada da pasta local `formula-card/`).
-       - Título e nome do produto.
-       - Descrição com os benefícios e diferenciais específicos de cada fórmula.
-       - Imagem promocional de fundo na coluna direita.
-  2. **Efeito de Transição Suave (Fade Transition)**:
-     - Implementamos a classe CSS `.formula-fade` combinada com o JavaScript para aplicar um efeito suave de esmaecimento e leve deslocamento vertical (`transform: translateY`) a cada transição de slide.
-
----
-
-## 🌟 Destaque de Produto Hero: Cabelo, Pele & Unhas
-- A seção de **Destaque de Produto Hero (Bloco 6)** foi atualizada para promover o produto **Cabelo, Pele & Unhas**:
-  1. **Alteração de Mídia**:
-     - Substituído o pote anterior pela imagem real do pote do produto [CABELO, PELE E UNHA.webp](file:///E:/LANDING PAGE BNS/formula-card/CABELO,%20PELE%20E%20UNHA.webp).
-  2. **Atualização Textual & Benefícios**:
-     - Título alterado para "Cabelo, Pele & Unhas" com o subtítulo "Brilho, Força e Elasticidade".
-     - Descrição reescrita destacando a sinergia entre a biotina concentrada, colágeno hidrolisado e minerais quelatos.
-     - Preço no botão ajustado de forma atrativa para **R$ 89,90**.
-
----
-
-## ⚓ Rolagem Suave com Offset para Menu Desktop e Mobile
-- Para atender à solicitação de que a navegação e rolagens automáticas surtam efeito perfeito também na versão mobile:
-  1. **Ajuste de Margem de Rolagem (CSS scroll-margin-top)**:
-     - Unificamos a propriedade `scroll-margin-top: 140px` tanto no desktop quanto no mobile para as seções `#bestSellers`, `#productHero`, `#trueFoods`, `#categories`, `#reviews` e `#recommended`.
-     - Isso garante que a rolagem nativa deixe um espaçamento adequado no topo, impedindo que a barra de cabeçalho fixa/sticky (que ficou ligeiramente mais alta no mobile com a nova barra de categorias) cubra os títulos das seções.
-  2. **Interceptador de Cliques do Menu Drawer (JavaScript)**:
-     - Implementado um tratador de eventos em JS para todos os links do menu drawer do mobile (`.mobile-menu-links a`).
-     - Quando um link é clicado, o drawer inicia seu fechamento deslizante (que leva 300ms) e é executado um `setTimeout` de 300ms antes de rolar. Isso evita engasgos e reposicionamentos incorretos durante a transição do menu.
-     - O cálculo de rolagem é dinâmico: `targetElement.getBoundingClientRect().top + window.scrollY - headerHeight`, garantindo precisão milimétrica em qualquer resolução.
-
----
-
-## 📱 Banner Hero Exclusivo para Versão Mobile (VERSAO_MOBILE_ALTA.webp - Alta Qualidade)
-- Para solucionar definitivamente a questão de resolução do banner mobile:
-  1. **Conversão e Otimização**:
-     - O arquivo de alta resolução `VERSAO_MOBILE_ALTA.png` (3MB) foi processado e salvo como `VERSAO_MOBILE_ALTA.webp` com largura limitada a `1000px` (proporção mantida), garantindo nitidez impecável em telas Retina de smartphones.
-     - O tamanho final do arquivo foi reduzido para apenas **113 KB** (otimização de ~96%).
-  2. **Substituição no HTML**:
-     - Atualizada a tag de imagem do banner mobile em [index.html](file:///E:/LANDING%20PAGE%20BNS/index.html) para apontar para `VERSAO_MOBILE_ALTA.webp`.
-
----
-
-## 🥗 Seção True Foods Expandida (7 Cards & Fotos Reais)
-- A seção **True Foods (Bloco 8)** foi reestruturada para exibir **7 cards ao todo** (uma adição de 3 novos cards):
-  1. **Fotos Reais e Otimizadas**:
-     - As 7 imagens fornecidas na pasta `foods/` (de 500KB a 10MB) foram redimensionadas para largura máxima de `800px` e convertidas para WebP.
-     - O tamanho total das fotos caiu de ~35MB para apenas **~440KB** somados (redução de 98.7% no peso dos arquivos), otimizando drasticamente a velocidade de carregamento.
-  2. **Paleta de Cores Pastéis Ampliada**:
-     - Criamos novas classes CSS (`.tf-purple`, `.tf-orange`, `.tf-yellow`) com fundos pastéis harmônicos para os 3 novos produtos.
-  3. **Identidade e Novo Layout dos Cards**:
-     - Removidos completamente os blocos de preços (antigo/promocional) e as pílulas com o sabor/nome do produto (ex: "Pasta de Amendoim") que sobrepunham a imagem na base.
-     - As avaliações de estrelas (ex: `★ 4.8`) foram movidas para a parte interna superior-direita do wrapper da imagem, estilizadas como um badge absoluto (`.product-rating-badge`) elegante com fundo branco, cantos arredondados e sombra suave.
-     - Mantivemos estritamente apenas o botão `"Conhecer produto"` na base da informação do produto.
-  4. **Responsividade**:
-     - Grid 100% responsivo: no desktop os 7 cards dividem-se de forma fluida, e no mobile continuam com o comportamento de scroll horizontal por arrasto/touch.
-
----
-
-## 🧭 Barra de Categorias Horizontal no Mobile (Estilo Menu Junto)
-- Ajustamos a barra de categorias secundária no mobile para ficar idêntica à referência:
-  1. **Remoção de Elementos**:
-     - Ocultamos completamente o botão azul `"Todos os produtos"` (`.btn-all-products`) no mobile para evitar poluição visual.
-     - Removemos todos os círculos/pontos separadores (`.nav-dot`) para manter o menu clean.
-  2. **Agrupamento e Espaçamento (CSS)**:
-     - Modificamos a classe `.nav-links` no mobile para se comportar como um contêiner flex (`display: flex !important; flex-direction: row !important; gap: 12px;`).
-     - Removemos completamente os círculos cinzas separadores (`.nav-dot` / `li.nav-dot`) na versão mobile para melhor aproveitamento do espaço.
-     - A tipografia dos links foi reduzida para **`0.8rem`** e peso **`600`**, aproximando as opções e permitindo que mais itens apareçam simultaneamente na tela.
-     - A navegação secundária permanece scrollável horizontalmente sem quebras de linha em qualquer dispositivo móvel.
-
----
-
-## 🎨 Outros Ajustes Mobile Premium
-1. **Logo Otimizada**:
-   * O arquivo da logomarca `logo_blue.webp` foi recortado via script para remover bordas transparentes desnecessárias no topo e na base (reduzido de `1920x933` para `1735x791`).
-2. **Colapso do Cabeçalho Mobile ao Rolar (Scrolled)**:
-   * **Estado Padrão**: Layout limpo com a logo e os botões de ação no topo, e o menu de navegação de categorias secundárias logo abaixo.
-   * **Estado Scrolled**: Ao rolar a página para baixo, o cabeçalho se contrai para uma única linha ultra compacta:
-     * A logo é redimensionada suavemente para **`85px`**.
-     * O menu secundário de navegação horizontal (Mais Vendidos, Catálogo, etc.) é ocultado temporariamente para liberar o espaço de tela útil de leitura.
-3. **Ícones de Categorias com 85px**:
-   * Redimensionamos os círculos das categorias no mobile para **`85px`** de diâmetro para maior visibilidade.
-   * Ajustamos os ícones internos (SVGs) para **`36px`** e o tamanho do card para **`100px`** de largura, mantendo a proporção ideal.
-
----
-
-## 📄 Páginas Explicativas de Categorias (Páginas de Detalhes de Produto)
-Desenvolvemos 9 novas páginas explicativas de categorias (estilo página de detalhes de produto) baseadas na referência visual solicitada pelo usuário:
-1. **Páginas Criadas**:
-   - [categoria-whey.html](file:///e:/LANDING%20PAGE%20BNS/categoria-whey.html) (Whey Protein)
-   - [categoria-pre-treino.html](file:///e:/LANDING%20PAGE%20BNS/categoria-pre-treino.html) (Pré-Treino)
-   - [categoria-creatina.html](file:///e:/LANDING%20PAGE%20BNS/categoria-creatina.html) (Creatina)
-   - [categoria-vitaminas.html](file:///e:/LANDING%20PAGE%20BNS/categoria-vitaminas.html) (Vitaminas)
-   - [categoria-omega-3.html](file:///e:/LANDING%20PAGE%20BNS/categoria-omega-3.html) (Ômega 3)
-   - [categoria-colageno.html](file:///e:/LANDING%20PAGE%20BNS/categoria-colageno.html) (Colágeno)
-   - [categoria-true-foods.html](file:///e:/LANDING%20PAGE%20BNS/categoria-true-foods.html) (True Foods)
-   - [categoria-emagrecedores.html](file:///e:/LANDING%20PAGE%20BNS/categoria-emagrecedores.html) (Emagrecedores)
-   - [categoria-vitamina-d.html](file:///e:/LANDING%20PAGE%20BNS/categoria-vitamina-d.html) (Vitamina D)
-2. **Automação via Python**:
-   - Criamos o gerador `scratch/generate_category_pages.py` que lê de forma dinâmica as seções globais (CSS, Header, Mobile Menu Drawer e Rodapé) do `index.html` e compila todos os 9 arquivos HTML contendo metadados específicos para cada produto/categoria.
-3. **Seções de Alta Fidelidade**:
-   - **Área de Compra**: Galeria interativa de fotos, breadcrumbs, avaliação, seletor de Sabor/Tamanho, simulador de assinatura (20% Off com frequência de entrega) e botão laranja.
-   - **Ingredientes Ativos**: Destaques numéricos de nutrientes sob foto conceitual de fundo.
-   - **Metáfora Visual**: Texto explicativo com analogia de cotidiano (lado esquerdo) e canister transparente (lado direito).
-   - **Como Ele Te Ajuda**: Grid de 4 cards de benefícios ilustrados.
-   - **Ciência Clínica**: Parágrafo científico e badges circulares com estatísticas percentuais de eficiência comprovada.
-   - **Consumo**: Modo de preparo sugerido acompanhado de imagem editorial.
-   - **Acordeão de FAQ**: 5 perguntas frequentes retráteis com abertura/fechamento dinâmico e suave em JS.
-   - **Ingredientes e Alergênicos**: Parágrafo detalhado com avisos e orientações.
-   - **Tabela Nutricional**: Tabela vertical limpa e de fácil leitura (%VD inclusos).
-   - **Avaliações**: Placar de satisfação estilo Trustvox com avaliações de clientes reais.
-4. **Navegação Integrada**:
-   - Atualizamos o carrossel de categorias da página inicial (`index.html`) para linkar para as novas páginas.
-   - Atualizamos a listagem do rodapé de produtos para apontar diretamente para as novas páginas.
-   - Os links de navegação do cabeçalho nas páginas de categoria apontam de volta para as respectivas seções da página inicial (`index.html#secao`).
-5. **Implantação na Vercel**:
-   - Os novos arquivos foram integrados e implantados com sucesso em produção na Vercel: https://pagebns.vercel.app.
