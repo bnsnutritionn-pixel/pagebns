@@ -4588,6 +4588,137 @@
       gap: 4px;
     }
     
+
+/* NEW WHEY EXTRA FEATURES */
+.quick-nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 18px 0;
+}
+.quick-nutrition-card {
+  background-color: #F9F7F5;
+  border-radius: 12px;
+  padding: 12px 6px;
+  text-align: center;
+  border: 1px solid #EAE6DF;
+  transition: all 0.2s ease;
+}
+.quick-nutrition-card:hover {
+  background-color: #FFFFFF;
+  border-color: #FF6D00;
+  box-shadow: 0 4px 12px rgba(255, 109, 0, 0.08);
+  transform: translateY(-2px);
+}
+.quick-nutrition-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #3C302F;
+  display: block;
+}
+.quick-nutrition-label {
+  font-size: 0.65rem;
+  color: #888888;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+.features-split-section {
+  padding: 80px 0;
+  background-color: #FAF8F5;
+}
+.features-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.features-split-card {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid #EAE6DF;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+.features-split-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #3C302F;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.features-split-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.features-split-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 0.95rem;
+  color: #4A4A4A;
+  line-height: 1.5;
+}
+.features-split-list li svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+@media (max-width: 991px) {
+  .features-split-grid {
+    gap: 24px;
+  }
+  .features-split-card {
+    padding: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .features-split-section {
+    padding: 50px 0;
+  }
+  .features-split-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .quick-nutrition-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    margin: 12px 0;
+  }
+  .quick-nutrition-card {
+    padding: 8px 2px;
+    border-radius: 8px;
+  }
+  .quick-nutrition-val {
+    font-size: 0.75rem;
+  }
+  .quick-nutrition-label {
+    font-size: 0.52rem;
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+  .features-split-card {
+    padding: 24px 20px;
+  }
+  .features-split-title {
+    font-size: 1.25rem;
+  }
+  .features-split-list li {
+    font-size: 0.9rem;
+    gap: 10px;
+  }
+}
+    
     </style>
 </head>
 <body>
@@ -4747,6 +4878,29 @@
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
               </div>
+            <!-- Quick Nutrition Highlights -->
+            <div class="quick-nutrition-grid">
+              <div class="quick-nutrition-card">
+                <span class="quick-nutrition-val">117 kcal</span>
+                <span class="quick-nutrition-label">Calorias</span>
+              </div>
+              <div class="quick-nutrition-card">
+                <span class="quick-nutrition-val">4 g</span>
+                <span class="quick-nutrition-label">Carbos</span>
+              </div>
+              <div class="quick-nutrition-card">
+                <span class="quick-nutrition-val">24 g</span>
+                <span class="quick-nutrition-label">Proteínas</span>
+              </div>
+              <div class="quick-nutrition-card">
+                <span class="quick-nutrition-val">2 g</span>
+                <span class="quick-nutrition-label">Gorduras</span>
+              </div>
+              <div class="quick-nutrition-card">
+                <span class="quick-nutrition-val">0 g</span>
+                <span class="quick-nutrition-label">Açúcares</span>
+              </div>
+            </div>
               <span>4.8 (903 avaliações)</span>
             </div>
             
@@ -4951,7 +5105,92 @@
       </div>
     </section>
 
-    <!-- 6. CIÊNCIA E ESTATÍSTICAS -->
+    
+<!-- 5.1. O QUE POSSUI E NÃO POSSUI -->
+<section class="features-split-section">
+  <div class="container">
+    <div class="features-split-grid">
+      <!-- Possui -->
+      <div class="features-split-card">
+        <h3 class="features-split-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          O que possui
+        </h3>
+        <ul class="features-split-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span><strong>24g de Proteína Pura:</strong> Combinação isolada e concentrada de alta digestibilidade.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span><strong>5.5g de BCAAs:</strong> Essenciais para a recuperação acelerada pós-treino e hipertrofia.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span><strong>4.3g de Glutamina:</strong> Auxílio fundamental na imunidade e na saúde da microbiota intestinal.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span><strong>Sabor & Cremosidade Incomparável:</strong> O blend ideal para misturas ou receitas fit.</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Não possui -->
+      <div class="features-split-card">
+        <h3 class="features-split-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          O que NÃO possui
+        </h3>
+        <ul class="features-split-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span><strong>Sem Açúcares Adicionados:</strong> Fórmula pura adoçada com adoçantes nobres.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span><strong>Adoçantes Artificiais Nocivos:</strong> Livre de ciclamato, aspartame ou aditivos.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span><strong>Corantes Artificiais:</strong> Sem prejuízos gástricos ou compostos alergênicos.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span><strong>Sem Glúten:</strong> Seguro para intolerantes e celíacos, garantindo digestão leve.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CIÊNCIA E ESTATÍSTICAS -->
     <section class="science-section-ref">
       <div class="container">
         <h2 class="science-title-ref" style="margin-bottom: 40px;">A percepção de bem-estar</h2>

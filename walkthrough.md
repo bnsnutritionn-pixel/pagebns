@@ -81,7 +81,11 @@ Para atender à solicitação de aplicar o design True mobile exclusivamente à 
    - Identificamos e corrigimos um erro de escape de barra invertida (`\\`) no padrão de expressão regular (`re.findall`) usado para calcular o percentual do gráfico de pizza de estatísticas científicas. 
    - A correção (`\\\\d+` para `\\\\\\\\d+` na cadeia de codificação Python) permite a extração correta de valores como `64%` para o atributo CSS `--pct-val: 64`, permitindo que os círculos SVG renderizem o progresso correto em vez de reverter para 100%.
 
-3. **Verificação Automatizada**:
+3. **Elementos Adicionais do Produto (Inspirados na True)**:
+   - **Grid de Informações Nutricionais Rápidas:** Incluímos um painel horizontal com 5 cartões minimalistas exibindo os macronutrientes do Whey BNS+ (117 kcal, 4g carbos, 24g proteínas, 2g gorduras, 0g açúcares adicionados) logo abaixo das avaliações do produto.
+   - **Seção "O que possui e NÃO possui":** Implementamos uma seção dividida em duas colunas com cartões dedicados. A coluna da esquerda detalha as propriedades ativas presentes (24g proteína, BCAAs, Glutamina, sabor e cremosidade) com ícones de verificação na cor laranja da BNS. A coluna da direita destaca o que é livre na fórmula (sem açúcares, adoçantes artificiais, corantes ou glúten) com ícones de cancelamento em cinza escuro.
+
+4. **Verificação Automatizada**:
    - Desenvolvemos e executamos o validador `scratch/verify_layouts.py`, confirmando que todas as 9 páginas foram geradas com sucesso com seus respectivos layouts corretos.
 
 ---
