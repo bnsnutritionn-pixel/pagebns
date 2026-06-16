@@ -2859,6 +2859,12 @@
       max-height: 85%;
       object-fit: contain;
       filter: drop-shadow(0 15px 30px rgba(0,0,0,0.05));
+      transition: opacity 0.25s ease;
+      opacity: 1;
+    }
+    
+    .main-image-wrapper img.fade-out {
+      opacity: 0;
     }
     
     .product-gold-badge {
@@ -4377,7 +4383,7 @@
             <div class="option-group">
               <span class="option-label">Sabor</span>
               <div class="options-buttons">
-                <button class="option-btn active">Cápsulas (Sem Sabor)</button>
+                <button class="option-btn active" onclick="selectFlavor(this, 'Cápsulas (Sem Sabor)')">Cápsulas (Sem Sabor)</button>
               </div>
             </div>
             
@@ -5011,11 +5017,47 @@
     
     
         <script>
+        const categoryId = 'vitaminas';
+        const wheyFlavorImages = {
+          "Chocolate": "PRODUTOS/NEW WHEY PROTEIN/WHEY CHOCOLATE.webp",
+          "Morango": "PRODUTOS/NEW WHEY PROTEIN/WHEY MORANGO.webp",
+          "Baunilha": "PRODUTOS/NEW WHEY PROTEIN/WHEY BAUNILHA.webp",
+          "Coco": "PRODUTOS/NEW WHEY PROTEIN/WHEY COCO.webp",
+          "Leitinho": "PRODUTOS/NEW WHEY PROTEIN/WHEY LEITINHO.webp",
+          "Cookies": "PRODUTOS/NEW WHEY PROTEIN/WHEY COOKIES.webp",
+          "Doce de Leite": "PRODUTOS/NEW WHEY PROTEIN/WHEY DOCE DE LEITE.webp"
+        };
+        </script>
+        
+    
+        <script>
         // Custom Category Detail Interactions
         function toggleAlliedMode() {
           const toggle = document.querySelector('.day-night-toggle');
           if (toggle) {
             toggle.classList.toggle('night');
+          }
+        }
+
+        function selectFlavor(btnEl, flavorName) {
+          const group = btnEl.parentElement;
+          group.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+          btnEl.classList.add('active');
+          
+          if (categoryId === 'whey') {
+            const mainImg = document.getElementById('mainProductDetailImg');
+            const newSrc = wheyFlavorImages[flavorName];
+            if (mainImg && newSrc) {
+              mainImg.classList.add('fade-out');
+              setTimeout(() => {
+                mainImg.src = newSrc;
+                const firstThumb = document.querySelector('.thumbnail-btn img');
+                if (firstThumb) {
+                  firstThumb.src = newSrc;
+                }
+                mainImg.classList.remove('fade-out');
+              }, 250);
+            }
           }
         }
 
