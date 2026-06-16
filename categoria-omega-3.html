@@ -2994,6 +2994,12 @@
       background-color: var(--bg-white);
     }
     
+    @media (min-width: 1024px) {
+      .product-detail-section .container {
+        padding: 0 30px !important;
+      }
+    }
+    
     .product-detail-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -3002,8 +3008,10 @@
     
     @media (min-width: 1024px) {
       .product-detail-grid {
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 60px;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        max-width: 1380px;
+        margin: 0 auto;
       }
     }
     
@@ -3022,13 +3030,17 @@
       justify-content: center;
       padding: 20px;
       border: none;
-      height: 480px;
+      width: 100%;
+      max-width: 674px;
+      aspect-ratio: 1;
+      height: auto;
       position: relative;
+      box-sizing: border-box;
     }
     
     .main-image-wrapper img {
-      max-width: 85%;
-      max-height: 85%;
+      max-width: 90%;
+      max-height: 90%;
       object-fit: contain;
       filter: drop-shadow(0 15px 30px rgba(0,0,0,0.05));
       transition: opacity 0.25s ease;
@@ -4725,17 +4737,6 @@
                   <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
                 </svg>
               </div>
-            </div>
-            <div class="thumbnails-grid">
-              <button class="thumbnail-btn active" onclick="switchMainImage('generic-product.webp', this)">
-                <img src="generic-product.webp" alt="Foto 1">
-              </button>
-              <button class="thumbnail-btn" onclick="switchMainImage('generic-product.webp', this)">
-                <img src="generic-product.webp" alt="Foto 2">
-              </button>
-              <button class="thumbnail-btn" onclick="switchMainImage('canister-product.webp', this)">
-                <img src="canister-product.webp" alt="Foto 3">
-              </button>
             </div>
           </div>
           
