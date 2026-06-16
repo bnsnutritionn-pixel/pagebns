@@ -3217,24 +3217,82 @@
     /* 2. Allied Section */
     .allied-section {
       background-color: #FAF6F0;
-      padding: 80px 0 0 0;
+      padding: 60px 0 0 0;
       text-align: center;
     }
     
-    .allied-badge {
-      display: inline-flex;
+    /* Day/Night Toggle Switch styling */
+    .allied-toggle-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    
+    .day-night-toggle {
+      width: 80px;
+      height: 38px;
+      background-color: #3C302F;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      padding: 3px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .toggle-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 46px;
-      height: 26px;
-      background-color: #D2A267;
-      color: #FFFFFF;
-      font-size: 0.75rem;
-      font-weight: 700;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    
+    .toggle-icon-svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+    
+    .toggle-icon.sun {
+      margin-left: 2px;
+      color: #FFA000;
+    }
+    
+    .toggle-icon.moon {
+      margin-right: 2px;
+      color: #FFB300;
+    }
+    
+    .toggle-thumb {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background-color: #FFC107;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      z-index: 1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    
+    .day-night-toggle.night .toggle-thumb {
+      transform: translateX(42px);
+    }
+    
+    .day-night-toggle.night .toggle-icon.sun {
+      color: #8C7D70;
+    }
+    
+    .day-night-toggle.night .toggle-icon.moon {
+      color: #3C302F;
     }
     
     .allied-title {
@@ -3243,77 +3301,117 @@
       color: #3C302F;
       font-weight: 700;
       margin-bottom: 40px;
-      max-width: 800px;
+      max-width: 850px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.25;
+      padding: 0 20px;
     }
     
     .allied-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 30px;
-      max-width: 1100px;
+      gap: 24px;
+      max-width: 1200px;
       margin: 0 auto 50px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
     
-    @media (min-width: 768px) {
+    @media (min-width: 600px) {
       .allied-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .allied-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
       }
     }
     
     .allied-col {
+      background-color: #FFFFFF;
+      border: 1px solid #E5E0DA;
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: left;
+      box-sizing: border-box;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
       position: relative;
-      padding: 0 16px;
     }
     
-    @media (min-width: 768px) {
-      .allied-col:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        right: -10px;
-        top: 10%;
-        height: 80%;
-        width: 1px;
-        background-color: #E5E0DA;
-      }
+    .allied-col:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(93, 156, 63, 0.08);
+      border-color: #5D9C3F;
     }
     
     .allied-val {
-      font-size: 2.6rem;
+      font-family: var(--font-heading);
+      font-size: 2.1rem;
       font-weight: 800;
       color: #3C302F;
       display: block;
-      margin-bottom: 8px;
-      line-height: 1;
+      margin-bottom: 6px;
+      line-height: 1.1;
     }
     
     .allied-lbl {
-      font-size: 1rem;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
       font-weight: 700;
       color: #3C302F;
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      line-height: 1.2;
     }
     
     .allied-desc {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: #7C7063;
-      line-height: 1.45;
+      line-height: 1.5;
+      margin: 0;
     }
     
     .allied-banner {
       width: 100%;
       height: 480px;
       overflow: hidden;
+      position: relative;
     }
     
     .allied-banner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
+    }
+    
+    .allied-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 160px;
+      background: linear-gradient(to bottom, #FAF6F0 0%, rgba(250, 246, 240, 0) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    @media (max-width: 767px) {
+      .allied-banner {
+        height: 280px;
+      }
+      .allied-banner::before {
+        height: 100px;
+      }
     }
     
     /* Yellow gold action button */
@@ -4342,7 +4440,18 @@
     <!-- 3. HIGHLIGHTS / INGREDIENTES ATIVOS -->
     <section class="allied-section">
       <div class="container">
-        <div class="allied-badge">BNS+</div>
+        <!-- Day/Night Toggle Switch -->
+        <div class="allied-toggle-container">
+          <div class="day-night-toggle night" onclick="toggleAlliedMode()">
+            <div class="toggle-thumb"></div>
+            <div class="toggle-icon sun">
+              <svg viewBox="0 0 24 24" class="toggle-icon-svg" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zM5.99 16.95l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0z"/></svg>
+            </div>
+            <div class="toggle-icon moon">
+              <svg viewBox="0 0 24 24" class="toggle-icon-svg" fill="currentColor"><path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.6-.1 1.2.3 1.3.9.1.6-.3 1.2-.9 1.3-3.5.7-6 3.8-6 7.6 0 4.4 3.6 8 8 8 3.8 0 6.9-2.5 7.6-6 .1-.6.7-1 1.3-.9.6.1 1 .7.9 1.3-.9 4.7-5 8.2-9.8 8.2z"/></svg>
+            </div>
+          </div>
+        </div>
         <h2 class="allied-title">Seu melhor aliado para a beleza, elasticidade e firmeza da sua pele</h2>
         <div class="allied-grid">
           
@@ -4367,9 +4476,9 @@
               <p class="allied-desc">Retém água nas camadas profundas, preenchendo a pele.</p>
             </div>
         </div>
-        <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-bottom: 50px;">Comprar Agora</button>
+        <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-bottom: 50px;">Cuidar da minha pele</button>
         <div class="allied-banner">
-          <img src="drink-banner.webp" alt="Rotina de Bem-Estar e Foco">
+          <img src="sleeping-woman-banner.jpg" alt="Rotina de Bem-Estar e Foco">
         </div>
       </div>
     </section>
@@ -4898,6 +5007,13 @@
     
         <script>
         // Custom Category Detail Interactions
+        function toggleAlliedMode() {
+          const toggle = document.querySelector('.day-night-toggle');
+          if (toggle) {
+            toggle.classList.toggle('night');
+          }
+        }
+
         function switchMainImage(imgSrc, btnEl) {
           document.getElementById('mainProductDetailImg').src = imgSrc;
           // Deactivate all thumbnails
