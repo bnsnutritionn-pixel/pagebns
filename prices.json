@@ -1,0 +1,38 @@
+{
+    "whey": {
+        "price": "R$ 142,47",
+        "priceOld": "R$ 179,97",
+        "priceMonthly": "R$ 135,35",
+        "installments": "6x de R$ 23,75"
+    },
+    "pre-treino": {
+        "price": "R$ 104,47",
+        "priceOld": "R$ 139,98",
+        "priceMonthly": "R$ 99,25",
+        "installments": "6x de R$ 17,41"
+    },
+    "creatina": {
+        "price": "R$ 47,38",
+        "priceOld": "R$ 49,87",
+        "priceMonthly": "R$ 45,01",
+        "installments": "6x de R$ 7,90"
+    },
+    "vitaminas": {
+        "price": "R$ 47,47",
+        "priceOld": "R$ 49,97",
+        "priceMonthly": "R$ 45,10",
+        "installments": "6x de R$ 7,91"
+    },
+    "emagrecedores": {
+        "price": "R$ 56,91",
+        "priceOld": "R$ 59,90",
+        "priceMonthly": "R$ 54,06",
+        "installments": "6x de R$ 9,48"
+    },
+    "vitamina-d": {
+        "price": "R$ 94,05",
+        "priceOld": "R$ 99,00",
+        "priceMonthly": "R$ 89,35",
+        "installments": "6x de R$ 15,67"
+    }
+}

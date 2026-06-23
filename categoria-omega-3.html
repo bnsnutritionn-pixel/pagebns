@@ -1336,7 +1336,43 @@
 
     /* Setas Carrossel */
     .carousel-btn {
-      display: none !important;
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .carousel-btn {
+        display: flex !important;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--bg-white);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        align-items: center;
+        justify-content: center;
+        color: var(--text-dark);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        z-index: 10;
+        transition: var(--transition-smooth);
+      }
+
+      .carousel-btn:hover {
+        background-color: var(--primary);
+        color: var(--bg-white);
+        border-color: var(--primary);
+        box-shadow: 0 6px 16px rgba(1, 92, 171, 0.25);
+      }
+
+      .carousel-btn-prev {
+        left: -22px;
+      }
+
+      .carousel-btn-next {
+        right: -22px;
+      }
     }
 
     /* ----------------------------------------------------
@@ -1444,9 +1480,9 @@
     /* ----------------------------------------------------
        6. DESTAQUE DE PRODUTO HERO (FULL-WIDTH)
        ---------------------------------------------------- */
-        .product-hero-section {
+    .product-hero-section {
       background-color: var(--bg-white);
-      padding: 48px 0;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1454,15 +1490,15 @@
 
     .product-hero-container {
       width: 100%;
-      max-width: 640px;
-      margin: 0 auto;
+      max-width: 100%;
+      margin: 0;
       background-color: #FAF5F0;
-      border-radius: 32px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+      border-radius: 0;
+      box-shadow: none;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(0, 0, 0, 0.03);
+      border: none;
     }
 
     .product-hero-image-wrapper {
@@ -1494,6 +1530,29 @@
       align-items: flex-start;
       box-sizing: border-box;
       width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .product-hero-container {
+        flex-direction: row;
+        align-items: stretch;
+      }
+      .product-hero-image-wrapper {
+        width: 50%;
+        height: auto;
+        min-height: 520px;
+      }
+      .product-hero-content {
+        width: 50%;
+        padding: 48px 64px;
+        justify-content: center;
+      }
+      .product-hero-title {
+        font-size: 2.2rem;
+      }
+      .product-hero-title span {
+        font-size: 1.4rem;
+      }
     }
 
     .product-hero-tag {
@@ -1854,63 +1913,41 @@
     }
 
     .true-foods-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
       gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 10px 0;
+      scrollbar-width: none; /* Firefox */
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+      scroll-behavior: smooth;
     }
 
-    @media (min-width: 600px) {
-      .true-foods-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .true-foods-grid::-webkit-scrollbar {
+      display: none;
     }
 
-    @media (min-width: 1024px) {
-      .true-foods-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
+    .true-foods-grid:active {
+      cursor: grabbing;
     }
 
-    /* Ajustes para tornar os cards responsivos no grid de True Foods */
     .true-foods-grid .product-card {
-      width: 100%;
-      height: auto;
-      min-width: 0;
-      flex: none;
+      width: 290px;
+      height: 440px;
+      flex: 0 0 290px;
       border-radius: 20px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      scroll-snap-align: start;
     }
 
     .true-foods-grid .product-img-wrapper {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 366 / 451;
-    }
-
-    .true-foods-grid .product-rating-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background-color: var(--bg-white);
-      padding: 6px 12px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #FFB300;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      z-index: 2;
-    }
-
-    .true-foods-grid .product-rating-badge svg {
-      width: 14px;
-      height: 14px;
-      fill: #FFB300;
-      margin: 0;
+      width: 290px;
+      height: 340px;
+      aspect-ratio: auto;
     }
 
     .product-img-wrapper.tf-pink { background-color: #FFF0F2; }
@@ -1923,33 +1960,19 @@
 
     @media (max-width: 767px) {
       .true-foods-grid {
-        display: flex;
-        gap: 24px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding: 10px 0;
-        scrollbar-width: none;
-        cursor: grab;
-        user-select: none;
-        -webkit-user-select: none;
         margin-left: -24px;
         margin-right: -24px;
         padding-left: 24px;
         padding-right: 24px;
       }
-      .true-foods-grid::-webkit-scrollbar {
-        display: none;
-      }
       .true-foods-grid .product-card {
-        width: 366px;
-        height: 546px;
-        flex: 0 0 366px;
-        scroll-snap-align: start;
+        width: 280px;
+        height: 420px;
+        flex: 0 0 280px;
       }
       .true-foods-grid .product-img-wrapper {
-        width: 366px;
-        height: 451px;
-        aspect-ratio: auto;
+        width: 280px;
+        height: 320px;
       }
     }
 
@@ -2173,13 +2196,7 @@
       border-color: var(--primary);
     }
 
-    /* ----------------------------------------------------
-       11. SEÇÃO "RECOMENDADOS PARA VOCÊ"
-       ---------------------------------------------------- */
-    .recommended-section {
-      background-color: var(--bg-white);
-      padding: 32px 0;
-    }
+
 
     /* ----------------------------------------------------
        12. BANNER INSTITUCIONAL FULL-WIDTH
@@ -4169,20 +4186,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
           </a>
-          <!-- Minha Conta -->
-          <a href="index.html" class="action-btn" title="Minha Conta">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-            </svg>
-            <span class="action-text">Faça seu login<br>ou cadastre-se</span>
-          </a>
-          <!-- Ajuda -->
-          <a href="https://wa.me/5561981962126" target="_blank" rel="noopener noreferrer" class="action-btn" title="Ajuda">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-            </svg>
-            <span class="action-text">Precisa de<br>ajuda?</span>
-          </a>
+
 
           <!-- Menu Hamburger Mobile -->
           <button class="menu-toggle" id="menuToggleBtn">
@@ -5107,9 +5111,28 @@
 
     enableDragScroll(bestSellersGrid);
 
-    // 5. Carrossel Recomendados Para Você (Scroll via click-and-drag)
-    const recGrid = document.getElementById('recGrid');
-    enableDragScroll(recGrid);
+    // Setas para navegação dos carrosséis
+    function setupCarouselArrows(gridId, prevId, nextId) {
+      const grid = document.getElementById(gridId);
+      const prev = document.getElementById(prevId);
+      const next = document.getElementById(nextId);
+      if (grid && prev && next) {
+        prev.addEventListener('click', () => {
+          const card = grid.querySelector('.product-card, .review-card-lifestyle');
+          const cardWidth = card ? card.offsetWidth : 300;
+          grid.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
+        });
+        next.addEventListener('click', () => {
+          const card = grid.querySelector('.product-card, .review-card-lifestyle');
+          const cardWidth = card ? card.offsetWidth : 300;
+          grid.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+        });
+      }
+    }
+
+    setupCarouselArrows('bestSellersGrid', 'bestSellersPrev', 'bestSellersNext');
+    setupCarouselArrows('reviewsGrid', 'reviewsPrev', 'reviewsNext');
+    setupCarouselArrows('trueFoodsGrid', 'tfPrev', 'tfNext');
 
      // 6. Carrossel Avaliações Lifestyle (Scroll via click-and-drag)
     const reviewsGrid = document.getElementById('reviewsGrid');
