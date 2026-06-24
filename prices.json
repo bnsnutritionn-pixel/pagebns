@@ -34,5 +34,11 @@
         "priceOld": "R$ 99,00",
         "priceMonthly": "R$ 89,35",
         "installments": "6x de R$ 15,67"
+    },
+    "coenzima-q10": {
+        "price": "R$ 94,88",
+        "priceOld": "R$ 99,87",
+        "priceMonthly": "R$ 90,14",
+        "installments": "6x de R$ 15,81"
     }
 }
