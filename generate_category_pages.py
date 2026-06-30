@@ -3949,9 +3949,11 @@ def generate_all_pages():
 }
 
 .benefits-carousel-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .benefits-track {
@@ -3959,7 +3961,7 @@ def generate_all_pages():
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 10px 4px 20px 4px;
+  padding: 10px 24px 20px 24px; /* Padding on track edges so cards align beautifully de canto a canto */
   scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
@@ -4560,17 +4562,17 @@ def generate_all_pages():
     <section class="help-section">
       <div class="container">
         <h2 class="help-title">Benefícios do Produto</h2>
-        <div class="benefits-carousel-container">
-          <div class="benefits-track">
-            {benefits_html}
-          </div>
-          <div style="display: flex; justify-content: center; gap: 6px; margin-top: 20px;">
-            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.8;"></span>
-            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
-            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
-            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
-            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
-          </div>
+      </div>
+      <div class="benefits-carousel-container">
+        <div class="benefits-track">
+          {benefits_html}
+        </div>
+        <div style="display: flex; justify-content: center; gap: 6px; margin-top: 20px;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.8;"></span>
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
         </div>
       </div>
     </section>
