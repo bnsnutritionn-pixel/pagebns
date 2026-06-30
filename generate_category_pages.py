@@ -3961,8 +3961,15 @@ def generate_all_pages():
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 10px 24px 20px 24px; /* Padding on track edges so cards align beautifully de canto a canto */
+  padding: 10px calc((100vw - 1440px) / 2 + 24px) 20px calc((100vw - 1440px) / 2 + 24px);
   scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+@media (max-width: 1488px) {
+  .benefits-track {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .benefits-track::-webkit-scrollbar {
