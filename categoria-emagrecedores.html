@@ -4243,7 +4243,7 @@
   </div>
     
     <main>
-        '
+        
     <!-- 2. PRODUTO COMPRA E DETALHES -->
     <section class="product-detail-section" id="buyArea">
       <div class="container">
@@ -4948,73 +4948,85 @@
         title: "Complexo B",
         desc: "Energia, foco e vitalidade metabólica. Fórmula ultra concentrada com todas as vitaminas essenciais do complexo B.",
         img: "formula-card/B-COMPLEX.webp",
-        banner: "formula-card-banners/b_complex_banner.webp"
+        banner: "formula-card-banners/b_complex_banner.webp",
+        link: "categoria-vitaminas.html"
       },
       {
         title: "Cabelo, Pele & Unhas",
         desc: "Beleza e fortalecimento de dentro para fora. Colágeno, biotina e minerais essenciais para cabelos fortes e pele saudável.",
         img: "formula-card/CABELO, PELE E UNHA.webp",
-        banner: "banner_cabelo.webp"
+        banner: "banner_cabelo.webp",
+        link: "categoria-colageno.html"
       },
       {
         title: "Cafeína Anidra",
         desc: "Performance máxima e foco absoluto nos treinos. Termogênico de rápida liberação energética para impulsionar seus limites.",
         img: "formula-card/CAFEÍNA.webp",
-        banner: "formula-card-banners/cafeina_banner.webp"
+        banner: "formula-card-banners/cafeina_banner.webp",
+        link: "categoria-emagrecedores.html"
       },
       {
         title: "Coenzima Q10",
         desc: "Saúde cardiovascular e energia mitocondrial celular. Potente ação antioxidante natural no combate ao envelhecimento precoce.",
         img: "formula-card/COENZIMA Q10.webp",
-        banner: "formula-card-banners/coenzima_q10_banner.webp"
+        banner: "formula-card-banners/coenzima_q10_banner.webp",
+        link: "categoria-coenzima-q10.html"
       },
       {
         title: "Curcumina Ativa",
         desc: "Anti-inflamatório e antioxidante natural. O melhor do extrato purificado de cúrcuma para a saúde articular e muscular.",
         img: "formula-card/CURCUMINA.webp",
-        banner: "formula-card-banners/curcumina_banner.webp"
+        banner: "formula-card-banners/curcumina_banner.webp",
+        link: "categoria-vitaminas.html"
       },
       {
         title: "Magnésio Malato + Resveratrol",
         desc: "Longevidade ativa e suporte contra dores musculares. Sinergia perfeita do magnésio com o antioxidante natural das uvas.",
         img: "formula-card/MAGNÉSIO MALATO RESVE.webp",
-        banner: "formula-card-banners/magnesio_malato_resve_banner.webp"
+        banner: "formula-card-banners/magnesio_malato_resve_banner.webp",
+        link: "categoria-vitaminas.html"
       },
       {
         title: "Magnésio Malato",
         desc: "Menos fadiga e melhor contração muscular. A forma mais biodisponível de magnésio para repor os minerais essenciais.",
         img: "formula-card/MAGNÉSIO MALATO.webp",
-        banner: "formula-card-banners/magnesio_malato_banner.webp"
+        banner: "formula-card-banners/magnesio_malato_banner.webp",
+        link: "categoria-vitaminas.html"
       },
       {
         title: "Picolinato de Cromo",
         desc: "Controle da saciedade e regulação da glicemia. Reduz significativamente a vontade de ingerir doces e carboidratos.",
         img: "formula-card/PICOLINATO DE CROMO.webp",
-        banner: "formula-card-banners/picolinato_cromo_banner.webp"
+        banner: "formula-card-banners/picolinato_cromo_banner.webp",
+        link: "categoria-emagrecedores.html"
       },
       {
         title: "Multivitamínico A-Z",
         desc: "Nutrição integral e imunidade fortalecida. O complemento diário ideal de micronutrientes biodisponíveis para seu corpo.",
-        img: "formula-card/POLIVITAMÍNICO.webp",
-        banner: "formula-card-banners/polivitaminico_banner.webp"
+        img: "formula-card/POLIVITÂNICO.webp",
+        banner: "formula-card-banners/polivitaminico_banner.webp",
+        link: "categoria-vitaminas.html"
       },
       {
         title: "Vitamina D3 + K2 + Mg",
         desc: "Fórmula de suporte ósseo avançado e blindagem imunológica. O trio ideal de fixação e distribuição de cálcio.",
         img: "formula-card/VITAMINA D3+K+MG+II.webp",
-        banner: "formula-card-banners/vitamina_d3_k_mg_ii_banner.webp"
+        banner: "formula-card-banners/vitamina_d3_k_mg_ii_banner.webp",
+        link: "categoria-vitamina-d.html"
       },
       {
         title: "Vitamina D3 Premium",
         desc: "Suplementação essencial da vitamina do sol. Fortalecimento de articulações e estímulo ao sistema imune diário.",
         img: "formula-card/VITAMINA D3.webp",
-        banner: "formula-card-banners/vitamina_d3_banner.webp"
+        banner: "formula-card-banners/vitamina_d3_banner.webp",
+        link: "categoria-vitamina-d.html"
       },
       {
         title: "Zinco Quelato",
         desc: "Suporte antioxidante e celular para o organismo. Mineral indispensável para a cicatrização e regeneração da pele.",
         img: "formula-card/ZINCO.webp",
-        banner: "formula-card-banners/zinco_banner.webp"
+        banner: "formula-card-banners/zinco_banner.webp",
+        link: "categoria-vitaminas.html"
       }
     ];
 
@@ -5024,6 +5036,7 @@
     const formulaTitle = document.getElementById('formulaTitle');
     const formulaDesc = document.getElementById('formulaDesc');
     const formulaDrinkImg = document.getElementById('formulaDrinkImg');
+    const formulaCta = document.getElementById('formulaCta');
     const formulaPrev = document.getElementById('formulaPrev');
     const formulaNext = document.getElementById('formulaNext');
 
@@ -5042,6 +5055,9 @@
         formulaDrinkImg.src = prod.banner;
         formulaDrinkImg.alt = "Bebida conceitual para " + prod.title;
 
+        if (formulaCta) {
+          formulaCta.href = prod.link || '#';
+        }
         formulaProductImg.classList.remove('formula-fade');
         formulaTitle.classList.remove('formula-fade');
         formulaDesc.classList.remove('formula-fade');
@@ -5297,6 +5313,82 @@
         }
       });
     });
+
+    // 12. Adicionar ao Carrinho Feedback Visual Premium
+    function triggerCartAnimation() {
+      // Exibe um feedback visual premium de sucesso
+      const toast = document.createElement('div');
+      toast.className = 'cart-toast';
+      toast.innerHTML = `
+        <div class="cart-toast-content">
+          <svg class="cart-toast-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <div class="cart-toast-text">
+            <h4>Adicionado!</h4>
+            <p>O produto foi adicionado ao seu carrinho.</p>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(toast);
+      
+      // Estilo dinâmico para o Toast
+      const style = document.createElement('style');
+      style.id = 'cart-toast-style';
+      style.innerHTML = `
+        .cart-toast {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          background: rgba(255, 255, 255, 0.95);
+          color: #333;
+          padding: 16px 24px;
+          border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          z-index: 10000;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+          border-left: 4px solid var(--primary, #0056b3);
+        }
+        .cart-toast.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .cart-toast-content {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+        .cart-toast-icon {
+          color: var(--primary, #0056b3);
+        }
+        .cart-toast-text h4 {
+          margin: 0 0 2px 0;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .cart-toast-text p {
+          margin: 0;
+          font-size: 0.85rem;
+          color: #666;
+        }
+      `;
+      if (!document.getElementById('cart-toast-style')) {
+        document.head.appendChild(style);
+      }
+      
+      // Animação de entrada
+      setTimeout(() => toast.classList.add('active'), 50);
+      
+      // Animação de saída
+      setTimeout(() => {
+        toast.classList.remove('active');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
   </script>
     
         <script>
@@ -5312,7 +5404,7 @@
         };
         </script>
         
-    '
+    
         <script>
         // Custom Category Detail Interactions
         function switchMainImage(imgSrc, btnEl) {
