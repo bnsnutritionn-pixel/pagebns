@@ -160,3 +160,26 @@ Completamos a aplicação do layout premium de alta fidelidade (estilo Vivatrue)
   - `vitamina-d` ➔ `PRODUTOS/TABELAS/VITAMINA D3+K+MG+2_TABELA.png`
   - `coenzima-q10` ➔ `PRODUTOS/TABELAS/COENZIMAQ10_TABELA.png`
 - **Fallback Inteligente**: Para produtos sem imagem na pasta de tabelas (como `omega-3` e `true-foods`), o gerador renderiza uma tabela HTML limpa e dinâmica baseada nos metadados cadastrados, garantindo a integridade visual da página.
+
+---
+
+## 🔄 Reordenação e Empilhamento de Elementos (Cópia Fiel do Layout Vivatrue)
+
+Completamos a reestruturação da hierarquia de blocos e ordem das seções no HTML de todas as 10 páginas de categorias de produtos para que sigam **exatamente** a ordem do site de referência Vivatrue.
+
+### 1. Sequência e Ordem Física dos Blocos
+Reordenamos as seções do template `detail_html` na seguinte sequência física:
+- **Hero de Compra Principal**: Imagem do produto e galeria à esquerda, box de ações de compra, seletores e quantidade à direita. (Removemos o grid de destaques rápidos do Whey de dentro do bloco do título).
+- **Como ele te ajuda (Grid de Benefícios)**: Exibição imediata dos ícones de benefícios abaixo do hero de compra.
+- **Tabela Rápida de Destaques Nutricionais**: Nova seção autônoma que exibe a linha horizontal com as 5 principais informações rápidas (Calorias, Carbos, Proteínas, etc.) logo após os benefícios.
+- **Seção O que é (Descrição Principal)**: Nova seção que exibe os textos descritivos dinâmicos `"whatIsTitle"` e `"whatIsText"` de cada produto.
+- **Seção Canister**: Exibição da foto do produto em maior escala com a lista lateral de bullets de diferenciação.
+- **Grid O que possui / NÃO possui (Diferenciais)**: Renderizado condicionalmente (apenas para o Whey) logo abaixo da seção Canister.
+- **Sugestão de Consumo (Preparo)**: Instruções de "Como usar" com o card de overlay posicionado sobre a imagem de fundo correspondente.
+- **Ingredientes e Tabela Nutricional**: Caixa de ingredientes ao lado da tabela nutricional física (PNG ou fallback HTML).
+- **Avaliações dos Clientes**: Placar geral com estrelas e comentários detalhados dos compradores.
+- **FAQ (Dúvidas Frequentes)**: Reintrodução de um bloco elegante de acordeão de dúvidas frequentes mapeado dinamicamente a partir do JSON de metadados de cada categoria.
+
+### 2. Remoção de Clutter e Visual Clean
+- Para manter a fidelidade total ao layout da Vivatrue, removemos as seções *"Seu melhor aliado para..." (Allied Section)* que continham o toggle switch Dia/Noite e a seção de carrossel de estatísticas científicas de bem-estar (*Science Stats Section*), limpando a página de elementos redundantes e focando nos blocos de conversão.
+
