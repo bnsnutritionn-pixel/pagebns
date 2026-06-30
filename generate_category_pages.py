@@ -3931,6 +3931,48 @@ def generate_all_pages():
     gap: 10px;
   }
 }
+
+.quick-nutrition-section {
+  padding: 40px 0;
+  background-color: #FFFFFF;
+}
+
+.product-description-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+.product-description-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.description-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #3C302F;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+.description-text {
+  font-size: 1.1rem;
+  color: #5C5248;
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .product-description-section {
+    padding: 50px 0;
+  }
+  .description-title {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+  .description-text {
+    font-size: 1rem;
+  }
+}
     """
     
     # Generate files for all 9 categories
@@ -4303,11 +4345,8 @@ def generate_all_pages():
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
               </div>
-            <!-- Quick Nutrition Highlights -->
-            <div class="quick-nutrition-grid">
-              {quick_nutri_html}
-            </div>
               <span>4.8 (903 avaliações)</span>
             </div>
             
@@ -4389,33 +4428,37 @@ def generate_all_pages():
       </div>
     </section>
 
-    <!-- 3. HIGHLIGHTS / INGREDIENTES ATIVOS -->
-    <section class="allied-section">
+    <!-- 3. COMO TE AJUDA (BENEFÍCIOS) -->
+    <section class="help-section">
       <div class="container">
-        <!-- Day/Night Toggle Switch -->
-        <div class="allied-toggle-container">
-          <div class="day-night-toggle night" onclick="toggleAlliedMode()">
-            <div class="toggle-thumb"></div>
-            <div class="toggle-icon sun">
-              <svg viewBox="0 0 24 24" class="toggle-icon-svg" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zM5.99 16.95l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0z"/></svg>
-            </div>
-            <div class="toggle-icon moon">
-              <svg viewBox="0 0 24 24" class="toggle-icon-svg" fill="currentColor"><path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.8.6-.1 1.2.3 1.3.9.1.6-.3 1.2-.9 1.3-3.5.7-6 3.8-6 7.6 0 4.4 3.6 8 8 8 3.8 0 6.9-2.5 7.6-6 .1-.6.7-1 1.3-.9.6.1 1 .7.9 1.3-.9 4.7-5 8.2-9.8 8.2z"/></svg>
-            </div>
-          </div>
+        <h2 class="help-title">Como ele te ajuda?</h2>
+        <div class="help-grid">
+          {benefits_html}
         </div>
-        <h2 class="allied-title">Seu melhor aliado para {cat["goal"]}</h2>
-        <div class="allied-grid">
-          {highlights_html}
-        </div>
-        <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-bottom: 50px;">Acelerar meus resultados</button>
-        <div class="allied-banner">
-          <img src="sleeping-woman-banner.jpg" alt="Rotina de Bem-Estar e Foco">
+        <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
+      </div>
+    </section>
+
+    <!-- 4. DESTAQUES NUTRICIONAIS RÁPIDOS -->
+    <section class="quick-nutrition-section">
+      <div class="container">
+        <div class="quick-nutrition-grid">
+          {quick_nutri_html}
         </div>
       </div>
     </section>
 
-    <!-- 4. CANISTER SPLIT SECTION -->
+    <!-- 5. O QUE É / DESCRIÇÃO DO PRODUTO -->
+    <section class="product-description-section">
+      <div class="container">
+        <div class="product-description-content">
+          <h2 class="description-title">{cat["whatIsTitle"]}</h2>
+          <p class="description-text">{cat["whatIsText"]}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CANISTER SPLIT SECTION -->
     <section class="canister-split-section">
       <div class="container">
         <h2 class="split-title">{cat["productName"]}</h2>
@@ -4429,107 +4472,20 @@ def generate_all_pages():
       </div>
     </section>
 
-    <!-- 5. COMO TE AJUDA (BENEFÍCIOS) -->
-    <section class="help-section">
-      <div class="container">
-        <h2 class="help-title">Como ele te ajuda?</h2>
-        <div class="help-grid">
-          {benefits_html}
-        </div>
-        <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
-      </div>
-    </section>
-
-    
     {features_split_html}
-
-<!-- 6. CIÊNCIA E ESTATÍSTICAS -->
-    <section class="science-section-ref">
-      <div class="container">
-        <h2 class="science-title-ref" style="margin-bottom: 40px;">A percepção de bem-estar</h2>
-        
-        <div class="science-stats-carousel-container">
-          <div class="science-stats-track" id="statsTrack">
-            {stats_html}
-          </div>
-          <!-- Navigation Buttons -->
-          <div class="stats-carousel-nav">
-            <button class="stats-nav-btn prev" onclick="shiftStats(-1); event.stopPropagation();">
-              <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-            </button>
-            <button class="stats-nav-btn next" onclick="shiftStats(1); event.stopPropagation();">
-              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg>
-            </button>
-          </div>
-        </div>
-        
-        <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
-        
-        <div class="science-img-row-ref">
-          <div class="science-img-card-ref">
-            <img src="foods/002.webp" alt="Estudo Clínico 1">
-          </div>
-          <div class="science-img-card-ref">
-            <img src="foods/003.webp" alt="Estudo Clínico 2">
-          </div>
-          <div class="science-img-card-ref">
-            <img src="foods/004.webp" alt="Estudo Clínico 3">
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- 7. SUGESTÃO DE CONSUMO -->
     <section class="usage-section-full" style="background-image: url('{cat["usageImg"]}');">
       <div class="container">
         <div class="usage-card-overlay">
           <h2 class="usage-title">Sugestão de consumo</h2>
-          <p class="usage-text">{cat["usageText"]}</p>
+          <p class="usage-desc">{cat["usageText"]}</p>
           <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-top: 24px;">Comprar Agora</button>
         </div>
       </div>
     </section>
 
-    <!-- 7.1. QUEM USA, RECOMENDA -->
-    <section class="recommends-dark">
-      <div class="container">
-        <h2 class="recommends-title-dark">Quem usa, recomenda</h2>
-        <div class="recommends-grid-ref">
-          <div class="recommend-card-ref img-card">
-            <img src="foods/005.webp" alt="Influenciador BNS+">
-          </div>
-          <div class="recommend-card-ref quote-card">
-            <span class="quote-stars-ref">★★★★★</span>
-            <p class="quote-text-ref">"Fórmula extremamente limpa de verdade, sabor incrível e resultados visíveis em poucas semanas. Se tornou indispensável na minha rotina!"</p>
-            <span class="quote-author-ref">Dra. Patrícia Lima</span>
-          </div>
-          <div class="recommend-card-ref img-card">
-            <img src="foods/006.webp" alt="Influenciador BNS+">
-          </div>
-        </div>
-        <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
-      </div>
-    </section>
-
-    <!-- 8. FAQ ACCORDION -->
-    <section class="faq-section-ref">
-      <div class="container">
-        <div class="faq-grid-ref">
-          <div class="faq-left-card-ref">
-            <img src="foods/007.webp" alt="Dúvidas Frequentes">
-            <div class="faq-left-overlay-ref">
-              <h2 class="faq-left-title-ref">Perguntas Frequentes</h2>
-              <p class="faq-left-desc-ref">Tire todas as suas dúvidas sobre o produto e como inseri-lo na sua rotina diária.</p>
-            </div>
-          </div>
-          <div class="faq-right-accordion-ref">
-            <h2 class="faq-title-mobile-ref">Perguntas Frequentes</h2>
-            <div class="faq-container">
-            {faqs_html}
-          </div>
-    </section>
-
-    <!-- 9 & 10. INGREDIENTES E TABELA NUTRICIONAL -->
+    <!-- 8. INGREDIENTES E TABELA NUTRICIONAL -->
     <section class="nutrition-section-ref">
       <div class="container">
         <div class="nutrition-grid-ref">
@@ -4553,7 +4509,7 @@ def generate_all_pages():
       </div>
     </section>
 
-    <!-- 11. AVALIAÇÕES (TRUSTVOX STYLE) -->
+    <!-- 9. AVALIAÇÕES (TRUSTVOX STYLE) -->
     <section class="reviews-list-section">
       <div class="container">
         <div class="reviews-list-grid">
@@ -4599,6 +4555,80 @@ def generate_all_pages():
               <h4 class="review-item-title">Fórmula limpa de verdade!</h4>
               <p class="review-item-text">Sou muito chata com adoçantes artificiais e esse produto me surpreendeu muito. Leve, natural e de altíssima qualidade. O suporte de vendas da BNS+ também foi excelente.</p>
               <span class="review-recommend-status">✓ Recomendo este produto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. AVALIAÇÕES (TRUSTVOX STYLE) -->
+    <section class="reviews-list-section">
+      <div class="container">
+        <div class="reviews-list-grid">
+          <!-- Placar Geral -->
+          <div class="reviews-score-card">
+            <span class="score-num">4.8</span>
+            <div class="score-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <span class="score-count">(903 avaliações)</span>
+            <span class="score-recommend">96% recomendam este produto</span>
+          </div>
+          
+          <!-- Lista de Comentários -->
+          <div class="reviews-items-col">
+            <div class="review-item-row">
+              <div class="review-meta">
+                <span class="review-author">Michele M. <span class="verified-badge">Compra Verificada</span></span>
+                <span>02/04/2026</span>
+              </div>
+              <h4 class="review-item-title">Ele realmente entrega o que promete!</h4>
+              <p class="review-item-text">Resultado incrível, estou consumindo todos os dias e a qualidade é indiscutível! Aprovadíssimo, sabor maravilhoso e sem qualquer desconforto gástrico. Super recomendo!</p>
+              <span class="review-recommend-status">✓ Recomendo este produto</span>
+            </div>
+            <div class="review-item-row">
+              <div class="review-meta">
+                <span class="review-author">Rodrigo S. <span class="verified-badge">Compra Verificada</span></span>
+                <span>31/03/2026</span>
+              </div>
+              <h4 class="review-item-title">Excelente custo-benefício e sabor incrível</h4>
+              <p class="review-item-text">Suplemento muito puro, dissolve super fácil e o sabor é muito agradável. Já sinto a diferença na disposição e no tônus após algumas semanas de uso constante.</p>
+              <span class="review-recommend-status">✓ Recomendo este produto</span>
+            </div>
+            <div class="review-item-row">
+              <div class="review-meta">
+                <span class="review-author">Gabriela T. <span class="verified-badge">Compra Verificada</span></span>
+                <span>28/03/2026</span>
+              </div>
+              <h4 class="review-item-title">Fórmula limpa de verdade!</h4>
+              <p class="review-item-text">Sou muito chata com adoçantes artificiais e esse produto me surpreendeu muito. Leve, natural e de altíssima qualidade. O suporte de vendas da BNS+ também foi excelente.</p>
+              <span class="review-recommend-status">✓ Recomendo este produto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. DÚVIDAS FREQUENTES (FAQ) -->
+    <section class="faq-section-ref">
+      <div class="container">
+        <div class="faq-grid-ref">
+          <div class="faq-left-card-ref">
+            <img src="foods/007.webp" alt="Dúvidas Frequentes">
+            <div class="faq-left-overlay-ref">
+              <h3 class="faq-left-title-ref">Ficou com alguma dúvida?</h3>
+              <p class="faq-left-desc-ref">Separamos as principais perguntas feitas pelos nossos clientes para te ajudar a escolher o melhor suplemento.</p>
+            </div>
+          </div>
+          <div class="faq-right-accordion-ref">
+            <h2 class="faq-title-mobile-ref">Dúvidas Frequentes</h2>
+            <h3 class="faq-title-desktop">Dúvidas Frequentes</h3>
+            <div class="faq-container">
+              {faqs_html}
             </div>
           </div>
         </div>
