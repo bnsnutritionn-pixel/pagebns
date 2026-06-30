@@ -69,7 +69,7 @@ def update_landing_page_prices(prices_data):
         },
         "coenzima-q10": {
             "identifier": "COENZIMA Q10.webp",
-            "link": "categoria-vitaminas.html"
+            "link": "categoria-coenzima-q10.html"
         },
         "emagrecedores": {
             "identifier": "HAVOC.webp",
@@ -91,7 +91,7 @@ def update_landing_page_prices(prices_data):
         target_link = config["link"]
         
         # Regex robusta para substituir preços e botão de "Conhecer produto"
-        pattern = rf'(<div class="product-card">[^>]*?.*?{identifier}.*?<span class="price-old">)[^<]*(</span>.*?<span class="price-current">)[^<]*(</span>.*?)(<button class="add-to-cart-btn">\s*Conhecer produto\s*</button>)'
+        pattern = rf'(<div class="product-card">[^>]*?.*?{identifier}.*?<span class="price-old">)[^<]*(</span>.*?<span class="price-current">)[^<]*(</span>.*?)(<(button|a) class="add-to-cart-btn"[^>]*>\s*Conhecer produto\s*</(button|a)>)'
         
         replacement = rf'\1{price_old}\2{price_current}\3<a href="{target_link}" class="add-to-cart-btn" style="text-decoration: none;">Conhecer produto</a>'
         
@@ -138,7 +138,7 @@ def main():
     req = urllib.request.Request(xml_url, headers={"User-Agent": "Mozilla/5.0"})
     
     try:
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, timeout=10) as response:
             xml_data = response.read()
     except Exception as e:
         print(f"[ERRO] Falha ao baixar o feed XML: {e}")

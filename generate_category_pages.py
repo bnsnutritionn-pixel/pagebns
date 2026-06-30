@@ -599,6 +599,63 @@ CATEGORIES_METADATA = [
             {"q": "Posso tomar em jejum?", "a": "Pode, pois nossa fórmula já contém MCT (óleo de coco) como carreador, mas a absorção é ainda melhor se ingerido com alimentos."},
             {"q": "É seguro tomar doses diárias de 2000 UI?", "a": "Sim, é uma dosagem de manutenção totalmente segura e recomendada para a maioria dos adultos com deficiência comum de sol."}
         ]
+    },
+    {
+        "id": "coenzima-q10",
+        "fileName": "categoria-coenzima-q10.html",
+        "title": "Coenzima Q10",
+        "subtitle": "Energia Celular e Proteção Antioxidante",
+        "productName": "True Coenzima Q10 - 60 comprimidos",
+        "image": "formula-card/COENZIMA Q10.webp",
+        "flavorOptions": ["Comprimidos (Sem Sabor)"],
+        "sizeOptions": ["60 Comprimidos"],
+        "price": "R$ 94,88",
+        "priceOld": "R$ 109,90",
+        "priceMonthly": "R$ 89,90",
+        "installments": "6x de R$ 15,81",
+        "goal": "a produção de energia mitocondrial e longevidade",
+        "bullets": [
+            "100MG DE COENZIMA Q10 (UBIQUINONA) POR DOSE",
+            "Ação antioxidante contra o envelhecimento celular",
+            "Melhora do rendimento físico e saúde cardiovascular"
+        ],
+        "activeHighlights": [
+            {"val": "100mg", "lbl": "de Coenzima Q10", "desc": "Concentração ideal para ativação das mitocôndrias celular."},
+            {"val": "100%", "lbl": "Antioxidante", "desc": "Combate aos radicais livres e proteção cardiovascular."},
+            {"val": "Zero", "lbl": "Açúcares/Glúten", "desc": "Comprimidos puros livres de aditivos alergênicos."},
+            {"val": "Uso Diário", "lbl": "Praticidade", "desc": "Apenas 1 comprimido ao dia para o suporte necessário."}
+        ],
+        "whatIsTitle": "O que é a Coenzima Q10?",
+        "whatIsText": "A Coenzima Q10 (CoQ10) é um nutriente naturalmente presente em nossas células, concentrado nas mitocôndrias – as usinas de energia do corpo. Pense na CoQ10 como a vela de ignição de um motor: sem ela, a célula não consegue converter os alimentos em energia celular (ATP). Com o passar dos anos, nossa produção natural de CoQ10 cai drasticamente, tornando a suplementação vital para manter a disposição e combater o envelhecimento precoce.",
+        "benefits": [
+            {"title": "Energia Mitocondrial", "desc": "Apoia a síntese de ATP celular nas mitocôndrias.", "img": "foods/005.webp"},
+            {"title": "Saúde do Coração", "desc": "Essencial para os tecidos cardíacos que demandam alta energia.", "img": "foods/004.webp"},
+            {"title": "Ação Antioxidante", "desc": "Combate radicais livres gerados pelo estresse e treinos.", "img": "foods/003.webp"},
+            {"title": "Performance Física", "desc": "Reduz o estresse oxidativo muscular durante os exercícios.", "img": "foods/002.webp"}
+        ],
+        "scienceTitle": "A Ciência por trás da Ubiquinona e Vitalidade",
+        "scienceDesc": "A Coenzima Q10 desempenha um papel duplo crucial: atua na cadeia de transporte de elétrons mitocondrial e funciona como um poderoso antioxidante lipossolúvel. Estudos mostram que a suplementação diária de CoQ10 reduz o dano muscular induzido pelo exercício e melhora a eficiência contrátil do miocárdio, otimizando o consumo de oxigênio pelas células.",
+        "scienceStats": [
+            {"pct": "95%", "lbl": "de absorção celular comprovada"},
+            {"pct": "88%", "lbl": "de melhora na fadiga crônica relatada"},
+            {"pct": "100mg", "lbl": "dose ideal recomendada por cardiologistas"},
+            {"pct": "Zero", "lbl": "efeitos colaterais ou toxicidade registrada"}
+        ],
+        "scienceImg": "foods/001.webp",
+        "usageText": "Ingerir 1 comprimido ao dia, preferencialmente junto com uma refeição rica em gorduras saudáveis (como café da manhã ou almoço) para maximizar a absorção desse nutriente lipossolúvel.",
+        "usageImg": "foods/006.webp",
+        "ingredients": "Coenzima Q10, amido, antiumectante dióxido de silício e cápsula de gelatina. NÃO CONTÉM GLÚTEN.",
+        "portionText": "Porção: 1 comprimido ao dia",
+        "nutritionTable": [
+            {"item": "Coenzima Q10", "qty": "100 mg", "vd": "100%"},
+            {"item": "Valor Energético", "qty": "0 kcal", "vd": "0%"}
+        ],
+        "faqs": [
+            {"q": "Para que serve a Coenzima Q10?", "a": "Ela serve principalmente para aumentar a produção de energia celular (ATP), combater os radicais livres, melhorar a saúde do coração e reduzir a fadiga física e mental."},
+            {"q": "Qual o melhor horário para tomar?", "a": "Nas principais refeições que contenham alguma fonte de gordura, pois a CoQ10 é lipossolúvel e necessita delas para ser absorvida com eficácia."},
+            {"q": "Pessoas de qualquer idade podem tomar?", "a": "Geralmente é indicada para adultos, especialmente após os 30 anos, quando a produção endógena começa a cair. Recomenda-se orientação de médico ou nutricionista."},
+            {"q": "Pode ser combinada com outros suplementos?", "a": "Sim, combina perfeitamente com ômega-3 (que inclusive ajuda em sua absorção) e com multivitamínicos."}
+        ]
     }
 ]
 
@@ -3929,16 +3986,7 @@ def generate_all_pages():
             
         # Build science stats HTML
         stats_html = ""
-        if cat["id"] == "whey":
-            science_stats_list = [
-                {"pct": "64%", "lbl": "dos participantes se sentiram mais dispostos"},
-                {"pct": "42%", "lbl": "relataram melhora da qualidade do sono"},
-                {"pct": "40%", "lbl": "reduziram ou interromperam o uso de medicamentos para dormir"},
-                {"pct": "30%", "lbl": "sentiram que pegaram no sono mais rápido"},
-                {"pct": "20%", "lbl": "relataram redução de dores corporais"}
-            ]
-        else:
-            science_stats_list = cat["scienceStats"]
+        science_stats_list = cat["scienceStats"]
             
         for st in science_stats_list:
             pct_num = re.findall(r'\d+', st["pct"])
@@ -4540,7 +4588,7 @@ def generate_all_pages():
     </section>
         """
         else:
-            detail_html = f"""'
+            detail_html = f"""
     <!-- 2. PRODUTO COMPRA E DETALHES -->
     <section class="product-detail-section" id="buyArea">
       <div class="container">
@@ -5032,7 +5080,7 @@ def generate_all_pages():
         </script>
         """
         else:
-            cat_script_extensions = """'
+            cat_script_extensions = """
         <script>
         // Custom Category Detail Interactions
         function switchMainImage(imgSrc, btnEl) {
@@ -5168,7 +5216,7 @@ def generate_all_pages():
         with open(target_path, "w", encoding="utf-8") as f:
             f.write(final_html)
             
-    print("Successfully generated all 9 category pages!")
+    print("Successfully generated all 10 category pages!")
 
 if __name__ == '__main__':
     generate_all_pages()
