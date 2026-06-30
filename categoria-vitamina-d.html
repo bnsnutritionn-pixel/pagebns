@@ -4736,45 +4736,160 @@
   }
 }
 
+.help-section {
+  padding: 60px 0 40px 0;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.help-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #9E7D63;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+}
+
+.benefits-carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.benefits-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 4px 20px 4px;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.benefits-track::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.benefit-item-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  background-color: #F6F4F2;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #EAE6DF;
+  transition: all 0.25s ease;
+}
+
+.benefit-item-card:hover {
+  background-color: #FFFFFF;
+  border-color: #9E7D63;
+  box-shadow: 0 8px 20px rgba(158,125,99,0.1);
+  transform: translateY(-2px);
+}
+
+.benefit-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.benefit-text-wrapper {
+  font-size: 0.85rem;
+  color: #3C302F;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.benefit-text-wrapper strong {
+  font-weight: 700;
+  color: #3C302F;
+}
+
 .quick-nutrition-section {
   padding: 40px 0;
   background-color: #FFFFFF;
 }
 
 .product-description-section {
-  padding: 80px 0;
-  background-color: #FFFFFF;
-  text-align: center;
+  position: relative;
+  padding: 120px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.product-description-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.88); /* Subtle white overlay to overlay description text exactly like Vivatrue */
+  z-index: 1;
+}
+
 .product-description-content {
+  position: relative;
   max-width: 800px;
   margin: 0 auto;
   padding: 0 24px;
+  z-index: 2;
+  text-align: center;
 }
+
 .description-title {
   font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 800;
-  color: #3C302F;
+  color: #9E7D63;
   margin-bottom: 24px;
   text-transform: uppercase;
   letter-spacing: -0.5px;
+  line-height: 1.25;
 }
+
 .description-text {
   font-size: 1.1rem;
   color: #5C5248;
   line-height: 1.7;
+  font-weight: 500;
 }
+
 @media (max-width: 768px) {
   .product-description-section {
-    padding: 50px 0;
+    padding: 80px 0;
   }
   .description-title {
     font-size: 1.6rem;
     margin-bottom: 16px;
   }
   .description-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+  .benefit-item-card {
+    flex: 0 0 280px;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .benefits-track {
+    padding-bottom: 15px;
   }
 }
     
@@ -5009,51 +5124,51 @@
     <!-- 3. COMO TE AJUDA (BENEFÍCIOS) -->
     <section class="help-section">
       <div class="container">
-        <h2 class="help-title">Como ele te ajuda?</h2>
-        <div class="help-grid">
-          
-            <div class="help-card">
-              <div class="help-card-img">
+        <h2 class="help-title">Benefícios do Produto</h2>
+        <div class="benefits-carousel-container">
+          <div class="benefits-track">
+            
+            <div class="benefit-item-card">
+              <div class="benefit-icon-wrapper">
                 <img src="foods/004.webp" alt="Saúde Óssea">
               </div>
-              <div class="help-card-content">
-                <div class="help-card-bar"></div>
-                <h4 class="help-card-title">Saúde Óssea</h4>
-                <p class="help-card-desc">Otimiza a fixação e densidade do cálcio nos ossos.</p>
+              <div class="benefit-text-wrapper">
+                <span><strong>Saúde Óssea</strong>: Otimiza a fixação e densidade do cálcio nos ossos.</span>
               </div>
             </div>
-            <div class="help-card">
-              <div class="help-card-img">
+            <div class="benefit-item-card">
+              <div class="benefit-icon-wrapper">
                 <img src="foods/005.webp" alt="Imunidade Reforçada">
               </div>
-              <div class="help-card-content">
-                <div class="help-card-bar"></div>
-                <h4 class="help-card-title">Imunidade Reforçada</h4>
-                <p class="help-card-desc">Modula células de defesa contra infecções.</p>
+              <div class="benefit-text-wrapper">
+                <span><strong>Imunidade Reforçada</strong>: Modula células de defesa contra infecções.</span>
               </div>
             </div>
-            <div class="help-card">
-              <div class="help-card-img">
+            <div class="benefit-item-card">
+              <div class="benefit-icon-wrapper">
                 <img src="foods/006.webp" alt="Saúde das Artérias">
               </div>
-              <div class="help-card-content">
-                <div class="help-card-bar"></div>
-                <h4 class="help-card-title">Saúde das Artérias</h4>
-                <p class="help-card-desc">K2 evita a calcificação de vasos sanguíneos.</p>
+              <div class="benefit-text-wrapper">
+                <span><strong>Saúde das Artérias</strong>: K2 evita a calcificação de vasos sanguíneos.</span>
               </div>
             </div>
-            <div class="help-card">
-              <div class="help-card-img">
+            <div class="benefit-item-card">
+              <div class="benefit-icon-wrapper">
                 <img src="foods/007.webp" alt="Suporte Hormonal">
               </div>
-              <div class="help-card-content">
-                <div class="help-card-bar"></div>
-                <h4 class="help-card-title">Suporte Hormonal</h4>
-                <p class="help-card-desc">Apoia a síntese de testosterona e equilíbrio endócrino.</p>
+              <div class="benefit-text-wrapper">
+                <span><strong>Suporte Hormonal</strong>: Apoia a síntese de testosterona e equilíbrio endócrino.</span>
               </div>
             </div>
+          </div>
+          <div style="display: flex; justify-content: center; gap: 6px; margin-top: 20px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.8;"></span>
+            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
+            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
+            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
+            <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #3C302F; opacity: 0.2;"></span>
+          </div>
         </div>
-        <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
       </div>
     </section>
 
@@ -5087,7 +5202,7 @@
     </section>
 
     <!-- 5. O QUE É / DESCRIÇÃO DO PRODUTO -->
-    <section class="product-description-section">
+    <section class="product-description-section" style="background-image: url('foods/004.webp');">
       <div class="container">
         <div class="product-description-content">
           <h2 class="description-title">O que é a Vitamina D3 + K2?</h2>
