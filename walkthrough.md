@@ -113,3 +113,25 @@ Implementamos e configuramos o sincronizador automático de preços com base no 
 - **Repositório GitHub:** [pagebns no GitHub](https://github.com/bnsnutritionn-pixel/pagebns.git)
 - **URL Oficial de Produção (Vercel):** [pagebns.vercel.app](https://pagebns.vercel.app)
 
+---
+
+## 🛠️ Correções de Auditoria e Sincronização Estendida (Últimos Ajustes)
+
+Realizamos uma auditoria completa no projeto e aplicamos as seguintes correções críticas:
+
+1. **Correção do Regex de Sincronização (`sync_prices.py`)**: 
+   - Ajustamos a expressão regular para que ela procure e atualize tanto tags `<button>` quanto tags `<a>` com a classe `add-to-cart-btn`. Isso impede que a sincronização falhe a partir da segunda execução (já que na primeira execução os botões estáticos eram convertidos em links `<a>`).
+2. **Implementação de `triggerCartAnimation`**:
+   - Criamos uma animação premium de toast de feedback visual no rodapé para quando o usuário clicar em "Adicionar ao Carrinho". Isso eliminou os erros de `ReferenceError: triggerCartAnimation is not defined` no console.
+3. **Criação da Página de Categoria da Coenzima Q10 (`categoria-coenzima-q10.html`)**:
+   - Adicionamos a Coenzima Q10 como a 10ª categoria no array de metadados do compilador (`generate_category_pages.py`), gerando uma página de detalhes exclusiva e resolvendo a divergência de preço e produto que ocorria quando ela apontava para a página de Vitaminas (Multivitamínico A-Z).
+   - Atualizamos a rota do card da Coenzima Q10 na página inicial e no sincronizador de preços para apontar corretamente para a nova página `categoria-coenzima-q10.html`.
+4. **Links de True Foods**:
+   - Atualizamos todos os botões "Conhecer produto" da seção True Foods na página inicial para apontar para a URL única externa fornecida: `https://www.reidascastanhas.com.br/`.
+5. **Dinamismo no Carrossel de Fórmulas**:
+   - Atualizamos o script do carrossel interativo na landing page para atualizar dinamicamente o link `href` do botão "Confira!" para a página de categoria correspondente da fórmula ativa no momento.
+6. **Remoção de Erros de Sintaxe e Mismatch de Sono**:
+   - Removemos as aspas simples soltas que eram geradas acidentalmente nas páginas de categoria não-Whey.
+   - Removemos o bloco que forçava dados científicos de sono no Whey Protein, permitindo que ele utilize suas estatísticas reais de regeneração e força muscular.
+
+
