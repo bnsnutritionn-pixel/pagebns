@@ -134,4 +134,29 @@ Realizamos uma auditoria completa no projeto e aplicamos as seguintes correçõe
    - Removemos as aspas simples soltas que eram geradas acidentalmente nas páginas de categoria não-Whey.
    - Removemos o bloco que forçava dados científicos de sono no Whey Protein, permitindo que ele utilize suas estatísticas reais de regeneração e força muscular.
 
+---
 
+## 🎨 Unificação Completa do Layout Premium e Associação de Imagens de Tabelas Nutricionais
+
+Completamos a aplicação do layout premium de alta fidelidade (estilo Vivatrue) para todos os produtos e a associação das tabelas nutricionais físicas (`PNG`) fornecidas.
+
+### 1. Aplicação do Layout Vivatrue a todos os Produtos
+- **Unificação Global**: Removemos a lógica de diferenciação de layouts. Agora, todas as 10 páginas de categorias de produtos (`categoria-*.html`) herdam o mesmo design premium de alta fidelidade que o Whey Protein.
+- **Tipografia Moderna**: Forçamos o uso da tipografia sem serifa limpa (`Inter`) para todos os títulos e migalhas das páginas internas, removendo a antiga fonte serifada `Playfair Display`.
+- **Componentes Compartilhados**: Habilitamos os seletores de tamanho circulares, as pílulas de sabor de marcação ativa premium e o card cinza de compras (`price-card-box`) em todas as categorias.
+- **Dinamização de Metadados**:
+  - Criamos o mapeamento `"quickNutri"` para dinamizar os 5 destaques nutricionais rápidos no topo (ex: teor de cafeína, beta-alanina, creatina ou calorias de acordo com o produto).
+  - Tornamos as estatísticas de "Como ajuda" (`benefits`) e os marcadores de fórmula (`bullets`) 100% dinâmicos a partir do JSON de metadados.
+  - O canister (imagem central de compras) agora puxa a imagem real (`{cat["image"]}`) de cada produto.
+
+### 2. Associação das Imagens de Tabelas Nutricionais (`PRODUTOS/TABELAS/`)
+- Mapeamos os caminhos físicos de imagens fornecidos diretamente para o compilador de páginas:
+  - `whey` ➔ `PRODUTOS/TABELAS/WHEY_PROTEIN_TABELA.png`
+  - `pre-treino` ➔ `PRODUTOS/TABELAS/DRAGON_GTX_TABELA.png`
+  - `creatina` ➔ `PRODUTOS/TABELAS/CREATINA_TABELA.png`
+  - `vitaminas` ➔ `PRODUTOS/TABELAS/POLI VITAMÍNICO.png`
+  - `colageno` ➔ `PRODUTOS/TABELAS/CABELO, PELE E UNHA_TABELA.png`
+  - `emagrecedores` ➔ `PRODUTOS/TABELAS/TERMOGÊNICO_HAVOC_TABELA.png`
+  - `vitamina-d` ➔ `PRODUTOS/TABELAS/VITAMINA D3+K+MG+2_TABELA.png`
+  - `coenzima-q10` ➔ `PRODUTOS/TABELAS/COENZIMAQ10_TABELA.png`
+- **Fallback Inteligente**: Para produtos sem imagem na pasta de tabelas (como `omega-3` e `true-foods`), o gerador renderiza uma tabela HTML limpa e dinâmica baseada nos metadados cadastrados, garantindo a integridade visual da página.
