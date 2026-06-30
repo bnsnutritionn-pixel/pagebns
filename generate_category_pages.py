@@ -3939,17 +3939,97 @@ def generate_all_pages():
         flavors_html = ""
         for idx, flavor in enumerate(cat["flavorOptions"]):
             active_class = "active" if idx == 0 else ""
-            if cat["id"] == "whey":
-                flavors_html += f'<button class="option-btn {active_class}" onclick="selectFlavor(this, \'{flavor}\')">{flavor}</button>'
-            else:
-                flavors_html += f'<button class="option-btn {active_class}">{flavor}</button>'
+            flavors_html += f'<button class="option-btn {active_class}" onclick="selectFlavor(this, \'{flavor}\')">{flavor}</button>'
             
         # Build size options HTML
         sizes_html = ""
         for idx, size in enumerate(cat["sizeOptions"]):
             active_class = "active" if idx == 0 else ""
             sizes_html += f'<button class="option-btn {active_class}">{size}</button>'
-            
+        # Quick Nutrition Highlights Map
+        quick_nutri_map = {
+            "whey": [
+                {"val": "117 kcal", "lbl": "Calorias"},
+                {"val": "4 g", "lbl": "Carbos"},
+                {"val": "24 g", "lbl": "Proteínas"},
+                {"val": "2 g", "lbl": "Gorduras"},
+                {"val": "0 g", "lbl": "Açúcares"}
+            ],
+            "pre-treino": [
+                {"val": "12 kcal", "lbl": "Calorias"},
+                {"val": "3.000 mg", "lbl": "Beta-Alanina"},
+                {"val": "1.000 mg", "lbl": "L-Arginina"},
+                {"val": "500 mg", "lbl": "Taurina"},
+                {"val": "200 mg", "lbl": "Cafeína"}
+            ],
+            "creatina": [
+                {"val": "0 kcal", "lbl": "Calorias"},
+                {"val": "3.000 mg", "lbl": "Creatina"},
+                {"val": "100%", "lbl": "Pura"},
+                {"val": "Zero", "lbl": "Açúcares"},
+                {"val": "Micronizada", "lbl": "Fácil Diluição"}
+            ],
+            "vitaminas": [
+                {"val": "0 kcal", "lbl": "Calorias"},
+                {"val": "23", "lbl": "Nutrientes"},
+                {"val": "100%", "lbl": "Quelatos"},
+                {"val": "1 cap", "lbl": "ao dia"},
+                {"val": "Zero", "lbl": "Açúcares"}
+            ],
+            "omega-3": [
+                {"val": "18 kcal", "lbl": "Calorias"},
+                {"val": "2.000 mg", "lbl": "Óleo de Peixe"},
+                {"val": "720 mg", "lbl": "EPA"},
+                {"val": "480 mg", "lbl": "DHA"},
+                {"val": "10 mg", "lbl": "Vitamina E"}
+            ],
+            "colageno": [
+                {"val": "35 kcal", "lbl": "Calorias"},
+                {"val": "9 g", "lbl": "Colágeno"},
+                {"val": "Verisol®", "lbl": "Tecnologia"},
+                {"val": "80 mg", "lbl": "Ácido Hial."},
+                {"val": "45 mg", "lbl": "Vitamina C"}
+            ],
+            "emagrecedores": [
+                {"val": "0 kcal", "lbl": "Calorias"},
+                {"val": "200 mg", "lbl": "Cafeína"},
+                {"val": "500 mg", "lbl": "Carnitina"},
+                {"val": "Zero", "lbl": "Açúcares"},
+                {"val": "Foco", "lbl": "Treino"}
+            ],
+            "vitamina-d": [
+                {"val": "0 kcal", "lbl": "Calorias"},
+                {"val": "2.000 UI", "lbl": "Vitamina D3"},
+                {"val": "120 mcg", "lbl": "Vitamina K2"},
+                {"val": "250 mg", "lbl": "MCT"},
+                {"val": "1 cap", "lbl": "ao dia"}
+            ],
+            "coenzima-q10": [
+                {"val": "0 kcal", "lbl": "Calorias"},
+                {"val": "100 mg", "lbl": "CoQ10"},
+                {"val": "1 cap", "lbl": "ao dia"},
+                {"val": "Zero", "lbl": "Açúcares"},
+                {"val": "100%", "lbl": "Pura"}
+            ],
+            "true-foods": [
+                {"val": "120 kcal", "lbl": "Calorias"},
+                {"val": "100%", "lbl": "Arábica"},
+                {"val": "TCM", "lbl": "Energia"},
+                {"val": "Zero", "lbl": "Açúcares"},
+                {"val": "Low", "lbl": "Carb"}
+            ]
+        }
+        
+        # Build quick nutrition highlights HTML
+        quick_nutri_html = ""
+        q_highlights = quick_nutri_map.get(cat["id"], [])
+        for q in q_highlights:
+            quick_nutri_html += f"""
+            <div class="quick-nutrition-card">
+              <span class="quick-nutrition-val">{q["val"]}</span>
+              <span class="quick-nutrition-label">{q["lbl"]}</span>
+            </div>"""
+
         # Build active highlights HTML
         highlights_html = ""
         for hl in cat["activeHighlights"]:
@@ -4031,9 +4111,131 @@ def generate_all_pages():
               <td class="right">{row["vd"]}</td>
             </tr>"""
             
-        # Custom Detail Layout Content HTML
+        # Check if a custom table image exists for this category
+        tabela_img_map = {
+            "whey": "PRODUTOS/TABELAS/WHEY_PROTEIN_TABELA.png",
+            "pre-treino": "PRODUTOS/TABELAS/DRAGON_GTX_TABELA.png",
+            "creatina": "PRODUTOS/TABELAS/CREATINA_TABELA.png",
+            "vitaminas": "PRODUTOS/TABELAS/POLI VITAMÍNICO.png",
+            "colageno": "PRODUTOS/TABELAS/CABELO, PELE E UNHA_TABELA.png",
+            "emagrecedores": "PRODUTOS/TABELAS/TERMOGÊNICO_HAVOC_TABELA.png",
+            "vitamina-d": "PRODUTOS/TABELAS/VITAMINA D3+K+MG+2_TABELA.png",
+            "coenzima-q10": "PRODUTOS/TABELAS/COENZIMAQ10_TABELA.png"
+        }
+        
+        tabela_img = tabela_img_map.get(cat["id"])
+        if tabela_img:
+            table_content_html = f"""
+            <img src="{tabela_img}" alt="Tabela Nutricional" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            """
+        else:
+            table_content_html = f"""
+            <table class="nutri-table">
+              <thead>
+                <tr>
+                  <th>Componente</th>
+                  <th>Quantidade</th>
+                  <th class="right">%VD*</th>
+                </tr>
+              </thead>
+              <tbody>
+                {nutri_rows_html}
+              </tbody>
+            </table>
+            """
+            
+        # Build features split HTML only for Whey
         if cat["id"] == "whey":
-            detail_html = f"""
+            features_split_html = """
+<!-- 5.1. O QUE POSSUI E NÃO POSSUI -->
+<section class="features-split-section">
+  <div class="container">
+    <div class="features-split-grid">
+      <!-- Possui -->
+      <div class="features-split-card">
+        <h3 class="features-split-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          O que possui
+        </h3>
+        <ul class="features-split-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span><strong>24g de Proteína Pura:</strong> Combinação isolada e concentrada de alta digestibilidade.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span><strong>5.5g de BCAAs:</strong> Essenciais para a recuperação acelerada pós-treino e hipertrofia.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span><strong>4.3g de Glutamina:</strong> Auxílio fundamental na imunidade e na saúde da microbiota intestinal.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span><strong>Sabor & Cremosidade Incomparável:</strong> O blend ideal para misturas ou receitas fit.</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Não possui -->
+      <div class="features-split-card">
+        <h3 class="features-split-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          O que NÃO possui
+        </h3>
+        <ul class="features-split-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span><strong>Sem Açúcares Adicionados:</strong> Fórmula pura adoçada com adoçantes nobres.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span><strong>Adoçantes Artificiais Nocivos:</strong> Livre de ciclamato, aspartame ou aditivos.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span><strong>Corantes Artificiais:</strong> Sem prejuízos gástricos ou compostos alergênicos.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span><strong>Sem Glúten:</strong> Seguro para intolerantes e celíacos, garantindo digestão leve.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+        else:
+            features_split_html = ""
+            
+        # Custom Detail Layout Content HTML
+        detail_html = f"""
 <!-- 2. PRODUTO COMPRA E DETALHES -->
     <section class="product-detail-section" id="buyArea">
       <div class="container">
@@ -4049,7 +4251,7 @@ def generate_all_pages():
             <span class="breadcrumb-separator">/</span>
             <a href="index.html#categories">Produtos</a>
             <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-current">Whey Protein</span>
+            <span class="breadcrumb-current">{cat["title"]}</span>
           </div>
           <h1 class="product-detail-title">{cat["productName"]}</h1>
         </div>
@@ -4063,7 +4265,7 @@ def generate_all_pages():
                 <span style="font-size:0.9rem; font-weight:800; margin:2px 0;">Pura</span>
                 <span style="font-size:0.55rem; opacity:0.8;">100% Clean</span>
               </div>
-              <img id="mainProductDetailImg" src="PRODUTOS/NEW WHEY PROTEIN/WHEY CHOCOLATE.webp" alt="{cat["productName"]}">
+              <img id="mainProductDetailImg" src="{cat["image"]}" alt="{cat["productName"]}">
               
               <!-- Cashback Badge -->
               <div class="cashback-badge">
@@ -4089,7 +4291,7 @@ def generate_all_pages():
                 <span class="breadcrumb-separator">/</span>
                 <a href="index.html#categories">Produtos</a>
                 <span class="breadcrumb-separator">/</span>
-                <span class="breadcrumb-current">Whey Protein</span>
+                <span class="breadcrumb-current">{cat["title"]}</span>
               </div>
               <div class="product-brand-tag">BNS+ Premium</div>
               <h1 class="product-detail-title">{cat["productName"]}</h1>
@@ -4104,26 +4306,7 @@ def generate_all_pages():
               </div>
             <!-- Quick Nutrition Highlights -->
             <div class="quick-nutrition-grid">
-              <div class="quick-nutrition-card">
-                <span class="quick-nutrition-val">117 kcal</span>
-                <span class="quick-nutrition-label">Calorias</span>
-              </div>
-              <div class="quick-nutrition-card">
-                <span class="quick-nutrition-val">4 g</span>
-                <span class="quick-nutrition-label">Carbos</span>
-              </div>
-              <div class="quick-nutrition-card">
-                <span class="quick-nutrition-val">24 g</span>
-                <span class="quick-nutrition-label">Proteínas</span>
-              </div>
-              <div class="quick-nutrition-card">
-                <span class="quick-nutrition-val">2 g</span>
-                <span class="quick-nutrition-label">Gorduras</span>
-              </div>
-              <div class="quick-nutrition-card">
-                <span class="quick-nutrition-val">0 g</span>
-                <span class="quick-nutrition-label">Açúcares</span>
-              </div>
+              {quick_nutri_html}
             </div>
               <span>4.8 (903 avaliações)</span>
             </div>
@@ -4223,27 +4406,7 @@ def generate_all_pages():
         </div>
         <h2 class="allied-title">Seu melhor aliado para {cat["goal"]}</h2>
         <div class="allied-grid">
-          
-            <div class="allied-col">
-              <span class="allied-val">24g</span>
-              <span class="allied-lbl">de Proteína Pura</span>
-              <p class="allied-desc">Filtragem pura para máxima absorção muscular.</p>
-            </div>
-            <div class="allied-col">
-              <span class="allied-val">5.5g</span>
-              <span class="allied-lbl">de BCAAs</span>
-              <p class="allied-desc">Essenciais para ativação da síntese proteica.</p>
-            </div>
-            <div class="allied-col">
-              <span class="allied-val">4.3g</span>
-              <span class="allied-lbl">de Glutamina</span>
-              <p class="allied-desc">Suporte ao sistema imunológico e saúde intestinal.</p>
-            </div>
-            <div class="allied-col">
-              <span class="allied-val">0g</span>
-              <span class="allied-lbl">Açúcares Adicionados</span>
-              <p class="allied-desc">Fórmula clean adoçada apenas com sucralose premium.</p>
-            </div>
+          {highlights_html}
         </div>
         <button class="btn-buy-now-accent" onclick="scrollToBuy()" style="margin-bottom: 50px;">Acelerar meus resultados</button>
         <div class="allied-banner">
@@ -4257,22 +4420,10 @@ def generate_all_pages():
       <div class="container">
         <h2 class="split-title">{cat["productName"]}</h2>
         <div class="split-canister-wrapper">
-          <img src="PRODUTOS/NEW WHEY PROTEIN/WHEY CHOCOLATE.webp" alt="{cat["productName"]}">
+          <img src="{cat["image"]}" alt="{cat["productName"]}">
         </div>
         <div class="split-bullets">
-          
-            <div class="split-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>100% PROTEÍNA PURA E LIMPA (ISOLADO & CONCENTRADO)</span>
-            </div>
-            <div class="split-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Zero adição de açúcares ou corantes artificiais na fórmula</span>
-            </div>
-            <div class="split-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <span>Matérias-primas importadas de altíssima biodisponibilidade</span>
-            </div>
+          {bullets_html}
         </div>
         <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
       </div>
@@ -4283,136 +4434,14 @@ def generate_all_pages():
       <div class="container">
         <h2 class="help-title">Como ele te ajuda?</h2>
         <div class="help-grid">
-          
-            <div class="help-card">
-              <div class="help-card-img">
-                <img src="foods/001.webp" alt="Ganho de Massa">
-              </div>
-              <div class="help-card-content">
-                <div class="help-card-bar"></div>
-                <h4 class="help-card-title">Ganho de Massa</h4>
-                <p class="help-card-desc">Estimula a síntese proteica e hipertrofia.</p>
-              </div>
-            </div>
-            <div class="help-card">
-              <div class="help-card-img">
-                <img src="foods/002.webp" alt="Recuperação Acelerada">
-              </div>
-              <div class="help-card-content">
-                <div class="help-card-bar"></div>
-                <h4 class="help-card-title">Recuperação Acelerada</h4>
-                <p class="help-card-desc">Reduz o catabolismo e dores pós-treino.</p>
-              </div>
-            </div>
-            <div class="help-card">
-              <div class="help-card-img">
-                <img src="foods/003.webp" alt="Máxima Absorção">
-              </div>
-              <div class="help-card-content">
-                <div class="help-card-bar"></div>
-                <h4 class="help-card-title">Máxima Absorção</h4>
-                <p class="help-card-desc">Filtragem premium de rápida digestibilidade.</p>
-              </div>
-            </div>
-            <div class="help-card">
-              <div class="help-card-img">
-                <img src="foods/004.webp" alt="Suporte Imunológico">
-              </div>
-              <div class="help-card-content">
-                <div class="help-card-bar"></div>
-                <h4 class="help-card-title">Suporte Imunológico</h4>
-                <p class="help-card-desc">Rico em anticorpos e aminoácidos de defesa.</p>
-              </div>
-            </div>
+          {benefits_html}
         </div>
         <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>
       </div>
     </section>
 
     
-<!-- 5.1. O QUE POSSUI E NÃO POSSUI -->
-<section class="features-split-section">
-  <div class="container">
-    <div class="features-split-grid">
-      <!-- Possui -->
-      <div class="features-split-card">
-        <h3 class="features-split-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          O que possui
-        </h3>
-        <ul class="features-split-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span><strong>24g de Proteína Pura:</strong> Combinação isolada e concentrada de alta digestibilidade.</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span><strong>5.5g de BCAAs:</strong> Essenciais para a recuperação acelerada pós-treino e hipertrofia.</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span><strong>4.3g de Glutamina:</strong> Auxílio fundamental na imunidade e na saúde da microbiota intestinal.</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span><strong>Sabor & Cremosidade Incomparável:</strong> O blend ideal para misturas ou receitas fit.</span>
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Não possui -->
-      <div class="features-split-card">
-        <h3 class="features-split-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-          O que NÃO possui
-        </h3>
-        <ul class="features-split-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            <span><strong>Sem Açúcares Adicionados:</strong> Fórmula pura adoçada com adoçantes nobres.</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            <span><strong>Adoçantes Artificiais Nocivos:</strong> Livre de ciclamato, aspartame ou aditivos.</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            <span><strong>Corantes Artificiais:</strong> Sem prejuízos gástricos ou compostos alergênicos.</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            <span><strong>Sem Glúten:</strong> Seguro para intolerantes e celíacos, garantindo digestão leve.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    {features_split_html}
 
 <!-- 6. CIÊNCIA E ESTATÍSTICAS -->
     <section class="science-section-ref">
@@ -4451,7 +4480,7 @@ def generate_all_pages():
     </section>
 
     <!-- 7. SUGESTÃO DE CONSUMO -->
-    <section class="usage-section-full" style="background-image: url('foods/005.webp');">
+    <section class="usage-section-full" style="background-image: url('{cat["usageImg"]}');">
       <div class="container">
         <div class="usage-card-overlay">
           <h2 class="usage-title">Sugestão de consumo</h2>
@@ -4517,19 +4546,8 @@ def generate_all_pages():
           </div>
           <div class="nutrition-right-card-ref">
             <h3 class="table-header">Tabela Nutricional</h3>
-            <p class="table-portion">{cat["portionText"]}</p>
-            <table class="nutri-table">
-              <thead>
-                <tr>
-                  <th>Componente</th>
-                  <th>Quantidade</th>
-                  <th class="right">%VD*</th>
-                </tr>
-              </thead>
-              <tbody>
-                {nutri_rows_html}
-              </tbody>
-            </table>
+            <p class="table-portion">{cat.get("portionText", "Porção recomendada")}</p>
+            {table_content_html}
           </div>
         </div>
       </div>
@@ -4587,7 +4605,7 @@ def generate_all_pages():
       </div>
     </section>
         """
-        else:
+        if False:
             detail_html = f"""
     <!-- 2. PRODUTO COMPRA E DETALHES -->
     <section class="product-detail-section" id="buyArea">
@@ -4907,7 +4925,7 @@ def generate_all_pages():
         """
         
         # Category Script extension for tabs, accordion, buy select
-        if cat["id"] == "whey":
+        if True:
             cat_script_extensions = """
 <script>
         // Custom Category Detail Interactions
@@ -5079,7 +5097,7 @@ def generate_all_pages():
         }
         </script>
         """
-        else:
+        if False:
             cat_script_extensions = """
         <script>
         // Custom Category Detail Interactions
@@ -5164,10 +5182,7 @@ def generate_all_pages():
         """
         
         # Conditionally choose layout and CSS
-        if cat["id"] == "whey":
-            combined_style = f"{style_content}\n{WHEY_CUSTOM_CSS}"
-        else:
-            combined_style = f"{style_content}\n{DEFAULT_CUSTOM_CSS}"
+        combined_style = f"{style_content}\n{WHEY_CUSTOM_CSS}"
             
         # Custom script globals
         script_globals = f"""
