@@ -90,6 +90,24 @@ Para atender à solicitação de aplicar o design True mobile exclusivamente à 
 
 ---
 
+## 🔄 Integração de Preços via XML & Auto-Push para o GitHub
+
+Implementamos e configuramos o sincronizador automático de preços com base no feed XML do Google Merchant Center:
+
+1. **Sincronização de Preços via XML (`sync_prices.py`)**:
+   - Desenvolvemos o script de integração que baixa diretamente o feed em tempo real da URL fornecida (`https://www.bnssuplementos.com.br/xml/xml.php?Chave=w9GazVGbn92bnxHMwADN3MTM`).
+   - O script mapeia os IDs de produto correspondentes no XML para as categorias locais do site (ex: Whey Protein, Pré-Treino, Creatina, Vitaminas, etc.) e atualiza automaticamente os preços no arquivo `prices.json`.
+   - Executa a compilação gerando as novas páginas estáticas de categoria (`categoria-*.html`) com os preços atualizados.
+
+2. **Commit e Push Automático para o GitHub**:
+   - Atualizamos o script `sync_prices.py` para executar os comandos do Git automaticamente após cada compilação de preços.
+   - O script executa:
+     - `git add prices.json categoria-*.html index.html`
+     - Verifica se há alterações staged. Se houver, cria um commit local com a mensagem `"chore: auto-sync prices and categories via XML"`.
+     - Executa o `git push origin main` com um **timeout de 30 segundos** (para garantir segurança contra bloqueios de credenciais).
+
+---
+
 ## 🚀 Links Oficiais e Publicação
 
 - **Repositório GitHub:** [pagebns no GitHub](https://github.com/bnsnutritionn-pixel/pagebns.git)
