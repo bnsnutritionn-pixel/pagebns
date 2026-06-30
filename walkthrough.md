@@ -183,3 +183,20 @@ Reordenamos as seções do template `detail_html` na seguinte sequência física
 ### 2. Remoção de Clutter e Visual Clean
 - Para manter a fidelidade total ao layout da Vivatrue, removemos as seções *"Seu melhor aliado para..." (Allied Section)* que continham o toggle switch Dia/Noite e a seção de carrossel de estatísticas científicas de bem-estar (*Science Stats Section*), limpando a página de elementos redundantes e focando nos blocos de conversão.
 
+---
+
+## 🎨 Alinhamento Fiel de Seções com Referências Visuais
+
+Ajustamos o layout de duas seções fundamentais de acordo com as capturas de tela fornecidas para obter correspondência exata com o site da Vivatrue:
+
+### 1. Seção "Benefícios do Produto" (Estrutura da Imagem 1)
+- **Substituição de Layout**: Substituímos os antigos cards verticais com fotos (estilo BNS+) por um slider horizontal responsivo e limpo.
+- **Estrutura dos Cards**: Cada card agora possui um fundo bege claro suave, cantos arredondados, borda sutil e disposição flex horizontal: **ícone representativo à esquerda** e **texto com título em negrito à direita** (ex: `<strong>Volume Muscular</strong>: Para quem busca volume`).
+- **Navegação Visual**: Adicionamos indicadores de paginação (dots horizontais) centralizados abaixo do slider, alinhado exatamente ao design da referência.
+
+### 2. Seção "Descrição do Produto" como Fullbanner (Estrutura da Imagem 3)
+- **Substituição de Layout**: Abandonamos o bloco de texto plano com fundo branco e convertemos a seção em um **Fullbanner de largura total**.
+- **Imagem de Fundo e Overlay**: O banner renderiza uma imagem de fundo conceitual para cada categoria (ex: coco/ingredientes no Whey) e adiciona um overlay branco suave de alta opacidade (`rgba(255, 255, 255, 0.88)`), garantindo legibilidade perfeita para o texto.
+- **Conteúdo Centralizado**: O título e o texto de descrição ficam perfeitamente centralizados por cima da imagem de fundo com a tipografia e cores correspondentes à marca premium Vivatrue.
+
+
