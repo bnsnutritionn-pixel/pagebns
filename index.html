@@ -2264,7 +2264,7 @@
       transform: scale(1.02);
     }
 
-    /* Modal de Catálogo PDF */
+    /* Modal de Catálogo PDF / Imagens */
     .pdf-modal {
       position: fixed;
       top: 0;
@@ -2357,6 +2357,97 @@
       width: 100%;
       height: calc(100% - 68px);
       background-color: #525659;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .catalog-slider-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: calc(100% - 40px);
+      background-color: #f5f5f7;
+      padding: 10px;
+    }
+
+    .catalog-image-container {
+      max-width: 100%;
+      max-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .catalog-image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .catalog-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      z-index: 5;
+    }
+
+    .catalog-nav-btn:hover {
+      background-color: var(--bg-white);
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .catalog-btn-prev {
+      left: 16px;
+    }
+
+    .catalog-btn-next {
+      right: 16px;
+    }
+
+    .catalog-page-indicator {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      .catalog-nav-btn {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      .catalog-btn-prev {
+        left: 8px;
+      }
+      .catalog-btn-next {
+        right: 8px;
+      }
+      .catalog-slider-wrapper {
+        padding: 5px;
+      }
     }
 
     /* ----------------------------------------------------
@@ -3721,20 +3812,43 @@
     </div>
   </footer>
 
-  <!-- Modal de Catálogo PDF -->
+  <!-- Modal de Catálogo PDF / Imagens -->
   <div id="pdfModal" class="pdf-modal">
     <div class="pdf-modal-overlay" id="pdfModalOverlay"></div>
     <div class="pdf-modal-container">
       <div class="pdf-modal-header">
         <h3 class="pdf-modal-title">Catálogo BNS+</h3>
-        <button class="pdf-modal-close" id="closePdfModal" aria-label="Fechar catálogo">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
+        <div class="pdf-modal-header-actions" style="display: flex; gap: 12px; align-items: center;">
+          <a href="DOCUMENTOS/CATÁLOGO_REVISTA_OTIMIZADO.pdf" download class="btn-download-pdf" style="font-size: 0.85rem; color: #2E7D32; font-weight: 600; display: flex; align-items: center; gap: 4px; text-decoration: none;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Baixar PDF
+          </a>
+          <button class="pdf-modal-close" id="closePdfModal" aria-label="Fechar catálogo">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
       </div>
       <div class="pdf-modal-body">
-        <iframe id="pdfIframe" src="" width="100%" height="100%" style="border: none;"></iframe>
+        <div class="catalog-slider-wrapper">
+          <button class="catalog-nav-btn catalog-btn-prev" id="catalogPrev" aria-label="Página anterior">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <div class="catalog-image-container">
+            <img id="catalogImage" src="" alt="Página do Catálogo" style="opacity: 0; transition: opacity 0.2s ease;">
+          </div>
+          <button class="catalog-nav-btn catalog-btn-next" id="catalogNext" aria-label="Próxima página">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="catalog-page-indicator" id="catalogPageIndicator">Página 1 de 33</div>
       </div>
     </div>
   </div>
@@ -4117,17 +4231,43 @@
       });
     }
 
-    // 10. Modal do Catálogo PDF
+    // 10. Modal do Catálogo (Slider de Imagens WebP/JPG com suporte mobile)
     const instCard = document.querySelector('.inst-image-wrapper');
     const openCatalogBtn = document.getElementById('openCatalogBtn');
     const pdfModal = document.getElementById('pdfModal');
-    const pdfIframe = document.getElementById('pdfIframe');
     const closePdfModal = document.getElementById('closePdfModal');
     const pdfModalOverlay = document.getElementById('pdfModalOverlay');
+    const catalogImage = document.getElementById('catalogImage');
+    const catalogPageIndicator = document.getElementById('catalogPageIndicator');
+    const catalogPrev = document.getElementById('catalogPrev');
+    const catalogNext = document.getElementById('catalogNext');
 
-    if ((instCard || openCatalogBtn) && pdfModal && pdfIframe) {
+    let currentCatalogPage = 1;
+    const totalCatalogPages = 33;
+
+    function updateCatalogImage() {
+      if (!catalogImage) return;
+      catalogImage.style.opacity = '0';
+      
+      // Use setTimeout to allow opacity transition
+      setTimeout(() => {
+        catalogImage.src = `DOCUMENTOS/catalogo_paginas/pagina_${currentCatalogPage}.jpg`;
+        if (catalogPageIndicator) {
+          catalogPageIndicator.textContent = `Página ${currentCatalogPage} de ${totalCatalogPages}`;
+        }
+      }, 150);
+    }
+
+    if (catalogImage) {
+      catalogImage.addEventListener('load', () => {
+        catalogImage.style.opacity = '1';
+      });
+    }
+
+    if ((instCard || openCatalogBtn) && pdfModal && catalogImage) {
       const openModal = () => {
-        pdfIframe.src = 'DOCUMENTOS/CATÁLOGO_REVISTA_OTIMIZADO.pdf';
+        currentCatalogPage = 1;
+        updateCatalogImage();
         pdfModal.classList.add('active');
         document.body.style.overflow = 'hidden';
       };
@@ -4146,13 +4286,43 @@
       const closeModal = () => {
         pdfModal.classList.remove('active');
         document.body.style.overflow = '';
-        setTimeout(() => {
-          pdfIframe.src = '';
-        }, 300);
       };
 
       closePdfModal.addEventListener('click', closeModal);
       pdfModalOverlay.addEventListener('click', closeModal);
+
+      if (catalogPrev && catalogNext) {
+        catalogPrev.addEventListener('click', () => {
+          if (currentCatalogPage > 1) {
+            currentCatalogPage--;
+          } else {
+            currentCatalogPage = totalCatalogPages;
+          }
+          updateCatalogImage();
+        });
+
+        catalogNext.addEventListener('click', () => {
+          if (currentCatalogPage < totalCatalogPages) {
+            currentCatalogPage++;
+          } else {
+            currentCatalogPage = 1;
+          }
+          updateCatalogImage();
+        });
+      }
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (pdfModal.classList.contains('active')) {
+          if (e.key === 'ArrowLeft' && catalogPrev) {
+            catalogPrev.click();
+          } else if (e.key === 'ArrowRight' && catalogNext) {
+            catalogNext.click();
+          } else if (e.key === 'Escape') {
+            closeModal();
+          }
+        }
+      });
     }
 
     // 11. Rodapé Acordeão no Mobile

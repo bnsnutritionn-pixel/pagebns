@@ -2264,7 +2264,7 @@
       transform: scale(1.02);
     }
 
-    /* Modal de Catálogo PDF */
+    /* Modal de Catálogo PDF / Imagens */
     .pdf-modal {
       position: fixed;
       top: 0;
@@ -2357,6 +2357,97 @@
       width: 100%;
       height: calc(100% - 68px);
       background-color: #525659;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .catalog-slider-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: calc(100% - 40px);
+      background-color: #f5f5f7;
+      padding: 10px;
+    }
+
+    .catalog-image-container {
+      max-width: 100%;
+      max-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .catalog-image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .catalog-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      z-index: 5;
+    }
+
+    .catalog-nav-btn:hover {
+      background-color: var(--bg-white);
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .catalog-btn-prev {
+      left: 16px;
+    }
+
+    .catalog-btn-next {
+      right: 16px;
+    }
+
+    .catalog-page-indicator {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      .catalog-nav-btn {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      .catalog-btn-prev {
+        left: 8px;
+      }
+      .catalog-btn-next {
+        right: 8px;
+      }
+      .catalog-slider-wrapper {
+        padding: 5px;
+      }
     }
 
     /* ----------------------------------------------------
@@ -5983,17 +6074,43 @@
       });
     }
 
-    // 10. Modal do Catálogo PDF
+    // 10. Modal do Catálogo (Slider de Imagens WebP/JPG com suporte mobile)
     const instCard = document.querySelector('.inst-image-wrapper');
     const openCatalogBtn = document.getElementById('openCatalogBtn');
     const pdfModal = document.getElementById('pdfModal');
-    const pdfIframe = document.getElementById('pdfIframe');
     const closePdfModal = document.getElementById('closePdfModal');
     const pdfModalOverlay = document.getElementById('pdfModalOverlay');
+    const catalogImage = document.getElementById('catalogImage');
+    const catalogPageIndicator = document.getElementById('catalogPageIndicator');
+    const catalogPrev = document.getElementById('catalogPrev');
+    const catalogNext = document.getElementById('catalogNext');
 
-    if ((instCard || openCatalogBtn) && pdfModal && pdfIframe) {
+    let currentCatalogPage = 1;
+    const totalCatalogPages = 33;
+
+    function updateCatalogImage() {
+      if (!catalogImage) return;
+      catalogImage.style.opacity = '0';
+      
+      // Use setTimeout to allow opacity transition
+      setTimeout(() => {
+        catalogImage.src = `DOCUMENTOS/catalogo_paginas/pagina_${currentCatalogPage}.jpg`;
+        if (catalogPageIndicator) {
+          catalogPageIndicator.textContent = `Página ${currentCatalogPage} de ${totalCatalogPages}`;
+        }
+      }, 150);
+    }
+
+    if (catalogImage) {
+      catalogImage.addEventListener('load', () => {
+        catalogImage.style.opacity = '1';
+      });
+    }
+
+    if ((instCard || openCatalogBtn) && pdfModal && catalogImage) {
       const openModal = () => {
-        pdfIframe.src = 'DOCUMENTOS/CATÁLOGO_REVISTA_OTIMIZADO.pdf';
+        currentCatalogPage = 1;
+        updateCatalogImage();
         pdfModal.classList.add('active');
         document.body.style.overflow = 'hidden';
       };
@@ -6012,13 +6129,43 @@
       const closeModal = () => {
         pdfModal.classList.remove('active');
         document.body.style.overflow = '';
-        setTimeout(() => {
-          pdfIframe.src = '';
-        }, 300);
       };
 
       closePdfModal.addEventListener('click', closeModal);
       pdfModalOverlay.addEventListener('click', closeModal);
+
+      if (catalogPrev && catalogNext) {
+        catalogPrev.addEventListener('click', () => {
+          if (currentCatalogPage > 1) {
+            currentCatalogPage--;
+          } else {
+            currentCatalogPage = totalCatalogPages;
+          }
+          updateCatalogImage();
+        });
+
+        catalogNext.addEventListener('click', () => {
+          if (currentCatalogPage < totalCatalogPages) {
+            currentCatalogPage++;
+          } else {
+            currentCatalogPage = 1;
+          }
+          updateCatalogImage();
+        });
+      }
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (pdfModal.classList.contains('active')) {
+          if (e.key === 'ArrowLeft' && catalogPrev) {
+            catalogPrev.click();
+          } else if (e.key === 'ArrowRight' && catalogNext) {
+            catalogNext.click();
+          } else if (e.key === 'Escape') {
+            closeModal();
+          }
+        }
+      });
     }
 
     // 11. Rodapé Acordeão no Mobile
