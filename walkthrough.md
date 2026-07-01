@@ -235,6 +235,17 @@ Realizamos ajustes visuais e de links na seção de alimentos saudáveis (Foods)
 - **Remoção de Avaliações**: Retiramos as estrelas e notas de avaliação (`product-rating-badge`) de todos os 7 cards presentes na seção de alimentos do site para obter um layout mais limpo.
 - **Redirecionamento de Compra**: Atualizamos o link de todos os cards de alimentos da seção "Conhecer produto" para apontarem diretamente para o site parceiro: `https://www.reidascastanhas.com.br/`.
 
+---
+
+## 👥 Reestruturação da Seção "Quem Usa, Recomenda!"
+
+Realizamos uma simplificação visual completa e atualização de imagem na seção de prova social:
+
+- **Simplificação e Layout Clean**: Removi todas as informações de texto sobrepostas nos cards, incluindo o nome de usuário (`@username`), o nome do produto, o preço, a classificação em estrelas e o botão "Conhecer produto" de todos os cards da seção. Agora, os cards exibem puramente as imagens de fundo com o efeito de gradiente original.
+- **Atualização de Imagem (Card 1)**: Converti a nova foto fornecida em `ugc/ugc_01.jpeg` para o formato otimizado `.webp` e a configurei como plano de fundo do Card 1 (`ugc/ugc_01.webp`), mantendo o alinhamento com a nova identidade visual.
+- **Sincronização**: Regeneramos todos os arquivos estáticos de categoria para garantir a atualização em todo o ecossistema da página.
+
+
 
 
 
