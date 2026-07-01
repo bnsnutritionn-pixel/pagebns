@@ -1,44 +1,44 @@
 {
     "whey": {
-        "price": "R$ 142,47",
+        "price": "R$ 170,97",
         "priceOld": "R$ 179,97",
-        "priceMonthly": "R$ 135,35",
-        "installments": "6x de R$ 23,75"
+        "priceMonthly": "R$ 162,42",
+        "installments": "6x de R$ 28,50"
     },
     "pre-treino": {
-        "price": "R$ 104,47",
+        "price": "R$ 132,98",
         "priceOld": "R$ 139,98",
-        "priceMonthly": "R$ 99,25",
-        "installments": "6x de R$ 17,41"
+        "priceMonthly": "R$ 126,33",
+        "installments": "6x de R$ 22,16"
     },
     "creatina": {
-        "price": "R$ 47,38",
-        "priceOld": "R$ 49,87",
-        "priceMonthly": "R$ 45,01",
-        "installments": "6x de R$ 7,90"
+        "price": "R$ 59,37",
+        "priceOld": "R$ 62,49",
+        "priceMonthly": "R$ 56,40",
+        "installments": "6x de R$ 9,89"
     },
     "vitaminas": {
-        "price": "R$ 47,47",
-        "priceOld": "R$ 49,97",
-        "priceMonthly": "R$ 45,10",
-        "installments": "6x de R$ 7,91"
+        "price": "R$ 55,85",
+        "priceOld": "R$ 58,79",
+        "priceMonthly": "R$ 53,06",
+        "installments": "6x de R$ 9,31"
     },
     "emagrecedores": {
-        "price": "R$ 56,91",
-        "priceOld": "R$ 59,90",
-        "priceMonthly": "R$ 54,06",
-        "installments": "6x de R$ 9,48"
+        "price": "R$ 66,97",
+        "priceOld": "R$ 70,49",
+        "priceMonthly": "R$ 63,62",
+        "installments": "6x de R$ 11,16"
     },
     "vitamina-d": {
-        "price": "R$ 94,05",
-        "priceOld": "R$ 99,00",
-        "priceMonthly": "R$ 89,35",
-        "installments": "6x de R$ 15,67"
+        "price": "R$ 110,67",
+        "priceOld": "R$ 116,49",
+        "priceMonthly": "R$ 105,14",
+        "installments": "6x de R$ 18,45"
     },
     "coenzima-q10": {
-        "price": "R$ 94,88",
-        "priceOld": "R$ 99,87",
-        "priceMonthly": "R$ 90,14",
-        "installments": "6x de R$ 15,81"
+        "price": "R$ 111,62",
+        "priceOld": "R$ 117,49",
+        "priceMonthly": "R$ 106,04",
+        "installments": "6x de R$ 18,60"
     }
 }
