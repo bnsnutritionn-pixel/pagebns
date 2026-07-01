@@ -255,6 +255,21 @@ Ajustamos o layout da seção "Quem usa, recomenda" (`recommends-dark`) nas pág
 - **Centralização do Depoimento**: Modificamos a estilização da seção (`.recommends-grid-ref`) nos arquivos de estilo personalizado (tanto no Whey quanto nos estilos padrão do gerador) para centerizar o card de depoimento (`quote-card`) no centro do container em telas desktop (`max-width: 600px; margin: 0 auto 50px auto;` e `grid-template-columns: 1fr`).
 - **Recompilação Completa**: Rodamos o compilador de páginas de categoria e sincronizamos os preços via XML, consolidando a mudança em todas as 10 categorias geradas.
 
+---
+
+## 📖 Implementação do Slider Responsivo para o Catálogo
+
+Corrigimos a exibição do catálogo na versão mobile e adicionamos controles de navegação por setas:
+
+- **Extração de Páginas**: Criamos um script que utilizou a biblioteca PyMuPDF para extrair as 33 páginas do PDF original `DOCUMENTOS/CATÁLOGO_REVISTA_OTIMIZADO.pdf` em alta resolução como imagens individuais salvas em `DOCUMENTOS/catalogo_paginas/pagina_X.jpg`.
+- **Substituição do Iframe por Slider**: Substituímos o elemento `iframe` no modal por um contêiner slider responsivo (`.catalog-slider-wrapper`) que carrega dinamicamente as imagens das páginas. Isso resolve 100% dos travamentos e telas brancas em navegadores mobile (que não possuem leitor de PDF inline nativo).
+- **Controles de Navegação**:
+  - Adicionadas setas laterais para avançar/retroceder páginas de forma fluida.
+  - Adicionado suporte a gestos de teclado (setas para esquerda e direita, além de fechar o modal no `Escape`).
+  - Adicionado um indicador visual no rodapé do modal informando a página atual (ex: `Página X de 33`).
+  - Adicionado um link para download direto do PDF original no topo do modal para usuários que preferirem baixar o arquivo completo.
+
+
 
 
 
