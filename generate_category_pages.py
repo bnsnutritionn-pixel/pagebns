@@ -1554,14 +1554,14 @@ def generate_all_pages():
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
-      max-width: 1200px;
+      max-width: 600px;
       margin: 0 auto 50px auto;
     }
     
     @media (min-width: 768px) {
       .recommends-grid-ref {
-        grid-template-columns: repeat(3, 1fr);
-        align-items: stretch;
+        grid-template-columns: 1fr;
+        align-items: center;
       }
     }
     
@@ -3330,14 +3330,14 @@ def generate_all_pages():
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
-      max-width: 1200px;
+      max-width: 600px;
       margin: 0 auto 50px auto;
     }
     
     @media (min-width: 768px) {
       .recommends-grid-ref {
-        grid-template-columns: repeat(3, 1fr);
-        align-items: stretch;
+        grid-template-columns: 1fr;
+        align-items: center;
       }
     }
     
@@ -4974,16 +4974,10 @@ def generate_all_pages():
       <div class="container">
         <h2 class="recommends-title-dark">Quem usa, recomenda</h2>
         <div class="recommends-grid-ref">
-          <div class="recommend-card-ref img-card">
-            <img src="foods/005.webp" alt="Influenciador BNS+">
-          </div>
           <div class="recommend-card-ref quote-card">
             <span class="quote-stars-ref">★★★★★</span>
             <p class="quote-text-ref">"Fórmula extremamente limpa de verdade, sabor incrível e resultados visíveis em poucas semanas. Se tornou indispensável na minha rotina!"</p>
             <span class="quote-author-ref">Dra. Patrícia Lima</span>
-          </div>
-          <div class="recommend-card-ref img-card">
-            <img src="foods/006.webp" alt="Influenciador BNS+">
           </div>
         </div>
         <button class="btn-buy-now-accent" onclick="scrollToBuy()">Comprar Agora</button>

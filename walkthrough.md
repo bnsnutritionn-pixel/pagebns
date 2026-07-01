@@ -245,6 +245,17 @@ Realizamos uma simplificação visual completa e atualização de imagem na seç
 - **Atualização de Imagem (Card 1)**: Converti a nova foto fornecida em `ugc/ugc_01.jpeg` para o formato otimizado `.webp` e a configurei como plano de fundo do Card 1 (`ugc/ugc_01.webp`), mantendo o alinhamento com a nova identidade visual.
 - **Sincronização**: Regeneramos todos os arquivos estáticos de categoria para garantir a atualização em todo o ecossistema da página.
 
+---
+
+## 💬 Remoção de Fotos da Seção de Depoimentos das Páginas de Categoria
+
+Ajustamos o layout da seção "Quem usa, recomenda" (`recommends-dark`) nas páginas internas de produto:
+
+- **Remoção de Imagens**: Eliminamos os cards com fotos de influenciadores (`recommend-card-ref img-card`) posicionados à esquerda e à direita do depoimento central, mantendo o foco exclusivo nos depoimentos textuais.
+- **Centralização do Depoimento**: Modificamos a estilização da seção (`.recommends-grid-ref`) nos arquivos de estilo personalizado (tanto no Whey quanto nos estilos padrão do gerador) para centerizar o card de depoimento (`quote-card`) no centro do container em telas desktop (`max-width: 600px; margin: 0 auto 50px auto;` e `grid-template-columns: 1fr`).
+- **Recompilação Completa**: Rodamos o compilador de páginas de categoria e sincronizamos os preços via XML, consolidando a mudança em todas as 10 categorias geradas.
+
+
 
 
 
