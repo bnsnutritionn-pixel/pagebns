@@ -68,7 +68,7 @@ def update_landing_page_prices(prices_data):
             "link": "categoria-creatina.html"
         },
         "coenzima-q10": {
-            "identifier": "COENZIMA Q10.webp",
+            "identifier": "COENZIMA_Q10.webp",
             "link": "categoria-coenzima-q10.html"
         },
         "emagrecedores": {

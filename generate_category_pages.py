@@ -606,7 +606,7 @@ CATEGORIES_METADATA = [
         "title": "Coenzima Q10",
         "subtitle": "Energia Celular e Proteção Antioxidante",
         "productName": "True Coenzima Q10 - 60 comprimidos",
-        "image": "formula-card/COENZIMA Q10.webp",
+        "image": "formula-card/COENZIMA_Q10.webp",
         "flavorOptions": ["Comprimidos (Sem Sabor)"],
         "sizeOptions": ["60 Comprimidos"],
         "price": "R$ 94,88",

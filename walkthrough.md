@@ -199,4 +199,19 @@ Ajustamos o layout de duas seções fundamentais de acordo com as capturas de te
 - **Imagem de Fundo e Overlay**: O banner renderiza uma imagem de fundo conceitual para cada categoria (ex: coco/ingredientes no Whey) e adiciona um overlay branco suave de alta opacidade (`rgba(255, 255, 255, 0.88)`), garantindo legibilidade perfeita para o texto.
 - **Conteúdo Centralizado**: O título e o texto de descrição ficam perfeitamente centralizados por cima da imagem de fundo com a tipografia e cores correspondentes à marca premium Vivatrue.
 
+---
+
+## 📸 Substituição de Imagem da Coenzima Q10
+
+Realizamos a substituição da foto do produto Coenzima Q10 conforme solicitado:
+
+- **Conversão e Otimização**: Convertemos a imagem original em JPEG localizada em `PRODUTOS/COENZIMA Q10/COENZIMA_Q10.jpeg` para o formato de alta performance `.webp` e a salvamos sob o nome `formula-card/COENZIMA_Q10.webp`.
+- **Atualização de Referências**:
+  - `generate_category_pages.py`: Atualizado o caminho da imagem de `COENZIMA Q10.webp` para `COENZIMA_Q10.webp` na categoria `coenzima-q10`.
+  - `index.html`: Atualizados todos os caminhos do card e do slider da Coenzima Q10 para usar a imagem atualizada.
+  - `sync_prices.py`: Atualizado o identificador para mapear o arquivo corrigido com o sublinhado (`COENZIMA_Q10.webp`).
+  - `preview_site_unico.html`: Atualizadas todas as referências estáticas.
+- **Recompilação e Sincronização**: Rodamos a compilação completa para regenerar todos os arquivos HTML de categoria com o novo caminho da imagem.
+
+
 
