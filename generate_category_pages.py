@@ -428,7 +428,7 @@ CATEGORIES_METADATA = [
     {
         "id": "true-foods",
         "fileName": "categoria-true-foods.html",
-        "title": "True Foods",
+        "title": "BNS Foods",
         "subtitle": "Nutrição Limpa e Funcional",
         "productName": "True Morning Coffee",
         "image": "foods/001.webp",

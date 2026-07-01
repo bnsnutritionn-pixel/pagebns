@@ -225,6 +225,17 @@ Realizamos a substituição da foto do produto Havoc conforme solicitado:
   - `sync_prices.py`: Atualizado o identificador do produto para `TERMO_HAVOC.webp` para garantir a perfeita sincronização dos preços.
 - **Sincronização e Geração**: Rodamos a compilação completa de categorias e a sincronização automática de preços por meio do feed XML para assegurar o funcionamento dos links e dados de compra.
 
+---
+
+## 🥗 Reestruturação da Seção Foods (De True Foods para BNS Foods)
+
+Realizamos ajustes visuais e de links na seção de alimentos saudáveis (Foods):
+
+- **Mudança de Branding**: Alteramos toda a nomenclatura visual de "True Foods" para "BNS Foods" no título da seção e no carrossel de categorias da página inicial (`index.html`), bem como o título correspondente no gerador de páginas (`generate_category_pages.py`).
+- **Remoção de Avaliações**: Retiramos as estrelas e notas de avaliação (`product-rating-badge`) de todos os 7 cards presentes na seção de alimentos do site para obter um layout mais limpo.
+- **Redirecionamento de Compra**: Atualizamos o link de todos os cards de alimentos da seção "Conhecer produto" para apontarem diretamente para o site parceiro: `https://www.reidascastanhas.com.br/`.
+
+
 
 
 
