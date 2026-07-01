@@ -72,7 +72,7 @@ def update_landing_page_prices(prices_data):
             "link": "categoria-coenzima-q10.html"
         },
         "emagrecedores": {
-            "identifier": "HAVOC.webp",
+            "identifier": "TERMO_HAVOC.webp",
             "link": "categoria-emagrecedores.html"
         }
     }

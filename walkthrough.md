@@ -213,5 +213,18 @@ Realizamos a substituição da foto do produto Coenzima Q10 conforme solicitado:
   - `preview_site_unico.html`: Atualizadas todas as referências estáticas.
 - **Recompilação e Sincronização**: Rodamos a compilação completa para regenerar todos os arquivos HTML de categoria com o novo caminho da imagem.
 
+---
+
+## 📸 Substituição de Imagem do Termogênico Havoc
+
+Realizamos a substituição da foto do produto Havoc conforme solicitado:
+
+- **Conversão e Otimização**: Convertemos a imagem original em JPEG localizada em `PRODUTOS/HAVOC/TERMO_HAVOC.jpeg` para o formato de alta performance `.webp` e a salvamos sob o nome `formula-card/TERMO_HAVOC.webp`.
+- **Atualização de Referências**:
+  - `index.html`: Atualizado o card do produto Havoc no grid de produtos da página principal para utilizar a imagem `formula-card/TERMO_HAVOC.webp`.
+  - `sync_prices.py`: Atualizado o identificador do produto para `TERMO_HAVOC.webp` para garantir a perfeita sincronização dos preços.
+- **Sincronização e Geração**: Rodamos a compilação completa de categorias e a sincronização automática de preços por meio do feed XML para assegurar o funcionamento dos links e dados de compra.
+
+
 
 
